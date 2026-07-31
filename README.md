@@ -26,7 +26,7 @@ Hệ thống trợ lý AI tra cứu tài liệu sản phẩm **Vconnex Smart Hom
 - Product Resolver
 - Multi-product Retrieval
 
-
+Hệ thống hỗ trợ tra cứu thông số kỹ thuật, hướng dẫn lắp đặt, kết nối thiết bị, reset, tính năng trên ứng dụng Vhomenex và so sánh nhiều sản phẩm.
 
 ---
 
