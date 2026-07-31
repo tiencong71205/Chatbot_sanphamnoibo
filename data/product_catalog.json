@@ -1,0 +1,261 @@
+[
+  {
+    "product_id": "cam_bien_hien_dien",
+    "product_name": "Cảm biến hiện diện",
+    "product_group": "Cảm biến",
+    "source_file": "01_Cam_bien_hien_dien_du_lieu_chatbot.docx",
+    "model": "VCN-HPS",
+    "aliases": [
+      "cảm biến hiện diện",
+      "hps",
+      "vcn-hps",
+      "cảm biến hiện diện vconnex",
+      "cảm biến phát hiện người"
+    ],
+    "common_typos": [
+      "cam bien hien dien",
+      "cam bien hien dien vconnex",
+      "vcn hps"
+    ],
+    "keywords": [
+      "hiện diện",
+      "radar",
+      "3m",
+      "7 người",
+      "gắn trần"
+    ]
+  },
+  {
+    "product_id": "cong_to",
+    "product_name": "Công tơ",
+    "product_group": "Thiết bị đo lường",
+    "source_file": "02_Cong_to_du_lieu_chatbot.docx",
+    "model": "VCN-VUC",
+    "aliases": [
+      "công tơ",
+      "công tơ điện",
+      "công tơ thông minh",
+      "vcn-vuc",
+      "thiết bị đo năng lượng"
+    ],
+    "common_typos": [
+      "cong to",
+      "cong to dien",
+      "vcn vuc"
+    ],
+    "keywords": [
+      "đo điện",
+      "kwh",
+      "công tơ điện",
+      "auto",
+      "bluetooth"
+    ]
+  },
+  {
+    "product_id": "bo_dieu_khien_hong_ngoai",
+    "product_name": "Bộ điều khiển hồng ngoại",
+    "product_group": "Bộ điều khiển",
+    "source_file": "03_Bo_dieu_khien_hong_ngoai_du_lieu_chatbot.docx",
+    "model": "VCN-IR",
+    "aliases": [
+      "bộ điều khiển hồng ngoại",
+      "ir remote",
+      "vcn-ir",
+      "điều khiển ir",
+      "bộ điều khiển điều hòa tivi"
+    ],
+    "common_typos": [
+      "bo dieu khien hong ngoai",
+      "ir",
+      "vcn ir",
+      "bộ điều khiển hong ngoai"
+    ],
+    "keywords": [
+      "hồng ngoại",
+      "ir",
+      "học lệnh",
+      "tivi",
+      "điều hòa"
+    ]
+  },
+  {
+    "product_id": "cong_tac_chong_giat_bnn",
+    "product_name": "Công tắc chống giật BNN",
+    "product_group": "Công tắc",
+    "source_file": "04_Cong_tac_chong_giat_BNN_du_lieu_chatbot.docx",
+    "model": "VCN-SW-BNN",
+    "aliases": [
+      "công tắc chống giật bnn",
+      "công tắc bình nước nóng",
+      "công tắc bnn",
+      "vcn-sw-bnn",
+      "chống giật bình nóng lạnh"
+    ],
+    "common_typos": [
+      "cong tac chong giat",
+      "cong tac bnn",
+      "vcn sw bnn"
+    ],
+    "keywords": [
+      "chống giật",
+      "bình nước nóng",
+      "rccb",
+      "dòng rò",
+      "bnn"
+    ]
+  },
+  {
+    "product_id": "khoa_dien_tu",
+    "product_name": "Khóa điện tử",
+    "product_group": "Khóa thông minh",
+    "source_file": "05_Khoa_dien_tu_du_lieu_chatbot.docx",
+    "model": "VCN-LOCK",
+    "aliases": [
+      "khóa điện tử",
+      "khóa vân tay",
+      "khóa thông minh",
+      "vcn-lock",
+      "lock pro"
+    ],
+    "common_typos": [
+      "khoa dien tu",
+      "khoa van tay",
+      "vcn lock"
+    ],
+    "keywords": [
+      "vân tay",
+      "mật mã",
+      "thẻ từ",
+      "chìa cơ",
+      "khóa cửa"
+    ]
+  },
+  {
+    "product_id": "cam_bien_cua_mesh",
+    "product_name": "Cảm biến cửa Mesh",
+    "product_group": "Cảm biến",
+    "source_file": "06_Cam_bien_cua_mesh_du_lieu_chatbot.docx",
+    "model": "VCN-DS-MESH",
+    "aliases": [
+      "cảm biến cửa mesh",
+      "cảm biến cửa",
+      "vcn-ds-mesh",
+      "cảm biến đóng mở cửa"
+    ],
+    "common_typos": [
+      "cam bien cua",
+      "cam bien cua mesh",
+      "vcn ds mesh"
+    ],
+    "keywords": [
+      "cảm biến cửa",
+      "đóng mở",
+      "mesh",
+      "bluetooth mesh",
+      "pin"
+    ]
+  },
+  {
+    "product_id": "dong_co_rem",
+    "product_name": "Động cơ rèm",
+    "product_group": "Động cơ thông minh",
+    "source_file": "07_Dong_co_rem_du_lieu_chatbot.docx",
+    "model": "VCN-CM",
+    "aliases": [
+      "động cơ rèm",
+      "rèm thông minh",
+      "vcn-cm",
+      "động cơ rèm cửa",
+      "rèm tự động"
+    ],
+    "common_typos": [
+      "dong co rem",
+      "rem thong minh",
+      "vcn cm"
+    ],
+    "keywords": [
+      "động cơ rèm",
+      "kéo rèm",
+      "hành trình",
+      "màn rèm"
+    ]
+  },
+  {
+    "product_id": "cam_bien_chuyen_dong_anh_sang",
+    "product_name": "Cảm biến chuyển động, ánh sáng",
+    "product_group": "Cảm biến",
+    "source_file": "08_Cam_bien_chuyen_dong_anh_sang_du_lieu_chatbot.docx",
+    "model": "VCN-PIR-LUX",
+    "aliases": [
+      "cảm biến chuyển động ánh sáng",
+      "cảm biến chuyển động",
+      "cảm biến ánh sáng",
+      "vcn-pir-lux",
+      "pir lux"
+    ],
+    "common_typos": [
+      "cam bien chuyen dong",
+      "cam bien anh sang",
+      "vcn pir lux"
+    ],
+    "keywords": [
+      "chuyển động",
+      "ánh sáng",
+      "pir",
+      "lux",
+      "hồng ngoại thụ động"
+    ]
+  },
+  {
+    "product_id": "cong_tac_dimmer",
+    "product_name": "Công tắc Dimmer",
+    "product_group": "Công tắc",
+    "source_file": "09_Cong_tac_dimmer_du_lieu_chatbot.docx",
+    "model": "Chưa xác định - cần xác nhận",
+    "aliases": [
+      "dimmer",
+      "công tắc dimmer",
+      "công tắc điều chỉnh độ sáng",
+      "công tắc tăng giảm độ sáng"
+    ],
+    "common_typos": [
+      "dimmmer",
+      "dimer",
+      "dimmer switch",
+      "cong tac dimmer"
+    ],
+    "keywords": [
+      "độ sáng",
+      "0-10V",
+      "triac",
+      "chiết áp",
+      "dimmer"
+    ]
+  },
+  {
+    "product_id": "cong_tac_cua_cuon_cua_cong",
+    "product_name": "Công tắc thông minh cho cửa cuốn, cửa cổng",
+    "product_group": "Công tắc",
+    "source_file": "10_Cong_tac_cua_cuon_cua_cong_du_lieu_chatbot.docx",
+    "model": "VCN-SW-ROLLER",
+    "aliases": [
+      "công tắc cửa cuốn cửa cổng",
+      "công tắc cửa cuốn",
+      "công tắc cửa cổng",
+      "vcn-sw-roller",
+      "cửa cuốn vconnex"
+    ],
+    "common_typos": [
+      "cong tac cua cuon",
+      "cong tac cua cong",
+      "vcn sw roller"
+    ],
+    "keywords": [
+      "cửa cuốn",
+      "cửa cổng",
+      "dừng",
+      "mở cửa",
+      "đóng cửa"
+    ]
+  }
+]
