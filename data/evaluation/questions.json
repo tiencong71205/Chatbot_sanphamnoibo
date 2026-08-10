@@ -1,0 +1,1232 @@
+[
+  {
+    "question": "Cho tôi tất cả thông số kỹ thuật của Cảm biến hiện diện",
+    "expected_product_id": "cam_bien_hien_dien",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [
+      "nguồn",
+      "điện"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Kích thước và công suất của Cảm biến hiện diện là bao nhiêu",
+    "expected_product_id": "cam_bien_hien_dien",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Tính năng chính của Cảm biến hiện diện là gì",
+    "expected_product_id": "cam_bien_hien_dien",
+    "expected_content_type": [
+      "feature",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cảm biến hiện diện có hỗ trợ cập nhật OTA không",
+    "expected_product_id": "cam_bien_hien_dien",
+    "expected_content_type": [
+      "feature",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cách kết nối Cảm biến hiện diện vào ứng dụng Vhomenex",
+    "expected_product_id": "cam_bien_hien_dien",
+    "expected_content_type": [
+      "connection"
+    ],
+    "expected_keywords": [
+      "bước",
+      "kết nối"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Hướng dẫn lắp đặt Cảm biến hiện diện",
+    "expected_product_id": "cam_bien_hien_dien",
+    "expected_content_type": [
+      "installation"
+    ],
+    "expected_keywords": [
+      "lắp đặt"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cách reset Cảm biến hiện diện về mặc định",
+    "expected_product_id": "cam_bien_hien_dien",
+    "expected_content_type": [
+      "reset",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cảnh báo an toàn khi dùng Cảm biến hiện diện",
+    "expected_product_id": "cam_bien_hien_dien",
+    "expected_content_type": [
+      "safety",
+      "troubleshooting"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "thong so cảm biến hiện diện vconnex",
+    "expected_product_id": "cam_bien_hien_dien",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Model của Cảm biến hiện diện là gì",
+    "expected_product_id": "cam_bien_hien_dien",
+    "expected_content_type": [
+      "identification",
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cho tôi tất cả thông số kỹ thuật của Công tơ",
+    "expected_product_id": "cong_to",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [
+      "nguồn",
+      "điện"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Kích thước và công suất của Công tơ là bao nhiêu",
+    "expected_product_id": "cong_to",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Tính năng chính của Công tơ là gì",
+    "expected_product_id": "cong_to",
+    "expected_content_type": [
+      "feature",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Công tơ có hỗ trợ cập nhật OTA không",
+    "expected_product_id": "cong_to",
+    "expected_content_type": [
+      "feature",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cách kết nối Công tơ vào ứng dụng Vhomenex",
+    "expected_product_id": "cong_to",
+    "expected_content_type": [
+      "connection"
+    ],
+    "expected_keywords": [
+      "bước",
+      "kết nối"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Hướng dẫn lắp đặt Công tơ",
+    "expected_product_id": "cong_to",
+    "expected_content_type": [
+      "installation"
+    ],
+    "expected_keywords": [
+      "lắp đặt"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cách reset Công tơ về mặc định",
+    "expected_product_id": "cong_to",
+    "expected_content_type": [
+      "reset",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cảnh báo an toàn khi dùng Công tơ",
+    "expected_product_id": "cong_to",
+    "expected_content_type": [
+      "safety",
+      "troubleshooting"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "thong so công tơ vconnex",
+    "expected_product_id": "cong_to",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Model của Công tơ là gì",
+    "expected_product_id": "cong_to",
+    "expected_content_type": [
+      "identification",
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cho tôi tất cả thông số kỹ thuật của Bộ điều khiển hồng ngoại",
+    "expected_product_id": "bo_dieu_khien_hong_ngoai",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [
+      "nguồn",
+      "điện"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Kích thước và công suất của Bộ điều khiển hồng ngoại là bao nhiêu",
+    "expected_product_id": "bo_dieu_khien_hong_ngoai",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Tính năng chính của Bộ điều khiển hồng ngoại là gì",
+    "expected_product_id": "bo_dieu_khien_hong_ngoai",
+    "expected_content_type": [
+      "feature",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Bộ điều khiển hồng ngoại có hỗ trợ cập nhật OTA không",
+    "expected_product_id": "bo_dieu_khien_hong_ngoai",
+    "expected_content_type": [
+      "feature",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cách kết nối Bộ điều khiển hồng ngoại vào ứng dụng Vhomenex",
+    "expected_product_id": "bo_dieu_khien_hong_ngoai",
+    "expected_content_type": [
+      "connection"
+    ],
+    "expected_keywords": [
+      "bước",
+      "kết nối"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Hướng dẫn lắp đặt Bộ điều khiển hồng ngoại",
+    "expected_product_id": "bo_dieu_khien_hong_ngoai",
+    "expected_content_type": [
+      "installation"
+    ],
+    "expected_keywords": [
+      "lắp đặt"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cách reset Bộ điều khiển hồng ngoại về mặc định",
+    "expected_product_id": "bo_dieu_khien_hong_ngoai",
+    "expected_content_type": [
+      "reset",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cảnh báo an toàn khi dùng Bộ điều khiển hồng ngoại",
+    "expected_product_id": "bo_dieu_khien_hong_ngoai",
+    "expected_content_type": [
+      "safety",
+      "troubleshooting"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "thong so bộ điều khiển hồng ngoại vconnex",
+    "expected_product_id": "bo_dieu_khien_hong_ngoai",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Model của Bộ điều khiển hồng ngoại là gì",
+    "expected_product_id": "bo_dieu_khien_hong_ngoai",
+    "expected_content_type": [
+      "identification",
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cho tôi tất cả thông số kỹ thuật của Công tắc chống giật BNN",
+    "expected_product_id": "cong_tac_chong_giat_bnn",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [
+      "nguồn",
+      "điện"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Kích thước và công suất của Công tắc chống giật BNN là bao nhiêu",
+    "expected_product_id": "cong_tac_chong_giat_bnn",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Tính năng chính của Công tắc chống giật BNN là gì",
+    "expected_product_id": "cong_tac_chong_giat_bnn",
+    "expected_content_type": [
+      "feature",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Công tắc chống giật BNN có hỗ trợ cập nhật OTA không",
+    "expected_product_id": "cong_tac_chong_giat_bnn",
+    "expected_content_type": [
+      "feature",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cách kết nối Công tắc chống giật BNN vào ứng dụng Vhomenex",
+    "expected_product_id": "cong_tac_chong_giat_bnn",
+    "expected_content_type": [
+      "connection"
+    ],
+    "expected_keywords": [
+      "bước",
+      "kết nối"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Hướng dẫn lắp đặt Công tắc chống giật BNN",
+    "expected_product_id": "cong_tac_chong_giat_bnn",
+    "expected_content_type": [
+      "installation"
+    ],
+    "expected_keywords": [
+      "lắp đặt"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cách reset Công tắc chống giật BNN về mặc định",
+    "expected_product_id": "cong_tac_chong_giat_bnn",
+    "expected_content_type": [
+      "reset",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cảnh báo an toàn khi dùng Công tắc chống giật BNN",
+    "expected_product_id": "cong_tac_chong_giat_bnn",
+    "expected_content_type": [
+      "safety",
+      "troubleshooting"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "thong so công tắc chống giật bnn vconnex",
+    "expected_product_id": "cong_tac_chong_giat_bnn",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Model của Công tắc chống giật BNN là gì",
+    "expected_product_id": "cong_tac_chong_giat_bnn",
+    "expected_content_type": [
+      "identification",
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cho tôi tất cả thông số kỹ thuật của Khóa điện tử",
+    "expected_product_id": "khoa_dien_tu",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [
+      "nguồn",
+      "điện"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Kích thước và công suất của Khóa điện tử là bao nhiêu",
+    "expected_product_id": "khoa_dien_tu",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Tính năng chính của Khóa điện tử là gì",
+    "expected_product_id": "khoa_dien_tu",
+    "expected_content_type": [
+      "feature",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Khóa điện tử có hỗ trợ cập nhật OTA không",
+    "expected_product_id": "khoa_dien_tu",
+    "expected_content_type": [
+      "feature",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cách kết nối Khóa điện tử vào ứng dụng Vhomenex",
+    "expected_product_id": "khoa_dien_tu",
+    "expected_content_type": [
+      "connection"
+    ],
+    "expected_keywords": [
+      "bước",
+      "kết nối"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Hướng dẫn lắp đặt Khóa điện tử",
+    "expected_product_id": "khoa_dien_tu",
+    "expected_content_type": [
+      "installation"
+    ],
+    "expected_keywords": [
+      "lắp đặt"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cách reset Khóa điện tử về mặc định",
+    "expected_product_id": "khoa_dien_tu",
+    "expected_content_type": [
+      "reset",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cảnh báo an toàn khi dùng Khóa điện tử",
+    "expected_product_id": "khoa_dien_tu",
+    "expected_content_type": [
+      "safety",
+      "troubleshooting"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "thong so khóa điện tử vconnex",
+    "expected_product_id": "khoa_dien_tu",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Model của Khóa điện tử là gì",
+    "expected_product_id": "khoa_dien_tu",
+    "expected_content_type": [
+      "identification",
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cho tôi tất cả thông số kỹ thuật của Cảm biến cửa Mesh",
+    "expected_product_id": "cam_bien_cua_mesh",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [
+      "nguồn",
+      "điện"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Kích thước và công suất của Cảm biến cửa Mesh là bao nhiêu",
+    "expected_product_id": "cam_bien_cua_mesh",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Tính năng chính của Cảm biến cửa Mesh là gì",
+    "expected_product_id": "cam_bien_cua_mesh",
+    "expected_content_type": [
+      "feature",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cảm biến cửa Mesh có hỗ trợ cập nhật OTA không",
+    "expected_product_id": "cam_bien_cua_mesh",
+    "expected_content_type": [
+      "feature",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cách kết nối Cảm biến cửa Mesh vào ứng dụng Vhomenex",
+    "expected_product_id": "cam_bien_cua_mesh",
+    "expected_content_type": [
+      "connection"
+    ],
+    "expected_keywords": [
+      "bước",
+      "kết nối"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Hướng dẫn lắp đặt Cảm biến cửa Mesh",
+    "expected_product_id": "cam_bien_cua_mesh",
+    "expected_content_type": [
+      "installation"
+    ],
+    "expected_keywords": [
+      "lắp đặt"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cách reset Cảm biến cửa Mesh về mặc định",
+    "expected_product_id": "cam_bien_cua_mesh",
+    "expected_content_type": [
+      "reset",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cảnh báo an toàn khi dùng Cảm biến cửa Mesh",
+    "expected_product_id": "cam_bien_cua_mesh",
+    "expected_content_type": [
+      "safety",
+      "troubleshooting"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "thong so cảm biến cửa mesh vconnex",
+    "expected_product_id": "cam_bien_cua_mesh",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Model của Cảm biến cửa Mesh là gì",
+    "expected_product_id": "cam_bien_cua_mesh",
+    "expected_content_type": [
+      "identification",
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cho tôi tất cả thông số kỹ thuật của Động cơ rèm",
+    "expected_product_id": "dong_co_rem",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [
+      "nguồn",
+      "điện"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Kích thước và công suất của Động cơ rèm là bao nhiêu",
+    "expected_product_id": "dong_co_rem",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Tính năng chính của Động cơ rèm là gì",
+    "expected_product_id": "dong_co_rem",
+    "expected_content_type": [
+      "feature",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Động cơ rèm có hỗ trợ cập nhật OTA không",
+    "expected_product_id": "dong_co_rem",
+    "expected_content_type": [
+      "feature",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cách kết nối Động cơ rèm vào ứng dụng Vhomenex",
+    "expected_product_id": "dong_co_rem",
+    "expected_content_type": [
+      "connection"
+    ],
+    "expected_keywords": [
+      "bước",
+      "kết nối"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Hướng dẫn lắp đặt Động cơ rèm",
+    "expected_product_id": "dong_co_rem",
+    "expected_content_type": [
+      "installation"
+    ],
+    "expected_keywords": [
+      "lắp đặt"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cách reset Động cơ rèm về mặc định",
+    "expected_product_id": "dong_co_rem",
+    "expected_content_type": [
+      "reset",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cảnh báo an toàn khi dùng Động cơ rèm",
+    "expected_product_id": "dong_co_rem",
+    "expected_content_type": [
+      "safety",
+      "troubleshooting"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "thong so động cơ rèm vconnex",
+    "expected_product_id": "dong_co_rem",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Model của Động cơ rèm là gì",
+    "expected_product_id": "dong_co_rem",
+    "expected_content_type": [
+      "identification",
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cho tôi tất cả thông số kỹ thuật của Cảm biến chuyển động, ánh sáng",
+    "expected_product_id": "cam_bien_chuyen_dong_anh_sang",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [
+      "nguồn",
+      "điện"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Kích thước và công suất của Cảm biến chuyển động, ánh sáng là bao nhiêu",
+    "expected_product_id": "cam_bien_chuyen_dong_anh_sang",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Tính năng chính của Cảm biến chuyển động, ánh sáng là gì",
+    "expected_product_id": "cam_bien_chuyen_dong_anh_sang",
+    "expected_content_type": [
+      "feature",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cảm biến chuyển động, ánh sáng có hỗ trợ cập nhật OTA không",
+    "expected_product_id": "cam_bien_chuyen_dong_anh_sang",
+    "expected_content_type": [
+      "feature",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cách kết nối Cảm biến chuyển động, ánh sáng vào ứng dụng Vhomenex",
+    "expected_product_id": "cam_bien_chuyen_dong_anh_sang",
+    "expected_content_type": [
+      "connection"
+    ],
+    "expected_keywords": [
+      "bước",
+      "kết nối"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Hướng dẫn lắp đặt Cảm biến chuyển động, ánh sáng",
+    "expected_product_id": "cam_bien_chuyen_dong_anh_sang",
+    "expected_content_type": [
+      "installation"
+    ],
+    "expected_keywords": [
+      "lắp đặt"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cách reset Cảm biến chuyển động, ánh sáng về mặc định",
+    "expected_product_id": "cam_bien_chuyen_dong_anh_sang",
+    "expected_content_type": [
+      "reset",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cảnh báo an toàn khi dùng Cảm biến chuyển động, ánh sáng",
+    "expected_product_id": "cam_bien_chuyen_dong_anh_sang",
+    "expected_content_type": [
+      "safety",
+      "troubleshooting"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "thong so cảm biến chuyển động, ánh sáng vconnex",
+    "expected_product_id": "cam_bien_chuyen_dong_anh_sang",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Model của Cảm biến chuyển động, ánh sáng là gì",
+    "expected_product_id": "cam_bien_chuyen_dong_anh_sang",
+    "expected_content_type": [
+      "identification",
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cho tôi tất cả thông số kỹ thuật của Công tắc Dimmer",
+    "expected_product_id": "cong_tac_dimmer",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [
+      "nguồn",
+      "điện"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Kích thước và công suất của Công tắc Dimmer là bao nhiêu",
+    "expected_product_id": "cong_tac_dimmer",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Tính năng chính của Công tắc Dimmer là gì",
+    "expected_product_id": "cong_tac_dimmer",
+    "expected_content_type": [
+      "feature",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Công tắc Dimmer có hỗ trợ cập nhật OTA không",
+    "expected_product_id": "cong_tac_dimmer",
+    "expected_content_type": [
+      "feature",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cách kết nối Công tắc Dimmer vào ứng dụng Vhomenex",
+    "expected_product_id": "cong_tac_dimmer",
+    "expected_content_type": [
+      "connection"
+    ],
+    "expected_keywords": [
+      "bước",
+      "kết nối"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Hướng dẫn lắp đặt Công tắc Dimmer",
+    "expected_product_id": "cong_tac_dimmer",
+    "expected_content_type": [
+      "installation"
+    ],
+    "expected_keywords": [
+      "lắp đặt"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cách reset Công tắc Dimmer về mặc định",
+    "expected_product_id": "cong_tac_dimmer",
+    "expected_content_type": [
+      "reset",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cảnh báo an toàn khi dùng Công tắc Dimmer",
+    "expected_product_id": "cong_tac_dimmer",
+    "expected_content_type": [
+      "safety",
+      "troubleshooting"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "thong so công tắc dimmer vconnex",
+    "expected_product_id": "cong_tac_dimmer",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Model của Công tắc Dimmer là gì",
+    "expected_product_id": "cong_tac_dimmer",
+    "expected_content_type": [
+      "identification",
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cho tôi tất cả thông số kỹ thuật của Công tắc thông minh cho cửa cuốn, cửa cổng",
+    "expected_product_id": "cong_tac_cua_cuon_cua_cong",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [
+      "nguồn",
+      "điện"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Kích thước và công suất của Công tắc thông minh cho cửa cuốn, cửa cổng là bao nhiêu",
+    "expected_product_id": "cong_tac_cua_cuon_cua_cong",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Tính năng chính của Công tắc thông minh cho cửa cuốn, cửa cổng là gì",
+    "expected_product_id": "cong_tac_cua_cuon_cua_cong",
+    "expected_content_type": [
+      "feature",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Công tắc thông minh cho cửa cuốn, cửa cổng có hỗ trợ cập nhật OTA không",
+    "expected_product_id": "cong_tac_cua_cuon_cua_cong",
+    "expected_content_type": [
+      "feature",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cách kết nối Công tắc thông minh cho cửa cuốn, cửa cổng vào ứng dụng Vhomenex",
+    "expected_product_id": "cong_tac_cua_cuon_cua_cong",
+    "expected_content_type": [
+      "connection"
+    ],
+    "expected_keywords": [
+      "bước",
+      "kết nối"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Hướng dẫn lắp đặt Công tắc thông minh cho cửa cuốn, cửa cổng",
+    "expected_product_id": "cong_tac_cua_cuon_cua_cong",
+    "expected_content_type": [
+      "installation"
+    ],
+    "expected_keywords": [
+      "lắp đặt"
+    ],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cách reset Công tắc thông minh cho cửa cuốn, cửa cổng về mặc định",
+    "expected_product_id": "cong_tac_cua_cuon_cua_cong",
+    "expected_content_type": [
+      "reset",
+      "usage_tip"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Cảnh báo an toàn khi dùng Công tắc thông minh cho cửa cuốn, cửa cổng",
+    "expected_product_id": "cong_tac_cua_cuon_cua_cong",
+    "expected_content_type": [
+      "safety",
+      "troubleshooting"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "thong so công tắc thông minh cho cửa cuốn, cửa cổng vconnex",
+    "expected_product_id": "cong_tac_cua_cuon_cua_cong",
+    "expected_content_type": [
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  },
+  {
+    "question": "Model của Công tắc thông minh cho cửa cuốn, cửa cổng là gì",
+    "expected_product_id": "cong_tac_cua_cuon_cua_cong",
+    "expected_content_type": [
+      "identification",
+      "specification"
+    ],
+    "expected_keywords": [],
+    "forbidden_products": [],
+    "answerable": true,
+    "must_cite": true
+  }
+]

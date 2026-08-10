@@ -1,0 +1,43 @@
+===== RESTORE QDRANT COLLECTION =====
+COLLECTION_CREATED
+{
+  "vectors": {
+    "size": 1024,
+    "distance": "Cosine"
+  },
+  "shard_number": 1,
+  "replication_factor": 1,
+  "write_consistency_factor": 1,
+  "on_disk_payload": true
+}
+Imported points 1-32 of 242
+Imported points 33-64 of 242
+Imported points 65-96 of 242
+Imported points 97-128 of 242
+Imported points 129-160 of 242
+Imported points 161-192 of 242
+Imported points 193-224 of 242
+Imported points 225-242 of 242
+ALL_POINTS_IMPORTED
+Payload index restored: product_id (keyword)
+Payload index restored: model (keyword)
+Payload index restored: source_file (keyword)
+Payload index restored: product_group (keyword)
+Payload index restored: content_type (keyword)
+ALL_PAYLOAD_INDEXES_RESTORED
+===== RESTORE VERIFICATION =====
+Collection status: green
+Points restored: 242
+Unique IDs: 242
+Vector size: 1024
+Distance: Cosine
+Payload indexes: ['content_type', 'model', 'product_group', 'product_id', 'source_file']
+Payload mismatches: 0
+Vector mismatches: 0
+Maximum vector difference: 0
+Source logical SHA-256: ecd566147a2847eecea889c44d775961bbc3a20c3492e9afe96fa374866fddb5
+Restored logical SHA-256: ecd566147a2847eecea889c44d775961bbc3a20c3492e9afe96fa374866fddb5
+QDRANT_RECOVERY_DATA_VERIFIED
+Restore exit code: 0
+c870587c4dfb85fab50b848f6282057e0b9c9b2f96bcbaeb5b4c49acd8b40401  /home/vconnex/vhomenex_hybrid_rag_v2/backups/before_fix_20260807/qdrant-recovery-collection-schema.json
+QDRANT_COLLECTION_RESTORE_COMPLETED

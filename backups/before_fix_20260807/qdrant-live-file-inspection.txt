@@ -1,0 +1,9 @@
+===== QDRANT LIVE FILE INSPECTION =====
+===== STORAGE DIRECTORY =====
+total 0
+===== STORAGE MOUNT INFO =====
+1983 1973 253:0 /home/vconnex/vconnex_rag_test/qdrant_storage//deleted /qdrant/storage rw,relatime - ext4 /dev/mapper/ubuntu--vg-ubuntu--lv rw
+===== OPEN STORAGE OR DELETED FILES =====
+NO_RELEVANT_OPEN_FILE_DESCRIPTORS
+===== MEMORY-MAPPED STORAGE FILES =====
+QDRANT_LIVE_FILE_INSPECTION_COMPLETED

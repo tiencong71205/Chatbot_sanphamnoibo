@@ -1,0 +1,24 @@
+===== BACKEND QDRANT REACHABILITY PREFLIGHT =====
+===== BACKEND RUNTIME CONFIG =====
+QDRANT_URL=http://host.docker.internal:6333
+QDRANT_COLLECTION=vhomenex_products_v2
+Backend extra hosts:
+["host.docker.internal:host-gateway"]
+===== COMPOSE QDRANT CONFIG =====
+--- docker-compose.yml ---
+3: # NOTE: Qdrant is already running as a separate container on the host.
+4: # Backend connects to it via host.docker.internal:6333
+5: # Do NOT start a new Qdrant container here to avoid conflicts.
+17: extra_hosts:
+18: - "host.docker.internal:host-gateway"
+===== TEST FROM INSIDE BACKEND =====
+Recovery bridge IP: 172.17.0.4
+host.docker.internal resolves to: 172.17.0.1
+RUNTIME_URL: REACHABLE url=http://host.docker.internal:6333 status=green points=242
+HOST_RECOVERY_6335: UNREACHABLE url=http://host.docker.internal:6335 error=URLError: <urlopen error [Errno 111] Connection refused>
+DIRECT_RECOVERY_BRIDGE: UNREACHABLE url=http://172.17.0.4:6333 error=URLError: <urlopen error timed out>
+Backend reachability test exit code: 0
+===== CURRENT BACKEND HTTP STATUS =====
+/health -> 200
+/api/health -> 404
+QDRANT_BACKEND_REACHABILITY_PREFLIGHT_COMPLETED

@@ -1,0 +1,15 @@
+===== QDRANT CONTAINER CONFIG =====
+Image=qdrant/qdrant:latest WorkingDir=/qdrant User=0:0
+===== QDRANT MOUNTS =====
+bind | /home/vconnex/vconnex_rag_test/qdrant_storage -> /qdrant/storage | RW=true
+
+===== QDRANT INTERNAL PATHS =====
+PWD=/qdrant
+uid=0(root) gid=0(root) groups=0(root)
+drwxr-xr-x 1 0 0 4096 Jul 30 04:57 .
+drwxrwxrwx 0 1000 1000 0 Aug  3 01:42 ./storage
+MISSING: ./storage/tmp
+drwxr-xr-x 1 0 0 4096 Jul 30 04:57 /qdrant
+drwxrwxrwx 0 1000 1000 0 Aug  3 01:42 /qdrant/storage
+MISSING: /qdrant/storage/tmp
+drwxr-xr-x 4 0 0 4096 Aug  7 03:23 /qdrant/snapshots

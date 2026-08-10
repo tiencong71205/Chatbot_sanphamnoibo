@@ -1,0 +1,14 @@
+===== EXACT QDRANT MOUNT SOURCE =====
+Host source: </home/vconnex/vconnex_rag_test/qdrant_storage>
+Shell escaped: /home/vconnex/vconnex_rag_test/qdrant_storage
+===== HOST PATH CHECK =====
+HOST_SOURCE_NOT_ACCESSIBLE_OR_MISSING
+===== PATH COMPONENTS =====
+f: /home/vconnex/vconnex_rag_test/qdrant_storage
+drwxr-xr-x root    root    /
+drwxr-xr-x root    root    home
+drwxr-x--- vconnex vconnex vconnex
+                           vconnex_rag_test - No such file or directory
+===== CONTAINER STORAGE =====
+mode=777 owner=UNKNOWN:UNKNOWN device=64768 inode=23627811 path=/qdrant/storage
+QDRANT_MOUNT_PATH_CHECK_COMPLETED

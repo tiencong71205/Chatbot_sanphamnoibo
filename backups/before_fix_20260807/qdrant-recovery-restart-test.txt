@@ -1,0 +1,20 @@
+===== RESTART RECOVERY PERSISTENCE TEST =====
+===== BEFORE RESTART =====
+Status=running Running=true
+qdrant-recovery-20260807
+Restart exit code: 0
+===== AFTER RESTART =====
+Status=running Running=true RestartCount=0
+RECOVERY_API_READY_AFTER_RESTART
+Collection status: green
+Points after restart: 242
+Unique IDs after restart: 242
+Payload indexes: ['content_type', 'model', 'product_group', 'product_id', 'source_file']
+Payload mismatches: 0
+Vector mismatches: 0
+Maximum vector difference: 0
+Original logical SHA-256: ecd566147a2847eecea889c44d775961bbc3a20c3492e9afe96fa374866fddb5
+Restarted logical SHA-256: ecd566147a2847eecea889c44d775961bbc3a20c3492e9afe96fa374866fddb5
+QDRANT_RECOVERY_PERSISTENCE_VERIFIED
+Persistence verification exit code: 0
+QDRANT_RECOVERY_RESTART_TEST_COMPLETED

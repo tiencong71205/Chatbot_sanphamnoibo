@@ -1,0 +1,12 @@
+===== VERIFY RECOVERY STORAGE WRITABILITY =====
+mode=755 owner=UNKNOWN:UNKNOWN path=/qdrant/storage
+mode=700 owner=root:root path=/qdrant/storage/tmp
+mode=644 owner=root:root path=/qdrant/storage/tmp/.qdrant_write_probe
+CONTAINER_STORAGE_WRITE_VERIFIED
+Container write test exit code: 0
+===== HOST VISIBILITY =====
+mode=755 owner=vconnex:vconnex path=/home/vconnex/vhomenex_hybrid_rag_v2/qdrant_recovery_storage_20260807
+mode=700 owner=root:root path=/home/vconnex/vhomenex_hybrid_rag_v2/qdrant_recovery_storage_20260807/tmp
+HOST_SEES_RECOVERY_TEMP_DIRECTORY
+QDRANT_RECOVERY_STORAGE_VERIFIED
+QDRANT_RECOVERY_STORAGE_CHECK_COMPLETED

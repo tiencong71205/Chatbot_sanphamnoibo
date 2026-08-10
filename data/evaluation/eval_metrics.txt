@@ -1,0 +1,9 @@
+# RAG EVALUATION BENCHMARK METRICS
+
+- Total Questions Evaluated: 100
+- Product Resolution Accuracy: 100.00% (Threshold >= 95%)
+- Hit@1: 0.00%
+- Hit@3: 100.00% (Threshold >= 90%)
+- Hit@5: 100.00%
+- Mean Reciprocal Rank (MRR): 0.5000
+- Cross-Product Contamination Rate: 0.00% (Threshold <= 2%)

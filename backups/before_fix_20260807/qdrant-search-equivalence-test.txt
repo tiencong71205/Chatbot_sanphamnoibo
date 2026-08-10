@@ -1,0 +1,11 @@
+===== QDRANT SEARCH EQUIVALENCE TEST =====
+OLD: status=green points=242
+RECOVERY: status=green points=242
+Query 1/5: source_id=1000320815834264734 top_results=10 payload_mismatches=0 max_score_difference=0
+Query 2/5: source_id=156637432492963353 top_results=10 payload_mismatches=0 max_score_difference=0
+Query 3/5: source_id=419271681925911426 top_results=10 payload_mismatches=0 max_score_difference=0
+Query 4/5: source_id=708818132806293270 top_results=10 payload_mismatches=0 max_score_difference=0
+Query 5/5: source_id=99877725970070587 top_results=10 payload_mismatches=0 max_score_difference=0
+QDRANT_SEARCH_EQUIVALENCE_VERIFIED
+Search equivalence exit code: 0
+QDRANT_CUTOVER_QUERY_PREFLIGHT_COMPLETED

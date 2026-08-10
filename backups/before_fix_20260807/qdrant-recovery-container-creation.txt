@@ -1,0 +1,18 @@
+===== CREATE RECOVERY QDRANT =====
+Image ID: sha256:0bd98fa7977f1e75694779359ca4e212822e5a71334e28421182f72f209d5286
+Storage path: /home/vconnex/vhomenex_hybrid_rag_v2/qdrant_recovery_storage_20260807
+RECOVERY_STORAGE_CREATED
+mode=755 owner=vconnex:vconnex path=/home/vconnex/vhomenex_hybrid_rag_v2/qdrant_recovery_storage_20260807
+mode=700 owner=vconnex:vconnex path=/home/vconnex/vhomenex_hybrid_rag_v2/qdrant_recovery_storage_20260807/tmp
+8ec598cd8737c9a55854457a43d53077e7a0da3326e645fb650eb51249e916ae
+Docker run exit code: 0
+===== RECOVERY CONTAINER STATUS =====
+Status=running Running=true Image=sha256:0bd98fa7977f1e75694779359ca4e212822e5a71334e28421182f72f209d5286
+/home/vconnex/vhomenex_hybrid_rag_v2/qdrant_recovery_storage_20260807 -> /qdrant/storage | RW=true
+
+{"title":"qdrant - vector search engine","version":"1.18.3","commit":"db8fa43fcb6aedec1e739487e17a99731b74590a"}
+mode=755 owner=UNKNOWN:UNKNOWN path=/qdrant/storage
+stat: cannot statx '/qdrant/storage/tmp': No such file or directory
+RECOVERY_STORAGE_NOT_WRITABLE
+QDRANT_RECOVERY_CONTAINER_READY
+QDRANT_RECOVERY_CONTAINER_STEP_COMPLETED

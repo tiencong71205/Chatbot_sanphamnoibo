@@ -1,0 +1,1151 @@
+2026-08-07 04:24:44 | INFO     | app.ingestion.document_metadata | Loading product catalog from: /app/data/product_catalog.json
+=== INGESTION START ===
+Data directory: /app/data/raw
+Recreate collection: True
+Dry run mode: False
+--------------------------------------------------
+2026-08-07 04:24:44 | INFO     | app.ingestion.ingest_service | Found 11 DOCX files in /app/data/raw
+2026-08-07 04:24:44 | INFO     | app.ingestion.ingest_service | Recreating Qdrant collection: vhomenex_products_v2
+2026-08-07 04:24:44 | INFO     | app.database.qdrant_store | Recreating collection: vhomenex_products_v2
+2026-08-07 04:24:44 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:24:44 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333 "HTTP/1.1 200 OK"
+2026-08-07 04:24:44 | INFO     | httpx | HTTP Request: DELETE http://qdrant-recovery:6333/collections/vhomenex_products_v2 "HTTP/1.1 200 OK"
+2026-08-07 04:24:44 | INFO     | app.database.qdrant_store | Creating Qdrant collection: vhomenex_products_v2 (dim=1024)
+2026-08-07 04:24:44 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2 "HTTP/1.1 200 OK"
+2026-08-07 04:24:44 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/index?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:45 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/index?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:45 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/index?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:45 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/index?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:45 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/index?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:45 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/index?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:45 | INFO     | app.ingestion.ingest_service | Document 1/11: 01_Cam_bien_hien_dien_RAG_v3.docx
+2026-08-07 04:24:45 | INFO     | app.ingestion.docx_loader | Loading DOCX: 01_Cam_bien_hien_dien_RAG_v3.docx
+2026-08-07 04:24:45 | INFO     | app.ingestion.docx_loader | Loaded 91 elements from 01_Cam_bien_hien_dien_RAG_v3.docx
+2026-08-07 04:24:45 | INFO     | app.ingestion.ingest_service | Chunks generated for 01_Cam_bien_hien_dien_RAG_v3.docx: 37
+2026-08-07 04:24:45 | INFO     | app.ingestion.ingest_service | Document 2/11: 03_Cam_bien_chuyen_dong_anh_sang_RAG_v3.docx
+2026-08-07 04:24:45 | INFO     | app.ingestion.docx_loader | Loading DOCX: 03_Cam_bien_chuyen_dong_anh_sang_RAG_v3.docx
+2026-08-07 04:24:45 | INFO     | app.ingestion.docx_loader | Loaded 66 elements from 03_Cam_bien_chuyen_dong_anh_sang_RAG_v3.docx
+2026-08-07 04:24:45 | INFO     | app.ingestion.ingest_service | Chunks generated for 03_Cam_bien_chuyen_dong_anh_sang_RAG_v3.docx: 26
+2026-08-07 04:24:45 | INFO     | app.ingestion.ingest_service | Document 3/11: 04_Bo_dieu_khien_hong_ngoai_RAG_v3.docx
+2026-08-07 04:24:45 | INFO     | app.ingestion.docx_loader | Loading DOCX: 04_Bo_dieu_khien_hong_ngoai_RAG_v3.docx
+2026-08-07 04:24:45 | INFO     | app.ingestion.docx_loader | Loaded 86 elements from 04_Bo_dieu_khien_hong_ngoai_RAG_v3.docx
+2026-08-07 04:24:45 | INFO     | app.ingestion.ingest_service | Chunks generated for 04_Bo_dieu_khien_hong_ngoai_RAG_v3.docx: 37
+2026-08-07 04:24:45 | INFO     | app.ingestion.ingest_service | Document 4/11: 05_Dong_co_rem_RAG_v3.docx
+2026-08-07 04:24:45 | INFO     | app.ingestion.docx_loader | Loading DOCX: 05_Dong_co_rem_RAG_v3.docx
+2026-08-07 04:24:45 | INFO     | app.ingestion.docx_loader | Loaded 84 elements from 05_Dong_co_rem_RAG_v3.docx
+2026-08-07 04:24:45 | INFO     | app.ingestion.ingest_service | Chunks generated for 05_Dong_co_rem_RAG_v3.docx: 36
+2026-08-07 04:24:45 | INFO     | app.ingestion.ingest_service | Document 5/11: 06_Cong_to_giam_sat_dien_RAG_v3.docx
+2026-08-07 04:24:45 | INFO     | app.ingestion.docx_loader | Loading DOCX: 06_Cong_to_giam_sat_dien_RAG_v3.docx
+2026-08-07 04:24:45 | INFO     | app.ingestion.docx_loader | Loaded 85 elements from 06_Cong_to_giam_sat_dien_RAG_v3.docx
+2026-08-07 04:24:45 | INFO     | app.ingestion.ingest_service | Chunks generated for 06_Cong_to_giam_sat_dien_RAG_v3.docx: 35
+2026-08-07 04:24:45 | INFO     | app.ingestion.ingest_service | Document 6/11: 07_Cong_tac_chong_giat_BNN_RAG_v3.docx
+2026-08-07 04:24:45 | INFO     | app.ingestion.docx_loader | Loading DOCX: 07_Cong_tac_chong_giat_BNN_RAG_v3.docx
+2026-08-07 04:24:45 | INFO     | app.ingestion.docx_loader | Loaded 106 elements from 07_Cong_tac_chong_giat_BNN_RAG_v3.docx
+2026-08-07 04:24:45 | INFO     | app.ingestion.ingest_service | Chunks generated for 07_Cong_tac_chong_giat_BNN_RAG_v3.docx: 47
+2026-08-07 04:24:45 | INFO     | app.ingestion.ingest_service | Document 7/11: 08_Cong_tac_cua_cuon_cua_cong_V2_RAG_v3.docx
+2026-08-07 04:24:45 | INFO     | app.ingestion.docx_loader | Loading DOCX: 08_Cong_tac_cua_cuon_cua_cong_V2_RAG_v3.docx
+2026-08-07 04:24:45 | INFO     | app.ingestion.docx_loader | Loaded 153 elements from 08_Cong_tac_cua_cuon_cua_cong_V2_RAG_v3.docx
+2026-08-07 04:24:45 | INFO     | app.ingestion.ingest_service | Chunks generated for 08_Cong_tac_cua_cuon_cua_cong_V2_RAG_v3.docx: 67
+2026-08-07 04:24:45 | INFO     | app.ingestion.ingest_service | Document 8/11: 09_Gateway_RAG_v3.docx
+2026-08-07 04:24:45 | INFO     | app.ingestion.docx_loader | Loading DOCX: 09_Gateway_RAG_v3.docx
+2026-08-07 04:24:45 | INFO     | app.ingestion.docx_loader | Loaded 91 elements from 09_Gateway_RAG_v3.docx
+2026-08-07 04:24:45 | INFO     | app.ingestion.ingest_service | Chunks generated for 09_Gateway_RAG_v3.docx: 38
+2026-08-07 04:24:45 | INFO     | app.ingestion.ingest_service | Document 9/11: 10_Khoa_dien_tu_RAG_v3.docx
+2026-08-07 04:24:45 | INFO     | app.ingestion.docx_loader | Loading DOCX: 10_Khoa_dien_tu_RAG_v3.docx
+2026-08-07 04:24:45 | INFO     | app.ingestion.docx_loader | Loaded 159 elements from 10_Khoa_dien_tu_RAG_v3.docx
+2026-08-07 04:24:45 | INFO     | app.ingestion.ingest_service | Chunks generated for 10_Khoa_dien_tu_RAG_v3.docx: 67
+2026-08-07 04:24:45 | INFO     | app.ingestion.ingest_service | Document 10/11: 11_Cong_tac_dimmer_RAG_v3.docx
+2026-08-07 04:24:45 | INFO     | app.ingestion.docx_loader | Loading DOCX: 11_Cong_tac_dimmer_RAG_v3.docx
+2026-08-07 04:24:46 | INFO     | app.ingestion.docx_loader | Loaded 98 elements from 11_Cong_tac_dimmer_RAG_v3.docx
+2026-08-07 04:24:46 | INFO     | app.ingestion.ingest_service | Chunks generated for 11_Cong_tac_dimmer_RAG_v3.docx: 42
+2026-08-07 04:24:46 | INFO     | app.ingestion.ingest_service | Document 11/11: 12_Cong_tac_thong_minh_V2_RAG_v3.docx
+2026-08-07 04:24:46 | INFO     | app.ingestion.docx_loader | Loading DOCX: 12_Cong_tac_thong_minh_V2_RAG_v3.docx
+2026-08-07 04:24:46 | INFO     | app.ingestion.docx_loader | Loaded 104 elements from 12_Cong_tac_thong_minh_V2_RAG_v3.docx
+2026-08-07 04:24:46 | INFO     | app.ingestion.ingest_service | Chunks generated for 12_Cong_tac_thong_minh_V2_RAG_v3.docx: 46
+2026-08-07 04:24:46 | INFO     | app.ingestion.ingest_service | Embedding batch 1/60 (8 chunks)...
+2026-08-07 04:24:47 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:47 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:47 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:47 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:47 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:47 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:47 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:47 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:47 | INFO     | app.ingestion.ingest_service | Embedding batch 1/60 completed
+2026-08-07 04:24:47 | INFO     | app.ingestion.ingest_service | Upserting points (8 chunks)...
+2026-08-07 04:24:47 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:24:47 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:24:47 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:47 | INFO     | app.database.qdrant_store | Upserted 8 points to vhomenex_products_v2
+2026-08-07 04:24:47 | INFO     | app.ingestion.ingest_service | Points inserted: 8 total so far
+2026-08-07 04:24:47 | INFO     | app.ingestion.ingest_service | Embedding batch 2/60 (8 chunks)...
+2026-08-07 04:24:47 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:47 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:47 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:47 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:47 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:48 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:48 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:48 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:48 | INFO     | app.ingestion.ingest_service | Embedding batch 2/60 completed
+2026-08-07 04:24:48 | INFO     | app.ingestion.ingest_service | Upserting points (16 chunks)...
+2026-08-07 04:24:48 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:24:48 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:24:48 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:48 | INFO     | app.database.qdrant_store | Upserted 16 points to vhomenex_products_v2
+2026-08-07 04:24:48 | INFO     | app.ingestion.ingest_service | Points inserted: 16 total so far
+2026-08-07 04:24:48 | INFO     | app.ingestion.ingest_service | Embedding batch 3/60 (8 chunks)...
+2026-08-07 04:24:48 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:48 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:48 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:48 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:48 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:48 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:48 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:48 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:48 | INFO     | app.ingestion.ingest_service | Embedding batch 3/60 completed
+2026-08-07 04:24:48 | INFO     | app.ingestion.ingest_service | Upserting points (24 chunks)...
+2026-08-07 04:24:48 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:24:48 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:24:48 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:48 | INFO     | app.database.qdrant_store | Upserted 24 points to vhomenex_products_v2
+2026-08-07 04:24:48 | INFO     | app.ingestion.ingest_service | Points inserted: 24 total so far
+2026-08-07 04:24:48 | INFO     | app.ingestion.ingest_service | Embedding batch 4/60 (8 chunks)...
+2026-08-07 04:24:48 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:48 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:48 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:49 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:49 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:49 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:49 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:49 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:49 | INFO     | app.ingestion.ingest_service | Embedding batch 4/60 completed
+2026-08-07 04:24:49 | INFO     | app.ingestion.ingest_service | Upserting points (32 chunks)...
+2026-08-07 04:24:49 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:24:49 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:24:49 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:49 | INFO     | app.database.qdrant_store | Upserted 32 points to vhomenex_products_v2
+2026-08-07 04:24:49 | INFO     | app.ingestion.ingest_service | Points inserted: 32 total so far
+2026-08-07 04:24:49 | INFO     | app.ingestion.ingest_service | Embedding batch 5/60 (8 chunks)...
+2026-08-07 04:24:49 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:49 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:49 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:49 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:49 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:49 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:49 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:49 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:49 | INFO     | app.ingestion.ingest_service | Embedding batch 5/60 completed
+2026-08-07 04:24:49 | INFO     | app.ingestion.ingest_service | Upserting points (40 chunks)...
+2026-08-07 04:24:49 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:24:49 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:24:49 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:49 | INFO     | app.database.qdrant_store | Upserted 40 points to vhomenex_products_v2
+2026-08-07 04:24:49 | INFO     | app.ingestion.ingest_service | Points inserted: 40 total so far
+2026-08-07 04:24:49 | INFO     | app.ingestion.ingest_service | Embedding batch 6/60 (8 chunks)...
+2026-08-07 04:24:49 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:50 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:50 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:50 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:50 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:50 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:50 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:50 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:50 | INFO     | app.ingestion.ingest_service | Embedding batch 6/60 completed
+2026-08-07 04:24:50 | INFO     | app.ingestion.ingest_service | Upserting points (48 chunks)...
+2026-08-07 04:24:50 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:24:50 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:24:50 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:50 | INFO     | app.database.qdrant_store | Upserted 48 points to vhomenex_products_v2
+2026-08-07 04:24:50 | INFO     | app.ingestion.ingest_service | Points inserted: 48 total so far
+2026-08-07 04:24:50 | INFO     | app.ingestion.ingest_service | Embedding batch 7/60 (8 chunks)...
+2026-08-07 04:24:50 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:50 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:50 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:50 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:50 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:50 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:50 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:50 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:50 | INFO     | app.ingestion.ingest_service | Embedding batch 7/60 completed
+2026-08-07 04:24:50 | INFO     | app.ingestion.ingest_service | Upserting points (56 chunks)...
+2026-08-07 04:24:50 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:24:50 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:24:51 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:51 | INFO     | app.database.qdrant_store | Upserted 56 points to vhomenex_products_v2
+2026-08-07 04:24:51 | INFO     | app.ingestion.ingest_service | Points inserted: 56 total so far
+2026-08-07 04:24:51 | INFO     | app.ingestion.ingest_service | Embedding batch 8/60 (8 chunks)...
+2026-08-07 04:24:51 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:51 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:51 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:51 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:51 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:51 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:51 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:51 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:51 | INFO     | app.ingestion.ingest_service | Embedding batch 8/60 completed
+2026-08-07 04:24:51 | INFO     | app.ingestion.ingest_service | Upserting points (64 chunks)...
+2026-08-07 04:24:51 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:24:51 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:24:51 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:51 | INFO     | app.database.qdrant_store | Upserted 64 points to vhomenex_products_v2
+2026-08-07 04:24:51 | INFO     | app.ingestion.ingest_service | Points inserted: 64 total so far
+2026-08-07 04:24:51 | INFO     | app.ingestion.ingest_service | Embedding batch 9/60 (8 chunks)...
+2026-08-07 04:24:51 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:51 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:51 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:51 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:51 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:52 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:52 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:52 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:52 | INFO     | app.ingestion.ingest_service | Embedding batch 9/60 completed
+2026-08-07 04:24:52 | INFO     | app.ingestion.ingest_service | Upserting points (72 chunks)...
+2026-08-07 04:24:52 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:24:52 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:24:52 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:52 | INFO     | app.database.qdrant_store | Upserted 72 points to vhomenex_products_v2
+2026-08-07 04:24:52 | INFO     | app.ingestion.ingest_service | Points inserted: 72 total so far
+2026-08-07 04:24:52 | INFO     | app.ingestion.ingest_service | Embedding batch 10/60 (8 chunks)...
+2026-08-07 04:24:52 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:52 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:52 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:52 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:52 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:52 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:52 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:52 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:52 | INFO     | app.ingestion.ingest_service | Embedding batch 10/60 completed
+2026-08-07 04:24:52 | INFO     | app.ingestion.ingest_service | Upserting points (80 chunks)...
+2026-08-07 04:24:52 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:24:52 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:24:52 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:52 | INFO     | app.database.qdrant_store | Upserted 80 points to vhomenex_products_v2
+2026-08-07 04:24:52 | INFO     | app.ingestion.ingest_service | Points inserted: 80 total so far
+2026-08-07 04:24:52 | INFO     | app.ingestion.ingest_service | Embedding batch 11/60 (8 chunks)...
+2026-08-07 04:24:52 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:53 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:53 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:53 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:53 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:53 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:53 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:53 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:53 | INFO     | app.ingestion.ingest_service | Embedding batch 11/60 completed
+2026-08-07 04:24:53 | INFO     | app.ingestion.ingest_service | Upserting points (88 chunks)...
+2026-08-07 04:24:53 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:24:53 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:24:53 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:53 | INFO     | app.database.qdrant_store | Upserted 88 points to vhomenex_products_v2
+2026-08-07 04:24:53 | INFO     | app.ingestion.ingest_service | Points inserted: 88 total so far
+2026-08-07 04:24:53 | INFO     | app.ingestion.ingest_service | Embedding batch 12/60 (8 chunks)...
+2026-08-07 04:24:53 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:53 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:53 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:53 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:53 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:53 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:54 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:54 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:54 | INFO     | app.ingestion.ingest_service | Embedding batch 12/60 completed
+2026-08-07 04:24:54 | INFO     | app.ingestion.ingest_service | Upserting points (96 chunks)...
+2026-08-07 04:24:54 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:24:54 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:24:54 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:54 | INFO     | app.database.qdrant_store | Upserted 96 points to vhomenex_products_v2
+2026-08-07 04:24:54 | INFO     | app.ingestion.ingest_service | Points inserted: 96 total so far
+2026-08-07 04:24:54 | INFO     | app.ingestion.ingest_service | Embedding batch 13/60 (8 chunks)...
+2026-08-07 04:24:54 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:54 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:54 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:54 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:54 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:54 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:54 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:54 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:54 | INFO     | app.ingestion.ingest_service | Embedding batch 13/60 completed
+2026-08-07 04:24:54 | INFO     | app.ingestion.ingest_service | Upserting points (104 chunks)...
+2026-08-07 04:24:54 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:24:54 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:24:54 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:54 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:54 | INFO     | app.database.qdrant_store | Upserted 104 points to vhomenex_products_v2
+2026-08-07 04:24:54 | INFO     | app.ingestion.ingest_service | Points inserted: 104 total so far
+2026-08-07 04:24:54 | INFO     | app.ingestion.ingest_service | Embedding batch 14/60 (8 chunks)...
+2026-08-07 04:24:54 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:54 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:54 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:54 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:55 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:55 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:55 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:55 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:55 | INFO     | app.ingestion.ingest_service | Embedding batch 14/60 completed
+2026-08-07 04:24:55 | INFO     | app.ingestion.ingest_service | Upserting points (112 chunks)...
+2026-08-07 04:24:55 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:24:55 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:24:55 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:55 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:55 | INFO     | app.database.qdrant_store | Upserted 112 points to vhomenex_products_v2
+2026-08-07 04:24:55 | INFO     | app.ingestion.ingest_service | Points inserted: 112 total so far
+2026-08-07 04:24:55 | INFO     | app.ingestion.ingest_service | Embedding batch 15/60 (8 chunks)...
+2026-08-07 04:24:55 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:55 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:55 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:55 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:55 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:55 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:55 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:56 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:56 | INFO     | app.ingestion.ingest_service | Embedding batch 15/60 completed
+2026-08-07 04:24:56 | INFO     | app.ingestion.ingest_service | Upserting points (120 chunks)...
+2026-08-07 04:24:56 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:24:56 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:24:56 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:56 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:56 | INFO     | app.database.qdrant_store | Upserted 120 points to vhomenex_products_v2
+2026-08-07 04:24:56 | INFO     | app.ingestion.ingest_service | Points inserted: 120 total so far
+2026-08-07 04:24:56 | INFO     | app.ingestion.ingest_service | Embedding batch 16/60 (8 chunks)...
+2026-08-07 04:24:56 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:56 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:56 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:56 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:56 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:56 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:56 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:56 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:56 | INFO     | app.ingestion.ingest_service | Embedding batch 16/60 completed
+2026-08-07 04:24:56 | INFO     | app.ingestion.ingest_service | Upserting points (128 chunks)...
+2026-08-07 04:24:56 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:24:56 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:24:56 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:56 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:56 | INFO     | app.database.qdrant_store | Upserted 128 points to vhomenex_products_v2
+2026-08-07 04:24:56 | INFO     | app.ingestion.ingest_service | Points inserted: 128 total so far
+2026-08-07 04:24:56 | INFO     | app.ingestion.ingest_service | Embedding batch 17/60 (8 chunks)...
+2026-08-07 04:24:56 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:56 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:56 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:56 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:57 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:57 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:57 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:57 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:57 | INFO     | app.ingestion.ingest_service | Embedding batch 17/60 completed
+2026-08-07 04:24:57 | INFO     | app.ingestion.ingest_service | Upserting points (136 chunks)...
+2026-08-07 04:24:57 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:24:57 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:24:57 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:57 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:57 | INFO     | app.database.qdrant_store | Upserted 136 points to vhomenex_products_v2
+2026-08-07 04:24:57 | INFO     | app.ingestion.ingest_service | Points inserted: 136 total so far
+2026-08-07 04:24:57 | INFO     | app.ingestion.ingest_service | Embedding batch 18/60 (8 chunks)...
+2026-08-07 04:24:57 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:57 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:57 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:57 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:57 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:57 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:57 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:57 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:57 | INFO     | app.ingestion.ingest_service | Embedding batch 18/60 completed
+2026-08-07 04:24:57 | INFO     | app.ingestion.ingest_service | Upserting points (144 chunks)...
+2026-08-07 04:24:57 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:24:57 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:24:57 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:57 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:57 | INFO     | app.database.qdrant_store | Upserted 144 points to vhomenex_products_v2
+2026-08-07 04:24:57 | INFO     | app.ingestion.ingest_service | Points inserted: 144 total so far
+2026-08-07 04:24:57 | INFO     | app.ingestion.ingest_service | Embedding batch 19/60 (8 chunks)...
+2026-08-07 04:24:57 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:58 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:58 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:58 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:58 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:58 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:58 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:58 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:58 | INFO     | app.ingestion.ingest_service | Embedding batch 19/60 completed
+2026-08-07 04:24:58 | INFO     | app.ingestion.ingest_service | Upserting points (152 chunks)...
+2026-08-07 04:24:58 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:24:58 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:24:58 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:58 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:58 | INFO     | app.database.qdrant_store | Upserted 152 points to vhomenex_products_v2
+2026-08-07 04:24:58 | INFO     | app.ingestion.ingest_service | Points inserted: 152 total so far
+2026-08-07 04:24:58 | INFO     | app.ingestion.ingest_service | Embedding batch 20/60 (8 chunks)...
+2026-08-07 04:24:58 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:58 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:58 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:58 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:58 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:59 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:59 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:59 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:59 | INFO     | app.ingestion.ingest_service | Embedding batch 20/60 completed
+2026-08-07 04:24:59 | INFO     | app.ingestion.ingest_service | Upserting points (160 chunks)...
+2026-08-07 04:24:59 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:24:59 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:24:59 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:59 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:59 | INFO     | app.database.qdrant_store | Upserted 160 points to vhomenex_products_v2
+2026-08-07 04:24:59 | INFO     | app.ingestion.ingest_service | Points inserted: 160 total so far
+2026-08-07 04:24:59 | INFO     | app.ingestion.ingest_service | Embedding batch 21/60 (8 chunks)...
+2026-08-07 04:24:59 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:59 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:59 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:59 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:59 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:59 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:59 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:59 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:59 | INFO     | app.ingestion.ingest_service | Embedding batch 21/60 completed
+2026-08-07 04:24:59 | INFO     | app.ingestion.ingest_service | Upserting points (168 chunks)...
+2026-08-07 04:24:59 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:24:59 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:24:59 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:59 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:24:59 | INFO     | app.database.qdrant_store | Upserted 168 points to vhomenex_products_v2
+2026-08-07 04:24:59 | INFO     | app.ingestion.ingest_service | Points inserted: 168 total so far
+2026-08-07 04:24:59 | INFO     | app.ingestion.ingest_service | Embedding batch 22/60 (8 chunks)...
+2026-08-07 04:24:59 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:24:59 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:00 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:00 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:00 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:00 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:00 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:00 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:00 | INFO     | app.ingestion.ingest_service | Embedding batch 22/60 completed
+2026-08-07 04:25:00 | INFO     | app.ingestion.ingest_service | Upserting points (176 chunks)...
+2026-08-07 04:25:00 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:00 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:00 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:00 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:00 | INFO     | app.database.qdrant_store | Upserted 176 points to vhomenex_products_v2
+2026-08-07 04:25:00 | INFO     | app.ingestion.ingest_service | Points inserted: 176 total so far
+2026-08-07 04:25:00 | INFO     | app.ingestion.ingest_service | Embedding batch 23/60 (8 chunks)...
+2026-08-07 04:25:00 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:00 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:00 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:00 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:00 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:00 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:01 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:01 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:01 | INFO     | app.ingestion.ingest_service | Embedding batch 23/60 completed
+2026-08-07 04:25:01 | INFO     | app.ingestion.ingest_service | Upserting points (184 chunks)...
+2026-08-07 04:25:01 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:01 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:01 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:01 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:01 | INFO     | app.database.qdrant_store | Upserted 184 points to vhomenex_products_v2
+2026-08-07 04:25:01 | INFO     | app.ingestion.ingest_service | Points inserted: 184 total so far
+2026-08-07 04:25:01 | INFO     | app.ingestion.ingest_service | Embedding batch 24/60 (8 chunks)...
+2026-08-07 04:25:01 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:01 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:01 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:01 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:01 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:01 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:01 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:01 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:01 | INFO     | app.ingestion.ingest_service | Embedding batch 24/60 completed
+2026-08-07 04:25:01 | INFO     | app.ingestion.ingest_service | Upserting points (192 chunks)...
+2026-08-07 04:25:01 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:01 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:01 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:01 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:01 | INFO     | app.database.qdrant_store | Upserted 192 points to vhomenex_products_v2
+2026-08-07 04:25:01 | INFO     | app.ingestion.ingest_service | Points inserted: 192 total so far
+2026-08-07 04:25:01 | INFO     | app.ingestion.ingest_service | Embedding batch 25/60 (8 chunks)...
+2026-08-07 04:25:01 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:01 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:02 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:02 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:02 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:02 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:02 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:02 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:02 | INFO     | app.ingestion.ingest_service | Embedding batch 25/60 completed
+2026-08-07 04:25:02 | INFO     | app.ingestion.ingest_service | Upserting points (200 chunks)...
+2026-08-07 04:25:02 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:02 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:02 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:02 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:02 | INFO     | app.database.qdrant_store | Upserted 200 points to vhomenex_products_v2
+2026-08-07 04:25:02 | INFO     | app.ingestion.ingest_service | Points inserted: 200 total so far
+2026-08-07 04:25:02 | INFO     | app.ingestion.ingest_service | Embedding batch 26/60 (8 chunks)...
+2026-08-07 04:25:02 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:02 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:02 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:02 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:02 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:02 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:03 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:03 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:03 | INFO     | app.ingestion.ingest_service | Embedding batch 26/60 completed
+2026-08-07 04:25:03 | INFO     | app.ingestion.ingest_service | Upserting points (208 chunks)...
+2026-08-07 04:25:03 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:03 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:03 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:03 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:03 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:03 | INFO     | app.database.qdrant_store | Upserted 208 points to vhomenex_products_v2
+2026-08-07 04:25:03 | INFO     | app.ingestion.ingest_service | Points inserted: 208 total so far
+2026-08-07 04:25:03 | INFO     | app.ingestion.ingest_service | Embedding batch 27/60 (8 chunks)...
+2026-08-07 04:25:03 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:03 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:03 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:03 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:03 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:03 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:03 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:03 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:03 | INFO     | app.ingestion.ingest_service | Embedding batch 27/60 completed
+2026-08-07 04:25:03 | INFO     | app.ingestion.ingest_service | Upserting points (216 chunks)...
+2026-08-07 04:25:03 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:03 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:03 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:03 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:03 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:03 | INFO     | app.database.qdrant_store | Upserted 216 points to vhomenex_products_v2
+2026-08-07 04:25:03 | INFO     | app.ingestion.ingest_service | Points inserted: 216 total so far
+2026-08-07 04:25:03 | INFO     | app.ingestion.ingest_service | Embedding batch 28/60 (8 chunks)...
+2026-08-07 04:25:03 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:04 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:04 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:04 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:04 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:04 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:04 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:04 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:04 | INFO     | app.ingestion.ingest_service | Embedding batch 28/60 completed
+2026-08-07 04:25:04 | INFO     | app.ingestion.ingest_service | Upserting points (224 chunks)...
+2026-08-07 04:25:04 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:04 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:04 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:04 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:04 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:04 | INFO     | app.database.qdrant_store | Upserted 224 points to vhomenex_products_v2
+2026-08-07 04:25:04 | INFO     | app.ingestion.ingest_service | Points inserted: 224 total so far
+2026-08-07 04:25:04 | INFO     | app.ingestion.ingest_service | Embedding batch 29/60 (8 chunks)...
+2026-08-07 04:25:04 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:04 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:04 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:04 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:04 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:05 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:05 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:05 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:05 | INFO     | app.ingestion.ingest_service | Embedding batch 29/60 completed
+2026-08-07 04:25:05 | INFO     | app.ingestion.ingest_service | Upserting points (232 chunks)...
+2026-08-07 04:25:05 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:05 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:05 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:05 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:05 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:05 | INFO     | app.database.qdrant_store | Upserted 232 points to vhomenex_products_v2
+2026-08-07 04:25:05 | INFO     | app.ingestion.ingest_service | Points inserted: 232 total so far
+2026-08-07 04:25:05 | INFO     | app.ingestion.ingest_service | Embedding batch 30/60 (8 chunks)...
+2026-08-07 04:25:05 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:05 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:05 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:05 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:05 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:05 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:05 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:05 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:05 | INFO     | app.ingestion.ingest_service | Embedding batch 30/60 completed
+2026-08-07 04:25:05 | INFO     | app.ingestion.ingest_service | Upserting points (240 chunks)...
+2026-08-07 04:25:05 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:05 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:05 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:05 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:05 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:05 | INFO     | app.database.qdrant_store | Upserted 240 points to vhomenex_products_v2
+2026-08-07 04:25:05 | INFO     | app.ingestion.ingest_service | Points inserted: 240 total so far
+2026-08-07 04:25:05 | INFO     | app.ingestion.ingest_service | Embedding batch 31/60 (8 chunks)...
+2026-08-07 04:25:05 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:06 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:06 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:06 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:06 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:06 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:06 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:06 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:06 | INFO     | app.ingestion.ingest_service | Embedding batch 31/60 completed
+2026-08-07 04:25:06 | INFO     | app.ingestion.ingest_service | Upserting points (248 chunks)...
+2026-08-07 04:25:06 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:06 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:06 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:06 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:06 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:06 | INFO     | app.database.qdrant_store | Upserted 248 points to vhomenex_products_v2
+2026-08-07 04:25:06 | INFO     | app.ingestion.ingest_service | Points inserted: 248 total so far
+2026-08-07 04:25:06 | INFO     | app.ingestion.ingest_service | Embedding batch 32/60 (8 chunks)...
+2026-08-07 04:25:06 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:06 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:06 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:06 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:06 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:07 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:07 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:07 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:07 | INFO     | app.ingestion.ingest_service | Embedding batch 32/60 completed
+2026-08-07 04:25:07 | INFO     | app.ingestion.ingest_service | Upserting points (256 chunks)...
+2026-08-07 04:25:07 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:07 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:07 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:07 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:07 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:07 | INFO     | app.database.qdrant_store | Upserted 256 points to vhomenex_products_v2
+2026-08-07 04:25:07 | INFO     | app.ingestion.ingest_service | Points inserted: 256 total so far
+2026-08-07 04:25:07 | INFO     | app.ingestion.ingest_service | Embedding batch 33/60 (8 chunks)...
+2026-08-07 04:25:07 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:07 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:07 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:07 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:07 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:07 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:07 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:07 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:07 | INFO     | app.ingestion.ingest_service | Embedding batch 33/60 completed
+2026-08-07 04:25:07 | INFO     | app.ingestion.ingest_service | Upserting points (264 chunks)...
+2026-08-07 04:25:07 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:07 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:07 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:07 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:07 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:07 | INFO     | app.database.qdrant_store | Upserted 264 points to vhomenex_products_v2
+2026-08-07 04:25:07 | INFO     | app.ingestion.ingest_service | Points inserted: 264 total so far
+2026-08-07 04:25:07 | INFO     | app.ingestion.ingest_service | Embedding batch 34/60 (8 chunks)...
+2026-08-07 04:25:08 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:08 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:08 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:08 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:08 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:08 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:08 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:08 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:08 | INFO     | app.ingestion.ingest_service | Embedding batch 34/60 completed
+2026-08-07 04:25:08 | INFO     | app.ingestion.ingest_service | Upserting points (272 chunks)...
+2026-08-07 04:25:08 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:08 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:08 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:08 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:08 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:08 | INFO     | app.database.qdrant_store | Upserted 272 points to vhomenex_products_v2
+2026-08-07 04:25:08 | INFO     | app.ingestion.ingest_service | Points inserted: 272 total so far
+2026-08-07 04:25:08 | INFO     | app.ingestion.ingest_service | Embedding batch 35/60 (8 chunks)...
+2026-08-07 04:25:08 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:08 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:08 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:08 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:08 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:09 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:09 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:09 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:09 | INFO     | app.ingestion.ingest_service | Embedding batch 35/60 completed
+2026-08-07 04:25:09 | INFO     | app.ingestion.ingest_service | Upserting points (280 chunks)...
+2026-08-07 04:25:09 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:09 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:09 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:09 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:09 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:09 | INFO     | app.database.qdrant_store | Upserted 280 points to vhomenex_products_v2
+2026-08-07 04:25:09 | INFO     | app.ingestion.ingest_service | Points inserted: 280 total so far
+2026-08-07 04:25:09 | INFO     | app.ingestion.ingest_service | Embedding batch 36/60 (8 chunks)...
+2026-08-07 04:25:09 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:09 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:09 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:09 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:09 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:09 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:09 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:09 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:09 | INFO     | app.ingestion.ingest_service | Embedding batch 36/60 completed
+2026-08-07 04:25:09 | INFO     | app.ingestion.ingest_service | Upserting points (288 chunks)...
+2026-08-07 04:25:09 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:09 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:09 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:09 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:10 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:10 | INFO     | app.database.qdrant_store | Upserted 288 points to vhomenex_products_v2
+2026-08-07 04:25:10 | INFO     | app.ingestion.ingest_service | Points inserted: 288 total so far
+2026-08-07 04:25:10 | INFO     | app.ingestion.ingest_service | Embedding batch 37/60 (8 chunks)...
+2026-08-07 04:25:10 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:10 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:10 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:10 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:10 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:10 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:10 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:10 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:10 | INFO     | app.ingestion.ingest_service | Embedding batch 37/60 completed
+2026-08-07 04:25:10 | INFO     | app.ingestion.ingest_service | Upserting points (296 chunks)...
+2026-08-07 04:25:10 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:10 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:10 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:10 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:10 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:10 | INFO     | app.database.qdrant_store | Upserted 296 points to vhomenex_products_v2
+2026-08-07 04:25:10 | INFO     | app.ingestion.ingest_service | Points inserted: 296 total so far
+2026-08-07 04:25:10 | INFO     | app.ingestion.ingest_service | Embedding batch 38/60 (8 chunks)...
+2026-08-07 04:25:10 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:10 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:10 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:11 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:11 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:11 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:11 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:11 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:11 | INFO     | app.ingestion.ingest_service | Embedding batch 38/60 completed
+2026-08-07 04:25:11 | INFO     | app.ingestion.ingest_service | Upserting points (304 chunks)...
+2026-08-07 04:25:11 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:11 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:11 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:11 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:11 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:11 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:11 | INFO     | app.database.qdrant_store | Upserted 304 points to vhomenex_products_v2
+2026-08-07 04:25:11 | INFO     | app.ingestion.ingest_service | Points inserted: 304 total so far
+2026-08-07 04:25:11 | INFO     | app.ingestion.ingest_service | Embedding batch 39/60 (8 chunks)...
+2026-08-07 04:25:11 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:11 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:11 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:11 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:11 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:11 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:11 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:12 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:12 | INFO     | app.ingestion.ingest_service | Embedding batch 39/60 completed
+2026-08-07 04:25:12 | INFO     | app.ingestion.ingest_service | Upserting points (312 chunks)...
+2026-08-07 04:25:12 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:12 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:12 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:12 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:12 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:12 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:12 | INFO     | app.database.qdrant_store | Upserted 312 points to vhomenex_products_v2
+2026-08-07 04:25:12 | INFO     | app.ingestion.ingest_service | Points inserted: 312 total so far
+2026-08-07 04:25:12 | INFO     | app.ingestion.ingest_service | Embedding batch 40/60 (8 chunks)...
+2026-08-07 04:25:12 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:12 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:12 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:12 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:12 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:12 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:12 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:12 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:12 | INFO     | app.ingestion.ingest_service | Embedding batch 40/60 completed
+2026-08-07 04:25:12 | INFO     | app.ingestion.ingest_service | Upserting points (320 chunks)...
+2026-08-07 04:25:12 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:12 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:12 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:12 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:12 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:12 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:12 | INFO     | app.database.qdrant_store | Upserted 320 points to vhomenex_products_v2
+2026-08-07 04:25:12 | INFO     | app.ingestion.ingest_service | Points inserted: 320 total so far
+2026-08-07 04:25:12 | INFO     | app.ingestion.ingest_service | Embedding batch 41/60 (8 chunks)...
+2026-08-07 04:25:12 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:12 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:13 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:13 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:13 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:13 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:13 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:13 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:13 | INFO     | app.ingestion.ingest_service | Embedding batch 41/60 completed
+2026-08-07 04:25:13 | INFO     | app.ingestion.ingest_service | Upserting points (328 chunks)...
+2026-08-07 04:25:13 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:13 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:13 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:13 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:13 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:13 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:13 | INFO     | app.database.qdrant_store | Upserted 328 points to vhomenex_products_v2
+2026-08-07 04:25:13 | INFO     | app.ingestion.ingest_service | Points inserted: 328 total so far
+2026-08-07 04:25:13 | INFO     | app.ingestion.ingest_service | Embedding batch 42/60 (8 chunks)...
+2026-08-07 04:25:13 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:13 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:13 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:13 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:13 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:13 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:14 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:14 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:14 | INFO     | app.ingestion.ingest_service | Embedding batch 42/60 completed
+2026-08-07 04:25:14 | INFO     | app.ingestion.ingest_service | Upserting points (336 chunks)...
+2026-08-07 04:25:14 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:14 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:14 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:14 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:14 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:14 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:14 | INFO     | app.database.qdrant_store | Upserted 336 points to vhomenex_products_v2
+2026-08-07 04:25:14 | INFO     | app.ingestion.ingest_service | Points inserted: 336 total so far
+2026-08-07 04:25:14 | INFO     | app.ingestion.ingest_service | Embedding batch 43/60 (8 chunks)...
+2026-08-07 04:25:14 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:14 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:14 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:14 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:14 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:14 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:14 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:14 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:14 | INFO     | app.ingestion.ingest_service | Embedding batch 43/60 completed
+2026-08-07 04:25:14 | INFO     | app.ingestion.ingest_service | Upserting points (344 chunks)...
+2026-08-07 04:25:14 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:14 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:14 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:14 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:14 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:14 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:14 | INFO     | app.database.qdrant_store | Upserted 344 points to vhomenex_products_v2
+2026-08-07 04:25:14 | INFO     | app.ingestion.ingest_service | Points inserted: 344 total so far
+2026-08-07 04:25:14 | INFO     | app.ingestion.ingest_service | Embedding batch 44/60 (8 chunks)...
+2026-08-07 04:25:15 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:15 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:15 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:15 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:15 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:15 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:15 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:15 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:15 | INFO     | app.ingestion.ingest_service | Embedding batch 44/60 completed
+2026-08-07 04:25:15 | INFO     | app.ingestion.ingest_service | Upserting points (352 chunks)...
+2026-08-07 04:25:15 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:15 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:15 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:15 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:15 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:15 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:15 | INFO     | app.database.qdrant_store | Upserted 352 points to vhomenex_products_v2
+2026-08-07 04:25:15 | INFO     | app.ingestion.ingest_service | Points inserted: 352 total so far
+2026-08-07 04:25:15 | INFO     | app.ingestion.ingest_service | Embedding batch 45/60 (8 chunks)...
+2026-08-07 04:25:15 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:15 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:15 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:16 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:16 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:16 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:16 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:16 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:16 | INFO     | app.ingestion.ingest_service | Embedding batch 45/60 completed
+2026-08-07 04:25:16 | INFO     | app.ingestion.ingest_service | Upserting points (360 chunks)...
+2026-08-07 04:25:16 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:16 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:16 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:16 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:16 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:16 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:16 | INFO     | app.database.qdrant_store | Upserted 360 points to vhomenex_products_v2
+2026-08-07 04:25:16 | INFO     | app.ingestion.ingest_service | Points inserted: 360 total so far
+2026-08-07 04:25:16 | INFO     | app.ingestion.ingest_service | Embedding batch 46/60 (8 chunks)...
+2026-08-07 04:25:16 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:16 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:16 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:16 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:16 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:16 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:17 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:17 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:17 | INFO     | app.ingestion.ingest_service | Embedding batch 46/60 completed
+2026-08-07 04:25:17 | INFO     | app.ingestion.ingest_service | Upserting points (368 chunks)...
+2026-08-07 04:25:17 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:17 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:17 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:17 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:17 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:17 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:17 | INFO     | app.database.qdrant_store | Upserted 368 points to vhomenex_products_v2
+2026-08-07 04:25:17 | INFO     | app.ingestion.ingest_service | Points inserted: 368 total so far
+2026-08-07 04:25:17 | INFO     | app.ingestion.ingest_service | Embedding batch 47/60 (8 chunks)...
+2026-08-07 04:25:17 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:17 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:17 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:17 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:17 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:17 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:17 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:17 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:17 | INFO     | app.ingestion.ingest_service | Embedding batch 47/60 completed
+2026-08-07 04:25:17 | INFO     | app.ingestion.ingest_service | Upserting points (376 chunks)...
+2026-08-07 04:25:17 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:17 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:17 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:17 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:17 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:17 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:17 | INFO     | app.database.qdrant_store | Upserted 376 points to vhomenex_products_v2
+2026-08-07 04:25:17 | INFO     | app.ingestion.ingest_service | Points inserted: 376 total so far
+2026-08-07 04:25:17 | INFO     | app.ingestion.ingest_service | Embedding batch 48/60 (8 chunks)...
+2026-08-07 04:25:18 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:18 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:18 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:18 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:18 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:18 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:18 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:18 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:18 | INFO     | app.ingestion.ingest_service | Embedding batch 48/60 completed
+2026-08-07 04:25:18 | INFO     | app.ingestion.ingest_service | Upserting points (384 chunks)...
+2026-08-07 04:25:18 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:18 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:18 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:18 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:18 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:18 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:18 | INFO     | app.database.qdrant_store | Upserted 384 points to vhomenex_products_v2
+2026-08-07 04:25:18 | INFO     | app.ingestion.ingest_service | Points inserted: 384 total so far
+2026-08-07 04:25:18 | INFO     | app.ingestion.ingest_service | Embedding batch 49/60 (8 chunks)...
+2026-08-07 04:25:18 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:18 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:18 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:18 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:19 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:19 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:19 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:19 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:19 | INFO     | app.ingestion.ingest_service | Embedding batch 49/60 completed
+2026-08-07 04:25:19 | INFO     | app.ingestion.ingest_service | Upserting points (392 chunks)...
+2026-08-07 04:25:19 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:19 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:19 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:19 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:19 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:19 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:19 | INFO     | app.database.qdrant_store | Upserted 392 points to vhomenex_products_v2
+2026-08-07 04:25:19 | INFO     | app.ingestion.ingest_service | Points inserted: 392 total so far
+2026-08-07 04:25:19 | INFO     | app.ingestion.ingest_service | Embedding batch 50/60 (8 chunks)...
+2026-08-07 04:25:19 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:19 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:19 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:19 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:19 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:19 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:19 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:19 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:19 | INFO     | app.ingestion.ingest_service | Embedding batch 50/60 completed
+2026-08-07 04:25:19 | INFO     | app.ingestion.ingest_service | Upserting points (400 chunks)...
+2026-08-07 04:25:19 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:19 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:19 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:19 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:20 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:20 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:20 | INFO     | app.database.qdrant_store | Upserted 400 points to vhomenex_products_v2
+2026-08-07 04:25:20 | INFO     | app.ingestion.ingest_service | Points inserted: 400 total so far
+2026-08-07 04:25:20 | INFO     | app.ingestion.ingest_service | Embedding batch 51/60 (8 chunks)...
+2026-08-07 04:25:20 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:20 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:20 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:20 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:20 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:20 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:20 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:20 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:20 | INFO     | app.ingestion.ingest_service | Embedding batch 51/60 completed
+2026-08-07 04:25:20 | INFO     | app.ingestion.ingest_service | Upserting points (408 chunks)...
+2026-08-07 04:25:20 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:20 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:20 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:20 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:20 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:20 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:20 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:20 | INFO     | app.database.qdrant_store | Upserted 408 points to vhomenex_products_v2
+2026-08-07 04:25:20 | INFO     | app.ingestion.ingest_service | Points inserted: 408 total so far
+2026-08-07 04:25:20 | INFO     | app.ingestion.ingest_service | Embedding batch 52/60 (8 chunks)...
+2026-08-07 04:25:20 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:21 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:21 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:21 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:21 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:21 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:21 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:21 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:21 | INFO     | app.ingestion.ingest_service | Embedding batch 52/60 completed
+2026-08-07 04:25:21 | INFO     | app.ingestion.ingest_service | Upserting points (416 chunks)...
+2026-08-07 04:25:21 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:21 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:21 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:21 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:21 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:21 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:21 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:21 | INFO     | app.database.qdrant_store | Upserted 416 points to vhomenex_products_v2
+2026-08-07 04:25:21 | INFO     | app.ingestion.ingest_service | Points inserted: 416 total so far
+2026-08-07 04:25:21 | INFO     | app.ingestion.ingest_service | Embedding batch 53/60 (8 chunks)...
+2026-08-07 04:25:21 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:21 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:21 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:21 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:21 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:21 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:22 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:22 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:22 | INFO     | app.ingestion.ingest_service | Embedding batch 53/60 completed
+2026-08-07 04:25:22 | INFO     | app.ingestion.ingest_service | Upserting points (424 chunks)...
+2026-08-07 04:25:22 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:22 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:22 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:22 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:22 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:22 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:22 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:22 | INFO     | app.database.qdrant_store | Upserted 424 points to vhomenex_products_v2
+2026-08-07 04:25:22 | INFO     | app.ingestion.ingest_service | Points inserted: 424 total so far
+2026-08-07 04:25:22 | INFO     | app.ingestion.ingest_service | Embedding batch 54/60 (8 chunks)...
+2026-08-07 04:25:22 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:22 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:22 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:22 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:22 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:22 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:22 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:22 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:22 | INFO     | app.ingestion.ingest_service | Embedding batch 54/60 completed
+2026-08-07 04:25:22 | INFO     | app.ingestion.ingest_service | Upserting points (432 chunks)...
+2026-08-07 04:25:22 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:22 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:22 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:22 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:22 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:22 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:23 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:23 | INFO     | app.database.qdrant_store | Upserted 432 points to vhomenex_products_v2
+2026-08-07 04:25:23 | INFO     | app.ingestion.ingest_service | Points inserted: 432 total so far
+2026-08-07 04:25:23 | INFO     | app.ingestion.ingest_service | Embedding batch 55/60 (8 chunks)...
+2026-08-07 04:25:23 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:23 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:23 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:23 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:23 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:23 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:23 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:23 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:23 | INFO     | app.ingestion.ingest_service | Embedding batch 55/60 completed
+2026-08-07 04:25:23 | INFO     | app.ingestion.ingest_service | Upserting points (440 chunks)...
+2026-08-07 04:25:23 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:23 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:23 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:23 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:23 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:23 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:23 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:23 | INFO     | app.database.qdrant_store | Upserted 440 points to vhomenex_products_v2
+2026-08-07 04:25:23 | INFO     | app.ingestion.ingest_service | Points inserted: 440 total so far
+2026-08-07 04:25:23 | INFO     | app.ingestion.ingest_service | Embedding batch 56/60 (8 chunks)...
+2026-08-07 04:25:23 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:23 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:24 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:24 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:24 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:24 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:24 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:24 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:24 | INFO     | app.ingestion.ingest_service | Embedding batch 56/60 completed
+2026-08-07 04:25:24 | INFO     | app.ingestion.ingest_service | Upserting points (448 chunks)...
+2026-08-07 04:25:24 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:24 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:24 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:24 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:24 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:24 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:24 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:24 | INFO     | app.database.qdrant_store | Upserted 448 points to vhomenex_products_v2
+2026-08-07 04:25:24 | INFO     | app.ingestion.ingest_service | Points inserted: 448 total so far
+2026-08-07 04:25:24 | INFO     | app.ingestion.ingest_service | Embedding batch 57/60 (8 chunks)...
+2026-08-07 04:25:24 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:24 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:24 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:24 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:24 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:24 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:25 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:25 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:25 | INFO     | app.ingestion.ingest_service | Embedding batch 57/60 completed
+2026-08-07 04:25:25 | INFO     | app.ingestion.ingest_service | Upserting points (456 chunks)...
+2026-08-07 04:25:25 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:25 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:25 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:25 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:25 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:25 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:25 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:25 | INFO     | app.database.qdrant_store | Upserted 456 points to vhomenex_products_v2
+2026-08-07 04:25:25 | INFO     | app.ingestion.ingest_service | Points inserted: 456 total so far
+2026-08-07 04:25:25 | INFO     | app.ingestion.ingest_service | Embedding batch 58/60 (8 chunks)...
+2026-08-07 04:25:25 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:25 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:25 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:25 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:25 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:25 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:25 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:25 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:25 | INFO     | app.ingestion.ingest_service | Embedding batch 58/60 completed
+2026-08-07 04:25:25 | INFO     | app.ingestion.ingest_service | Upserting points (464 chunks)...
+2026-08-07 04:25:25 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:25 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:25 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:25 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:26 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:26 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:26 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:26 | INFO     | app.database.qdrant_store | Upserted 464 points to vhomenex_products_v2
+2026-08-07 04:25:26 | INFO     | app.ingestion.ingest_service | Points inserted: 464 total so far
+2026-08-07 04:25:26 | INFO     | app.ingestion.ingest_service | Embedding batch 59/60 (8 chunks)...
+2026-08-07 04:25:26 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:26 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:26 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:26 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:26 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:26 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:26 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:26 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:26 | INFO     | app.ingestion.ingest_service | Embedding batch 59/60 completed
+2026-08-07 04:25:26 | INFO     | app.ingestion.ingest_service | Upserting points (472 chunks)...
+2026-08-07 04:25:26 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:26 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:26 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:26 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:26 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:26 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:26 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:26 | INFO     | app.database.qdrant_store | Upserted 472 points to vhomenex_products_v2
+2026-08-07 04:25:26 | INFO     | app.ingestion.ingest_service | Points inserted: 472 total so far
+2026-08-07 04:25:26 | INFO     | app.ingestion.ingest_service | Embedding batch 60/60 (6 chunks)...
+2026-08-07 04:25:26 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:26 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:27 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:27 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:27 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:27 | INFO     | httpx | HTTP Request: POST http://host.docker.internal:11434/api/embed "HTTP/1.1 200 OK"
+2026-08-07 04:25:27 | INFO     | app.ingestion.ingest_service | Embedding batch 60/60 completed
+2026-08-07 04:25:27 | INFO     | app.ingestion.ingest_service | Upserting points (478 chunks)...
+2026-08-07 04:25:27 | INFO     | httpx | HTTP Request: GET http://qdrant-recovery:6333/collections "HTTP/1.1 200 OK"
+2026-08-07 04:25:27 | INFO     | app.database.qdrant_store | Qdrant collection exists: vhomenex_products_v2
+2026-08-07 04:25:27 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:27 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:27 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:27 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:27 | INFO     | httpx | HTTP Request: PUT http://qdrant-recovery:6333/collections/vhomenex_products_v2/points?wait=true "HTTP/1.1 200 OK"
+2026-08-07 04:25:27 | INFO     | app.database.qdrant_store | Upserted 478 points to vhomenex_products_v2
+2026-08-07 04:25:27 | INFO     | app.ingestion.ingest_service | Points inserted: 478 total so far
+2026-08-07 04:25:27 | INFO     | app.ingestion.ingest_service | Building BM25 index...
+2026-08-07 04:25:27 | INFO     | app.database.bm25_store | Building BM25 index from 478 chunks
+2026-08-07 04:25:28 | INFO     | app.database.bm25_store | BM25 index built with vocabulary of 1325 terms
+2026-08-07 04:25:28 | INFO     | app.database.bm25_store | BM25 index saved to /app/storage/bm25/index.joblib
+2026-08-07 04:25:28 | INFO     | app.ingestion.ingest_service | BM25 index saved to /app/storage/bm25/index.joblib
+--------------------------------------------------
+=== INGESTION RESULTS ===
+Files processed: 11
+Chunks generated: 478
+Chunks skipped: 0
+
+✅ Status: SUCCESS (0 errors)
+=========================

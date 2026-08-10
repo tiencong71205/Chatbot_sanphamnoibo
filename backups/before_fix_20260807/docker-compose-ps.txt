@@ -1,0 +1,3 @@
+NAME                   IMAGE                  COMMAND                  SERVICE    CREATED      STATUS                PORTS
+vhomenex-backend-v2    vhomenex-backend:v2    "uvicorn app.api:app…"   backend    3 days ago   Up 3 days (healthy)   0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp
+vhomenex-frontend-v2   vhomenex-frontend:v2   "streamlit run ui/st…"   frontend   3 days ago   Up 3 days (healthy)   0.0.0.0:8501->8501/tcp, [::]:8501->8501/tcp

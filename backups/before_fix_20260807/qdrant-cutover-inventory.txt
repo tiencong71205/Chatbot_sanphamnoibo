@@ -1,0 +1,322 @@
+===== QDRANT CUTOVER INVENTORY =====
+===== TARGET QDRANT CONTAINERS =====
+Container: qdrant
+  Image: qdrant/qdrant:latest
+  Status: running
+  Running: True
+  Restart policy: unless-stopped
+  Network mode: bridge
+  Published ports:
+    0.0.0.0:6333 -> 6333/tcp
+    :::6333 -> 6333/tcp
+    0.0.0.0:6334 -> 6334/tcp
+    :::6334 -> 6334/tcp
+  Networks:
+    bridge: ip=172.17.0.3 aliases=[]
+  Mounts:
+    /home/vconnex/vconnex_rag_test/qdrant_storage -> /qdrant/storage rw=True
+  Relevant environment:
+    none
+
+Container: qdrant-recovery-20260807
+  Image: sha256:0bd98fa7977f1e75694779359ca4e212822e5a71334e28421182f72f209d5286
+  Status: running
+  Running: True
+  Restart policy: unless-stopped
+  Network mode: bridge
+  Published ports:
+    127.0.0.1:6335 -> 6333/tcp
+    127.0.0.1:6336 -> 6334/tcp
+  Networks:
+    bridge: ip=172.17.0.4 aliases=[]
+  Mounts:
+    /home/vconnex/vhomenex_hybrid_rag_v2/qdrant_recovery_storage_20260807 -> /qdrant/storage rw=True
+  Relevant environment:
+    none
+
+===== ALL RUNNING CONTAINERS =====
+Container: ollama
+  Image: ollama/ollama:latest
+  Status: running
+  Running: True
+  Restart policy: no
+  Network mode: bridge
+  Published ports:
+    0.0.0.0:11434 -> 11434/tcp
+    :::11434 -> 11434/tcp
+  Networks:
+    bridge: ip=172.17.0.2 aliases=[]
+  Mounts:
+    /var/lib/docker/volumes/ollama/_data -> /root/.ollama rw=True
+  Relevant environment:
+    none
+
+Container: project_n8n
+  Image: n8nio/n8n:latest
+  Status: running
+  Running: True
+  Restart policy: always
+  Network mode: project-intelligence-net
+  Published ports:
+    0.0.0.0:5678 -> 5678/tcp
+    :::5678 -> 5678/tcp
+  Networks:
+    project-intelligence-net: ip=172.26.0.2 aliases=['project_n8n', 'n8n']
+  Mounts:
+    /opt/project-intelligence/n8n_data -> /home/node/.n8n rw=True
+  Compose metadata:
+    project: project-intelligence
+    service: n8n
+    working_dir: /opt/project-intelligence
+    config_files: /opt/project-intelligence/docker-compose.yml
+  Relevant environment:
+    none
+
+Container: project_postgres
+  Image: postgres:15
+  Status: running
+  Running: True
+  Restart policy: always
+  Network mode: project-intelligence-net
+  Published ports:
+    5432/tcp: not published
+  Networks:
+    project-intelligence-net: ip=172.26.0.3 aliases=['project_postgres', 'postgres']
+  Mounts:
+    /opt/project-intelligence/postgres_data -> /var/lib/postgresql/data rw=True
+  Compose metadata:
+    project: project-intelligence
+    service: postgres
+    working_dir: /opt/project-intelligence
+    config_files: /opt/project-intelligence/docker-compose.yml
+  Relevant environment:
+    none
+
+Container: qdrant
+  Image: qdrant/qdrant:latest
+  Status: running
+  Running: True
+  Restart policy: unless-stopped
+  Network mode: bridge
+  Published ports:
+    0.0.0.0:6333 -> 6333/tcp
+    :::6333 -> 6333/tcp
+    0.0.0.0:6334 -> 6334/tcp
+    :::6334 -> 6334/tcp
+  Networks:
+    bridge: ip=172.17.0.3 aliases=[]
+  Mounts:
+    /home/vconnex/vconnex_rag_test/qdrant_storage -> /qdrant/storage rw=True
+  Relevant environment:
+    none
+
+Container: qdrant-recovery-20260807
+  Image: sha256:0bd98fa7977f1e75694779359ca4e212822e5a71334e28421182f72f209d5286
+  Status: running
+  Running: True
+  Restart policy: unless-stopped
+  Network mode: bridge
+  Published ports:
+    127.0.0.1:6335 -> 6333/tcp
+    127.0.0.1:6336 -> 6334/tcp
+  Networks:
+    bridge: ip=172.17.0.4 aliases=[]
+  Mounts:
+    /home/vconnex/vhomenex_hybrid_rag_v2/qdrant_recovery_storage_20260807 -> /qdrant/storage rw=True
+  Relevant environment:
+    none
+
+Container: vhomenex-backend-v2
+  Image: vhomenex-backend:v2
+  Status: running
+  Running: True
+  Restart policy: unless-stopped
+  Network mode: vhomenex-rag-v2_default
+  Published ports:
+    0.0.0.0:8000 -> 8000/tcp
+    :::8000 -> 8000/tcp
+  Networks:
+    vhomenex-rag-v2_default: ip=172.27.0.2 aliases=['vhomenex-backend-v2', 'backend']
+  Mounts:
+    /home/vconnex/vhomenex_hybrid_rag_v2/scripts -> /app/scripts rw=True
+    /home/vconnex/vhomenex_hybrid_rag_v2/ui -> /app/ui rw=True
+    /home/vconnex/vhomenex_hybrid_rag_v2/data -> /app/data rw=True
+    /home/vconnex/vhomenex_hybrid_rag_v2/storage -> /app/storage rw=True
+    /home/vconnex/vhomenex_hybrid_rag_v2/logs -> /app/logs rw=True
+    /home/vconnex/vhomenex_hybrid_rag_v2/app -> /app/app rw=True
+  Compose metadata:
+    project: vhomenex-rag-v2
+    service: backend
+    working_dir: /home/vconnex/vhomenex_hybrid_rag_v2
+    config_files: /home/vconnex/vhomenex_hybrid_rag_v2/docker-compose.yml
+  Relevant environment:
+    QDRANT_COLLECTION=vhomenex_products_v2
+    QDRANT_URL=http://host.docker.internal:6333
+
+Container: vhomenex-frontend-v2
+  Image: vhomenex-frontend:v2
+  Status: running
+  Running: True
+  Restart policy: unless-stopped
+  Network mode: vhomenex-rag-v2_default
+  Published ports:
+    0.0.0.0:8501 -> 8501/tcp
+    :::8501 -> 8501/tcp
+  Networks:
+    vhomenex-rag-v2_default: ip=172.27.0.3 aliases=['vhomenex-frontend-v2', 'frontend']
+  Mounts:
+    /home/vconnex/vhomenex_hybrid_rag_v2/ui -> /app/ui rw=True
+  Compose metadata:
+    project: vhomenex-rag-v2
+    service: frontend
+    working_dir: /home/vconnex/vhomenex_hybrid_rag_v2
+    config_files: /home/vconnex/vhomenex_hybrid_rag_v2/docker-compose.yml
+  Relevant environment:
+    none
+
+===== CONNECTED DOCKER NETWORKS =====
+Network: bridge driver=bridge scope=local
+  ollama: ipv4=172.17.0.2/16
+  qdrant: ipv4=172.17.0.3/16
+  qdrant-recovery-20260807: ipv4=172.17.0.4/16
+Network: project-intelligence-net driver=bridge scope=local
+  project_n8n: ipv4=172.26.0.2/16
+  project_postgres: ipv4=172.26.0.3/16
+Network: vhomenex-rag-v2_default driver=bridge scope=local
+  vhomenex-backend-v2: ipv4=172.27.0.2/16
+  vhomenex-frontend-v2: ipv4=172.27.0.3/16
+Docker inventory exit code: 0
+===== PROJECT QDRANT REFERENCES =====
+.gitignore:15: storage/qdrant/
+PLAN.md:9: - **Vector DB:** Qdrant existing container (port 6333)
+PLAN.md:15: - **Collection:** vhomenex_products_v2
+RAG_REFACTOR_REPORT.md:8: - **Core Vector DB**: Qdrant Vector Database (`vhomenex_products_v2` collection, 242 points, 1024 dims cosine similarity).
+README.md:12: Qdrant (:6333)         BM25 Index (file)
+README.md:71: - Collection Qdrant: `vhomenex_products_v2` (không liên quan `vconnex_products`)
+deploy_v2.py:288: "from app.database.qdrant_store import QdrantStore; "
+deploy_v2.py:292: "s = get_settings(); q = QdrantStore(s); b = BM25Store(s); e = OllamaEmbedding(s); "
+docker-compose.yml:3: # NOTE: Qdrant is already running as a separate container on the host.
+docker-compose.yml:4: # Backend connects to it via host.docker.internal:6333
+docker-compose.yml:5: # Do NOT start a new Qdrant container here to avoid conflicts.
+scripts/_test_retrieval_step8.py:5: from app.database.qdrant_store import QdrantStore
+scripts/_test_retrieval_step8.py:10: qdrant = QdrantStore(settings)
+scripts/_test_retrieval_step8.py:13: retriever = HybridRetriever(settings, qdrant, bm25, emb)
+scripts/backup_storage.py:2: """Backup BM25 index and export Qdrant collection info."""
+scripts/build_bm25.py:4: from app.database.qdrant_store import QdrantStore
+scripts/build_bm25.py:13: qdrant = QdrantStore(settings)
+scripts/build_bm25.py:16: logger.info("Fetching all chunks from Qdrant...")
+scripts/build_bm25.py:17: records = qdrant.scroll_all()
+scripts/build_bm25.py:18: logger.info("Retrieved %d points from Qdrant", len(records))
+scripts/check_services.py:32: # Qdrant
+scripts/check_services.py:34: r = httpx.get(f"{settings.qdrant_url}/collections", timeout=5)
+scripts/check_services.py:36: has_col = settings.qdrant_collection in collections
+scripts/check_services.py:37: print(f"✅ Qdrant: {settings.qdrant_url}")
+scripts/check_services.py:38: print(f"   Collection {settings.qdrant_collection}: {'✅' if has_col else '⚠️ not found'}")
+scripts/check_services.py:40: print(f"❌ Qdrant: {e}")
+scripts/evaluate_rag.py:15: from app.database.qdrant_store import QdrantStore
+scripts/evaluate_rag.py:31: qdrant = QdrantStore(settings)
+scripts/evaluate_rag.py:37: retriever = HybridRetriever(settings, qdrant, bm25, embedding)
+scripts/ingest_documents.py:2: """Ingest DOCX documents into Qdrant and BM25 with detailed output."""
+scripts/ingest_documents.py:11: from app.database.qdrant_store import QdrantStore
+scripts/ingest_documents.py:26: qdrant = QdrantStore(settings)
+scripts/ingest_documents.py:29: svc = IngestService(settings, qdrant, bm25, embedding)
+scripts/inspect_chunks.py:2: """Inspect chunks in Qdrant collection."""
+scripts/inspect_chunks.py:10: from app.database.qdrant_store import QdrantStore
+scripts/inspect_chunks.py:20: qdrant = QdrantStore(settings)
+scripts/inspect_chunks.py:21: print(f"Collection: {settings.qdrant_collection}")
+scripts/inspect_chunks.py:22: print(f"Total chunks: {qdrant.count()}")
+scripts/inspect_chunks.py:25: payloads = qdrant.get_all_payloads(limit=args.limit * 10)
+scripts/test_retrieval.py:8: from app.database.qdrant_store import QdrantStore
+scripts/test_retrieval.py:59: qdrant = QdrantStore(settings)
+scripts/test_retrieval.py:65: qdrant=qdrant,
+tests/test_api.py:10: patch("app.api.get_qdrant_store") as mock_qdrant_dep, \
+tests/test_api.py:14: qdrant_mock = MagicMock()
+tests/test_api.py:15: qdrant_mock.list_products.return_value = []
+tests/test_api.py:16: qdrant_mock.count.return_value = 0
+tests/test_api.py:17: mock_qdrant_dep.return_value = qdrant_mock
+tests/test_retrieval.py:5: from app.retrieval.metadata_filter import build_qdrant_filter, HARD_CONFIDENCE
+tests/test_retrieval.py:25: f = build_qdrant_filter(resolved)
+tests/test_retrieval.py:34: f = build_qdrant_filter(resolved)
+app/api.py:25: get_qdrant_store, get_bm25_store, get_embedding,
+app/api.py:28: from app.database.qdrant_store import QdrantStore
+app/api.py:67: qdrant_ok = False
+app/api.py:99: # Check Qdrant
+app/api.py:102: resp = await client.get(f"{settings.qdrant_url}/collections/{settings.qdrant_collection}")
+app/api.py:103: qdrant_ok = resp.status_code == 200
+app/api.py:104: if qdrant_ok:
+app/api.py:106: details["qdrant_points"] = col_info.get("points_count", 0)
+app/api.py:107: details["qdrant_collection"] = settings.qdrant_collection
+app/api.py:109: details["qdrant_error"] = str(e)
+app/api.py:117: overall = "ok" if (ollama_ok and llm_model_ok and embed_model_ok and qdrant_ok) else "degraded"
+app/api.py:125: qdrant=qdrant_ok,
+app/api.py:212: qdrant: QdrantStore = Depends(get_qdrant_store),
+app/api.py:218: svc = IngestService(settings, qdrant, bm25, embedding)
+app/api.py:243: qdrant: QdrantStore = Depends(get_qdrant_store),
+app/api.py:247: return await ingest_documents(request, settings, qdrant, bm25, embedding)
+app/api.py:254: qdrant: QdrantStore = Depends(get_qdrant_store),
+app/api.py:260: svc = IngestService(settings, qdrant, bm25, embedding)
+app/api.py:284: qdrant: QdrantStore = Depends(get_qdrant_store),
+app/api.py:287: """List all products in the knowledge base from catalog and Qdrant."""
+app/api.py:303: # Get chunk count from Qdrant
+app/api.py:306: count_result = qdrant.count_by_product(item.get("product_id", ""))
+app/api.py:320: # Fallback: get from Qdrant
+app/api.py:321: raw_products = qdrant.list_products()
+app/api.py:330: qdrant: QdrantStore = Depends(get_qdrant_store),
+app/api.py:334: docs = qdrant.list_documents()
+app/api.py:343: qdrant: QdrantStore = Depends(get_qdrant_store),
+app/api.py:347: doc = qdrant.get_document_info(document_id)
+app/api.py:360: qdrant: QdrantStore = Depends(get_qdrant_store),
+app/api.py:364: chunk = qdrant.get_chunk_by_id(chunk_id)
+app/config.py:17: # Qdrant
+app/config.py:18: qdrant_url: str = "http://127.0.0.1:6333"
+app/config.py:19: qdrant_collection: str = "vhomenex_products_v2"
+app/dependencies.py:6: from app.database.qdrant_store import QdrantStore
+app/dependencies.py:14: def get_qdrant_store(settings: Settings = Depends(get_settings)) -> QdrantStore:
+app/dependencies.py:15: return QdrantStore(settings)
+app/dependencies.py:28: qdrant: QdrantStore = Depends(get_qdrant_store),
+app/dependencies.py:32: return HybridRetriever(settings, qdrant, bm25, embedding)
+app/schemas.py:113: qdrant: bool = False
+app/retrieval/dense_retriever.py:1: """Dense vector retriever using Qdrant."""
+app/retrieval/dense_retriever.py:8: from app.database.qdrant_store import QdrantStore
+app/retrieval/dense_retriever.py:14: def __init__(self, settings: Settings, qdrant: QdrantStore, embedding: OllamaEmbedding):
+app/retrieval/dense_retriever.py:16: self.qdrant = qdrant
+app/retrieval/dense_retriever.py:28: results = self.qdrant.search(
+app/retrieval/hybrid_retriever.py:11: from app.database.qdrant_store import QdrantStore
+app/retrieval/hybrid_retriever.py:25: qdrant: QdrantStore,
+app/retrieval/hybrid_retriever.py:30: self.qdrant = qdrant
+app/retrieval/hybrid_retriever.py:35: self.dense = DenseRetriever(settings, qdrant, embedding)
+app/retrieval/metadata_filter.py:10: def build_qdrant_filter(
+app/retrieval/metadata_filter.py:14: Build Qdrant filter dict.
+app/ingestion/ingest_service.py:12: from app.database.qdrant_store import QdrantStore
+app/ingestion/ingest_service.py:30: qdrant: QdrantStore,
+app/ingestion/ingest_service.py:35: self.qdrant = qdrant
+app/ingestion/ingest_service.py:60: logger.info("Recreating Qdrant collection: %s", self.settings.qdrant_collection)
+app/ingestion/ingest_service.py:61: self.qdrant.recreate_collection()
+app/ingestion/ingest_service.py:132: # Per-batch upsert to Qdrant so transaction is not held till end
+app/ingestion/ingest_service.py:135: self.qdrant.upsert_chunks(valid_chunks, valid_vectors)
+app/database/qdrant_store.py:1: """Qdrant vector store wrapper with full CRUD and listing support."""
+app/database/qdrant_store.py:7: from qdrant_client import QdrantClient
+app/database/qdrant_store.py:8: from qdrant_client.http import models as qdrant_models
+app/database/qdrant_store.py:9: from qdrant_client.http.exceptions import UnexpectedResponse
+app/database/qdrant_store.py:22: def _build_filter(filters: Dict[str, Any]) -> qdrant_models.Filter:
+app/database/qdrant_store.py:27: qdrant_models.FieldCondition(
+app/database/qdrant_store.py:29: match=qdrant_models.MatchAny(any=value),
+app/database/qdrant_store.py:34: qdrant_models.FieldCondition(
+app/database/qdrant_store.py:36: match=qdrant_models.MatchValue(value=value),
+app/database/qdrant_store.py:39: return qdrant_models.Filter(must=conditions)
+app/database/qdrant_store.py:42: class QdrantStore:
+app/database/qdrant_store.py:45: self.collection = settings.qdrant_collection
+app/database/qdrant_store.py:46: self._client = QdrantClient(
+app/database/qdrant_store.py:47: url=settings.qdrant_url,
+app/database/qdrant_store.py:74: logger.info("Creating Qdrant collection: %s (dim=%d)", self.collection, self.settings.embedding_dimension)
+app/database/qdrant_store.py:77: vectors_config=qdrant_models.VectorParams(
+app/database/qdrant_store.py:79: distance=qdrant_models.Distance.COSINE,
+app/database/qdrant_store.py:94: logger.info("Qdrant collection exists: %s", self.collection)
+app/database/qdrant_store.py:103: <REDACTED: sensitive configuration line>
+app/database/qdrant_store.py:118: qdrant_models.PointStruct(
+app/database/qdrant_store.py:150: elif isinstance(filters, qdrant_models.Filter):
+app/database/qdrant_store.py:171: logger.error("Qdrant search error: %s", e)
+app/database/qdrant_store.py:223: logger.error("Error fetching products from Qdrant: %s", e)
+PROJECT_QDRANT_REFERENCE_COUNT=130
+Reference scan exit code: 0
+QDRANT_CUTOVER_INVENTORY_CAPTURED
