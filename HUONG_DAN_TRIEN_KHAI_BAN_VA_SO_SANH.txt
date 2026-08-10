@@ -1,0 +1,45 @@
+BẢN VÁ SO SÁNH NHIỀU SẢN PHẨM - TRUY XUẤT THÍCH ỨNG V4
+
+Phạm vi:
+- Không thêm Cảm biến cửa Mesh.
+- Không thay đổi product_catalog.json.
+- Không ingest lại Qdrant/BM25.
+- Truy xuất thích ứng theo độ phủ tiêu chí:
+  + tối thiểu 2 chunk/sản phẩm khi có đủ dữ liệu;
+  + mục tiêu thông thường 3-5 chunk/sản phẩm;
+  + tối đa 6 chunk/sản phẩm nếu vẫn còn tiêu chí thiếu bằng chứng;
+  + tối đa 20 chunk cho toàn bộ câu so sánh.
+- Ưu tiên chunk thông số kỹ thuật và tóm tắt/tổng quan của từng sản phẩm.
+- Kiểm tra độ phủ trước khi ghi "Chưa có dữ liệu".
+- Tự sửa hàng tiêu đề bảng Markdown nếu mô hình ghép sai cột.
+
+Triển khai từ thư mục ~/vhomenex_hybrid_rag_v2:
+
+1. Sao lưu các file code hiện tại:
+   mkdir -p backup_20260810_so_sanh
+   cp app/services/chatbot_service.py backup_20260810_so_sanh/
+   cp app/generation/prompts.py backup_20260810_so_sanh/
+
+2. Giải nén gói vá vào thư mục dự án:
+   unzip -o ~/vhomenex_fix_so_sanh_thich_ung_v4.zip -d .
+
+3. Kiểm tra cú pháp:
+   docker compose -p vhomenex-rag-v2 run --rm backend python -m compileall -q app tests
+
+4. Build và khởi động lại (không chạy ingest):
+   docker compose -p vhomenex-rag-v2 up -d --build backend frontend
+
+5. Kiểm tra trạng thái:
+   docker compose -p vhomenex-rag-v2 ps
+
+Câu kiểm thử hồi quy:
+so sánh công tắc cửa cuốn, công tắc chống giật bnn, công tắc dimmer và công tắc thông minh v2
+
+Kỳ vọng:
+- Có đủ 4 cột sản phẩm và 1 cột tiêu chí.
+- Nguồn của Dimmer và Công tắc V2 không còn bị ghi thiếu nếu chunk thông số tồn tại.
+- Truyền thông và công suất/đầu ra lấy đúng theo từng sản phẩm.
+- Không có tiêu chí mơ hồ "Hệ điện hỗ trợ".
+- Với 4 sản phẩm, context thường có 12-20 chunk.
+- Không thêm chunk thứ 4-6 nếu chunk đó không bổ sung tiêu chí còn thiếu.
+- Tổng context không vượt quá 20 chunk và mỗi sản phẩm không vượt quá 6 chunk.
