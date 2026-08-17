@@ -1,7 +1,0 @@
-CONTAINER ID                                                       NAMES                  IMAGE                  STATUS                PORTS
-7398dd570255b39816b94c740cdaad644d59aa60ca4d87d12efa5c849f989532   vhomenex-frontend-v2   vhomenex-frontend:v2   Up 3 days (healthy)   0.0.0.0:8501->8501/tcp, [::]:8501->8501/tcp
-2999ab1088c9e2525a337eb3b6042987b2eaf7124425c3e88d9f1a83237b1ac5   vhomenex-backend-v2    vhomenex-backend:v2    Up 3 days (healthy)   0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp
-8a39e306b00129c8b2b9ca95d413a5f1fe1bc5178225f491f1763651f8e18dfc   qdrant                 qdrant/qdrant:latest   Up 7 days             0.0.0.0:6333-6334->6333-6334/tcp, [::]:6333-6334->6333-6334/tcp
-013f0f1e95e59799a73710c7b80ba314412672f096bc4ff466f45fecd5ca1a91   project_n8n            n8nio/n8n:latest       Up 2 weeks            0.0.0.0:5678->5678/tcp, [::]:5678->5678/tcp
-72e0b0bc6f1d4dbfd4ebd6ab3202c1bf6634766f9836f2a69cea81793fac7e42   project_postgres       postgres:15            Up 2 weeks            5432/tcp
-e61ff9ea3cc5463e37e37559d7c4f7f8b02e407765886d181032d1e8d6fd49e7   ollama                 ollama/ollama:latest   Up 7 days             0.0.0.0:11434->11434/tcp, [::]:11434->11434/tcp
