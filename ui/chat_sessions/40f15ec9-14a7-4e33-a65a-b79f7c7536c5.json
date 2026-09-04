@@ -1,0 +1,66 @@
+{
+  "title": "cho tôi hướng dẫn lắp đặt bộ điều khiển hồng n…",
+  "updated_at": "2026-08-28T07:15:05.136565+00:00",
+  "messages": [
+    {
+      "role": "user",
+      "content": "cho tôi hướng dẫn lắp đặt bộ điều khiển hồng ngoại thông mình v3"
+    },
+    {
+      "role": "assistant",
+      "content": "Dưới đây là hướng dẫn lắp đặt bộ điều khiển hồng ngoại thông minh v3 dựa trên tài liệu đã cung cấp:\n\n1. **Chuẩn bị trước khi lắp đặt**  \n   - Đảm bảo có adapter và dây nguồn đi kèm thiết bị.  \n   - Có điện thoại đã cài ứng dụng Vhomenex và đã kết nối với hệ thống Mesh/Gateway.  \n   - Xác định khu vực lắp đặt có nguồn điện phù hợp và thuận tiện để thiết bị phát tín hiệu hồng ngoại đến thiết bị cần điều khiển.  \n   - Thiết bị cần điều khiển (như TV, điều hòa, quạt) phải nằm trong cùng không gian hoặc gần khu vực lắp đặt bộ điều khiển.\n\n2. **Xác định vị trí lắp đặt**  \n   - Đặt bộ điều khiển hồng ngoại tại vị trí thông thoáng, ổn định và không bị che khuất.  \n   - Đảm bảo hướng phát tín hiệu hồng ngoại của thiết bị hướng về phía thiết bị cần điều khiển (ví dụ: TV, điều hòa, quạt).  \n   - Nên đặt bộ điều khiển trong cùng không gian với các thiết bị điện tử cần điều khiển.  \n   - Tránh đặt bộ điều khiển phía sau đồ vật, trong tủ kín hoặc tại vị trí có vật cản che chắn đường truyền hồng ngoại.  \n   - Đặt thiết bị gần nguồn điện và đảm bảo dây nguồn không bị kéo căng, gập hoặc đè lên.\n\n3. **Tiến hành lắp đặt**  \n   - Chọn vị trí lắp đặt phù hợp theo hướng dẫn.  \n   - Mở ứng dụng Vhomenex và thực hiện thêm bộ điều khiển hồng ngoại vào hệ thống theo hướng dẫn sử dụng.  \n   - Thực hiện thiết lập các thiết bị cần điều khiển như TV, điều hòa, quạt,... và cấu hình các chức năng điều khiển tương ứng (ví dụ: bật/tắt, tăng/giảm âm lượng, chuyển kênh, điều chỉnh nhiệt độ, tốc độ quạt,...).\n\n4. **Kiểm tra sau khi lắp đặt**  \n   - Chờ thiết bị khởi động và kiểm tra trạng thái hoạt động.  \n   - Kiểm tra thiết bị đã hiển thị trên ứng dụng Vhomenex.  \n   - Kiểm tra các thiết bị hồng ngoại đã được thêm và cấu hình thành công.  \n   - Thực hiện các thao tác điều khiển cơ bản như bật/tắt TV, điều chỉnh nhiệt độ điều hòa hoặc bật/tắt quạt.  \n   - Kiểm tra thiết bị nhận lệnh ổn định và chính xác.  \n   - Kiểm tra khả năng thực thi khẩu lệnh nếu thiết bị được cấu hình điều khiển bằng giọng nói.  \n   - Kiểm tra trạng thái kết nối của bộ điều khiển trên ứng dụng.  \n   - Kiểm tra nhật ký hoạt động sau khi trạng thái cửa thay đổi (nếu có).\n\n⚠️ **Lưu ý quan trọng**:  \n- Không đặt bộ điều khiển tại nơi có nhiệt độ cao, độ ẩm lớn, gần nguồn nước hoặc nơi có nguy cơ va đập.  \n- Không che chắn khu vực phát tín hiệu hồng ngoại của thiết bị.",
+      "latency_ms": 9315.254653804004,
+      "images": []
+    },
+    {
+      "role": "user",
+      "content": "cách lắp đặt cảm biến cửa mesh"
+    },
+    {
+      "role": "assistant",
+      "content": "Dưới đây là hướng dẫn lắp đặt cảm biến cửa Mesh dựa trên tài liệu đã cung cấp:\n\n1. **Chuẩn bị trước khi lắp đặt**  \n   - Bề mặt lắp đặt phải sạch, khô và phẳng.  \n   - Đảm bảo điện thoại đã cài ứng dụng Vhomenex và đã kết nối với hệ thống Mesh/Gateway.\n\n2. **Xác định vị trí lắp đặt**  \n   - Cảm biến gồm hai bộ phận: thân cảm biến (chứa mạch cảm biến và pin) và nam châm.  \n   - Lắp hai bộ phận trên cùng một cánh cửa và khung cửa sao cho khi cửa đóng, thân cảm biến và nam châm nằm gần và thẳng hàng với nhau.  \n   - Tránh lắp ở vị trí bị rung lắc mạnh, tiếp xúc trực tiếp với nước hoặc nhiệt độ cao.\n\n3. **Tiến hành lắp đặt**  \n   - Làm sạch và lau khô vị trí dự kiến lắp đặt.  \n   - Bóc lớp keo bảo vệ ở mặt sau của cảm biến và nam châm.  \n   - Dán thân cảm biến lên khung cửa hoặc vị trí cố định.  \n   - Dán nam châm lên cánh cửa, đối diện với thân cảm biến.  \n   - Đảm bảo khoảng cách giữa cảm biến và nam châm khi cửa đóng nằm trong khoảng cách hoạt động cho phép của thiết bị.  \n   - Sau khi dán, giữ cố định thiết bị trong một khoảng thời gian để lớp keo bám chắc.\n\n4. **Kiểm tra sau khi lắp đặt**  \n   - Đóng/mở cửa vài lần để kiểm tra cảm biến nhận biết chính xác trạng thái Đóng/Mở.  \n   - Kiểm tra trạng thái thiết bị trên ứng dụng Vhomenex.  \n   - Kiểm tra thiết bị đã được cố định chắc chắn và kết nối thành công với Gateway hoặc Vconnex USB Converter.  \n   - Kiểm tra mức pin được hiển thị trên ứng dụng.  \n   - Kiểm tra nhật ký hoạt động sau khi trạng thái cửa thay đổi.",
+      "latency_ms": 8125.679856631905,
+      "images": []
+    },
+    {
+      "role": "user",
+      "content": "cách lắp đặt cảm biến hiện diện"
+    },
+    {
+      "role": "assistant",
+      "content": "Dưới đây là hướng dẫn lắp đặt cảm biến hiện diện dựa trên tài liệu đã cung cấp:\n\n1. **Chuẩn bị trước khi lắp đặt**  \n   - Bề mặt lắp đặt phải sạch, khô và phẳng.  \n   - Đảm bảo điện thoại đã cài ứng dụng Vhomenex và đã kết nối với hệ thống Mesh/Gateway.\n\n2. **Xác định vị trí lắp đặt**  \n   - Lắp cảm biến tại khu vực cần giám sát sự hiện diện của người.  \n   - Đặt cảm biến tại vị trí có phạm vi quan sát phù hợp, không bị che khuất.  \n   - Lắp cảm biến ở độ cao và hướng phù hợp để tối ưu khả năng phát hiện người, kể cả khi người đứng yên.  \n   - Ưu tiên vị trí có tầm quan sát rộng đến khu vực cần giám sát.  \n   - Tránh lắp cảm biến gần nguồn nhiệt, nguồn sáng thay đổi liên tục hoặc vị trí có nhiều vật cản.  \n   - Không đặt cảm biến trực tiếp đối diện các thiết bị có thể gây nhiễu hoặc làm sai lệch khả năng phát hiện.\n\n3. **Chọn kiểu lắp đặt**  \n   - **Gắn trần**: Chiều cao lắp đặt trong khoảng từ 2.7m đến 3m. Góc quan sát là 100º.  \n   - **Gắn tường**: Chiều cao lắp đặt của thiết bị cách mặt đất trong khoảng từ 1.4m đến 2m. Nên lắp đặt ở giữa bức tường của không gian cần lắp đặt.\n\n4. **Tiến hành lắp đặt**  \n   - Làm sạch và lau khô bề mặt lắp đặt.  \n   - Dán cảm biến vào bề mặt theo kiểu đã chọn (gắn trần hoặc gắn tường).  \n   - Đảm bảo cảm biến được cố định chắc chắn, không bị rung hoặc lệch.  \n   - Không lắp cảm biến tại vị trí tiếp xúc trực tiếp với nước, nhiệt độ cao hoặc rung lắc mạnh.\n\n5. **Kiểm tra sau khi lắp đặt**  \n   - Kiểm tra cảm biến đã được cố định chắc chắn.  \n   - Kiểm tra thiết bị đã kết nối thành công với Gateway hoặc Vconnex USB Converter.  \n   - Di chuyển trong khu vực giám sát và kiểm tra cảm biến có phát hiện sự hiện diện.  \n   - Đứng yên trong khu vực giám sát và kiểm tra cảm biến vẫn duy trì trạng thái phát hiện.  \n   - Kiểm tra nhật ký hoạt động sau khi cảm biến phát hiện sự hiện diện.",
+      "latency_ms": 10310.480528045446,
+      "images": []
+    },
+    {
+      "role": "user",
+      "content": "cách lắp đặt cảm biến chống giật"
+    },
+    {
+      "role": "assistant",
+      "content": "Câu hỏi: \"cách lắp đặt cảm biến chống giật\"\n\nSản phẩm được xác định: **Cảm biến chuyển động ánh sáng** và **Cảm biến cửa Mesh**\n\nTuy nhiên, trong **ngữ cảnh tài liệu**:\n\n- Không có bất kỳ thông tin nào về **\"cảm biến chống giật\"** được đề cập.\n- Các sản phẩm được mô tả là **cảm biến chuyển động ánh sáng** và **cảm biến cửa Mesh**, với chức năng liên quan đến việc phát hiện chuyển động hoặc trạng thái mở/đóng cửa, **không có chức năng \"chống giật\"** nào được nêu.\n- Không có sản phẩm nào trong tài liệu có tên hoặc chức năng liên quan đến \"chống giật\" (ví dụ: chống giật điện, chống giật do rung, chống giật do điện áp, v.v.).\n\nDo đó, **không có dữ liệu nào trong ngữ cảnh tài liệu hỗ trợ việc lắp đặt \"cảm biến chống giật\"**.\n\n---",
+      "latency_ms": 5241.84942105785,
+      "images": []
+    },
+    {
+      "role": "user",
+      "content": "cách lắp đặt công tắc chông giật"
+    },
+    {
+      "role": "assistant",
+      "content": "Dưới đây là hướng dẫn lắp đặt **Công tắc chống giật** dựa trên tài liệu đã cung cấp:\n\n1. **Chuẩn bị trước khi lắp đặt**  \n   - Đảm bảo bề mặt lắp đặt sạch, khô và phù hợp.  \n   - Thiết bị điện cần kết nối với ổ cắm.  \n   - Điện thoại đã cài ứng dụng Vhomenex và đã kết nối với hệ thống Mesh/Gateway.\n\n2. **Xác định vị trí lắp đặt**  \n   - Lắp công tắc tại vị trí phù hợp với thiết bị điện cần sử dụng.  \n   - Đảm bảo vị trí lắp đặt khô ráo, thông thoáng và thuận tiện cho việc sử dụng.  \n   - Tránh lắp đặt tại nơi có nguy cơ tiếp xúc trực tiếp với nước, độ ẩm cao, nhiệt độ cao hoặc có nhiều bụi bẩn, hóa chất.  \n   - Không đặt công tắc tại vị trí có nguy cơ va đập mạnh.\n\n3. **Tiến hành lắp đặt**  \n   - Cắm Công tắc thông minh chống giật vào nguồn điện phù hợp.  \n   - Kết nối thiết bị điện cần sử dụng với ổ cắm.  \n   - Đưa Công tắc vào trạng thái sẵn sàng kết nối theo hướng dẫn của sản phẩm.\n\n4. **Kiểm tra sau khi lắp đặt**  \n   - Kiểm tra Công tắc đã được kết nối chắc chắn với nguồn điện.  \n   - Kiểm tra trạng thái Bật/Tắt của Công tắc trên ứng dụng Vhomenex.  \n   - Thực hiện bật/tắt thiết bị điện và kiểm tra khả năng điều khiển.  \n   - Kiểm tra chức năng chống giật/rò điện theo hướng dẫn của sản phẩm.  \n   - Đảm bảo Công tắc không có hiện tượng nóng bất thường, phát tia lửa điện hoặc mùi khét trong quá trình sử dụng.  \n   - Theo dõi trạng thái và nhật ký hoạt động của thiết bị trên ứng dụng Vhomenex.",
+      "latency_ms": 9068.544256035239,
+      "images": []
+    },
+    {
+      "role": "user",
+      "content": "cách lắp đặt cảm biến cửa mesh"
+    },
+    {
+      "role": "assistant",
+      "content": "Dưới đây là hướng dẫn lắp đặt **cảm biến cửa Mesh** dựa trên tài liệu đã cung cấp:\n\n1. **Chuẩn bị trước khi lắp đặt**  \n   - Bề mặt lắp đặt phải sạch, khô và phẳng.  \n   - Điện thoại đã cài ứng dụng Vhomenex và đã kết nối với hệ thống Mesh/Gateway.\n\n2. **Xác định vị trí lắp đặt**  \n   - Cảm biến gồm hai bộ phận:  \n     - **Thân cảm biến**: chứa mạch cảm biến và pin.  \n     - **Nam châm**: dùng để xác định trạng thái đóng/mở cửa.  \n   - Lắp hai bộ phận trên cùng một cánh cửa và khung cửa sao cho khi cửa đóng, thân cảm biến và nam châm nằm gần và thẳng hàng với nhau.  \n   - Tránh lắp cảm biến và nam châm ở vị trí bị rung lắc mạnh, tiếp xúc trực tiếp với nước hoặc nhiệt độ cao.\n\n3. **Tiến hành lắp đặt**  \n   - Làm sạch và lau khô vị trí dự kiến lắp đặt.  \n   - Bóc lớp keo bảo vệ ở mặt sau của cảm biến và nam châm.  \n   - Dán thân cảm biến lên khung cửa hoặc vị trí cố định.  \n   - Dán nam châm lên cánh cửa, đối diện với thân cảm biến.  \n   - Đảm bảo khoảng cách giữa cảm biến và nam châm khi cửa đóng nằm trong khoảng cách hoạt động cho phép của thiết bị.  \n   - Sau khi dán, nên giữ cố định thiết bị trong một khoảng thời gian để lớp keo bám chắc.\n\n4. **Kiểm tra sau khi lắp đặt**  \n   - Kiểm tra thiết bị đã được cố định chắc chắn.  \n   - Kiểm tra thiết bị đã kết nối thành công với Gateway hoặc Vconnex USB Converter.  \n   - Thực hiện đóng/mở cửa vài lần để kiểm tra cảm biến nhận biết chính xác trạng thái Đóng/Mở.  \n   - Kiểm tra trạng thái thiết bị trên ứng dụng Vhomenex.  \n   - Kiểm tra mức pin được hiển thị trên ứng dụng.  \n   - Kiểm tra nhật ký hoạt động sau khi trạng thái cửa thay đổi.",
+      "latency_ms": 9061.340926215053,
+      "images": []
+    }
+  ]
+}

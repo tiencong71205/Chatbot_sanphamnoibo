@@ -1,0 +1,858 @@
+"""Chatbot service — orchestrates multi-intent retrieve & multi-stage synthesis with complete coverage & citations."""
+from __future__ import annotations
+
+import json
+import logging
+import re
+import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Tuple
+
+from app.config import Settings
+from app.generation.comparison_formatter import repair_comparison_table
+from app.generation.context_builder import ContextBuilder, estimate_tokens
+from app.generation.vllm_generator import VLLMGenerator
+from app.generation.prompts import COMPARE_SYSTEM_PROMPT
+from app.retrieval.hybrid_retriever import HybridRetriever
+from app.retrieval.query_intent import QueryIntent, classify_intent
+from app.schemas import ChatResponse, ConversationTurn, RetrieveResponse, SourceReference
+from app.services.conversation_context import (
+    ConversationContextResolver,
+    filter_cited_sources,
+)
+
+logger = logging.getLogger(__name__)
+
+# 11 Canonical Coverage Groups as required by specification
+COVERAGE_GROUPS = [
+    ("overview", "1. Nhận diện/tổng quan", ["overview", "identity", "nhận diện", "tổng quan", "mô tả sản phẩm"]),
+    ("purpose", "2. Mô tả và mục đích", ["purpose", "mục đích", "mô tả", "giải pháp", "ứng dụng thực tế"]),
+    ("specification", "3. Thông số kỹ thuật", ["specification", "thông số", "kỹ thuật", "điện áp", "công suất", "kích thước"]),
+    ("device_feature", "4. Tính năng trên thiết bị", ["device_feature", "tính năng trên thiết bị", "nút bấm", "đèn báo", "còi"]),
+    ("app_feature", "5. Chức năng trên ứng dụng", ["app_feature", "chức năng trên ứng dụng", "ứng dụng", "vhomenex", "app"]),
+    ("configuration", "6. Kết nối/cấu hình", ["configuration", "kết nối", "cấu hình", "pairing", "thêm thiết bị", "reset"]),
+    ("automation", "7. Automation/kịch bản", ["automation", "kịch bản", "tự động", "nhà thông minh", "scene"]),
+    ("installation", "8. Lắp đặt", ["installation", "lắp đặt", "hướng dẫn lắp đặt", "thi công", "gắn"]),
+    ("post_installation", "9. Kiểm tra sau lắp đặt", ["post_installation", "kiểm tra sau lắp đặt", "kiểm tra", "vận hành thử"]),
+    ("troubleshooting", "10. Xử lý sự cố/FAQ", ["troubleshooting", "faq", "sự cố", "lỗi", "khắc phục", "hỏi đáp"]),
+    ("voice_command", "11. Khẩu lệnh hoặc nội dung đặc thù", ["voice_command", "khẩu lệnh", "giọng nói", "google assistant", "alexa"]),
+]
+
+# Direct content_type -> coverage-group-key map, checked BEFORE the
+# keyword/substring pass in _group_chunks_by_coverage. app/ingestion/
+# content_classifier.py only ever produces these exact values:
+# identification, overview, specification, usage_tip, installation,
+# connection, configuration, reset, troubleshooting, safety,
+# compatibility, automation, feature (its own default fallback).
+#
+# The keyword lists in COVERAGE_GROUPS above were written against a
+# *different*, more granular vocabulary (device_feature, app_feature,
+# voice_command, post_installation, purpose) that the classifier never
+# actually emits, and critically "connection" (English) never matches
+# "kết nối" (Vietnamese) as a substring either way. Left unmapped, every
+# "connection" and "feature" chunk (the bulk of most product docs) fell
+# through to the "overview" catch-all default, producing a bloated,
+# misclassified, slow-to-summarize overview group instead of populating
+# groups 4/5/6/11 where they actually belong.
+_CONTENT_TYPE_TO_GROUP = {
+    "identification": "overview",
+    "overview": "overview",
+    "specification": "specification",
+    "usage_tip": "device_feature",
+    "installation": "installation",
+    "connection": "configuration",
+    "configuration": "configuration",
+    "reset": "configuration",
+    "troubleshooting": "troubleshooting",
+    "safety": "installation",
+    "compatibility": "specification",
+    "automation": "automation",
+    # "feature" is the classifier's own catch-all default, used for
+    # on-device features, app features, and voice-command tables alike, so
+    # it needs its own text-based disambiguation rather than one fixed
+    # group — see _group_chunks_by_coverage below.
+}
+
+
+class ChatbotService:
+    _PROCEDURE_INTENT_TERMS = (
+        "hướng dẫn",
+        "cách kết nối",
+        "các bước",
+        "quy trình",
+        "làm thế nào để kết nối",
+    )
+    _STEP_RE = re.compile(
+        r"(?ms)^\s*(B\d+)\s*[:.)-]\s*(.+?)"
+        r"(?=^\s*B\d+\s*[:.)-]|\Z)"
+    )
+
+    def __init__(
+        self,
+        settings: Settings,
+        retriever: HybridRetriever,
+        generator: VLLMGenerator,
+    ):
+        self.settings = settings
+        self.retriever = retriever
+        self.generator = generator
+        self.context_builder = ContextBuilder(settings)
+        self.conversation_context = ConversationContextResolver(retriever.resolver)
+
+    def _build_source_references(
+        self, selected: List[Dict[str, Any]], start: int = 1
+    ) -> List[SourceReference]:
+        sources: List[SourceReference] = []
+        for i, item in enumerate(selected, start=start):
+            payload = item.get("payload", item)
+            sources.append(
+                SourceReference(
+                    source_id=f"SOURCE_{i}",
+                    product_name=payload.get("product_name", ""),
+                    product_id=payload.get("product_id", ""),
+                    product_group=payload.get("product_group", ""),
+                    source_document=payload.get("source_document", "") or payload.get("source_file", ""),
+                    source_section=payload.get("source_section", "") or payload.get("title", ""),
+                    content_type=payload.get("content_type", ""),
+                    content=payload.get("content", "")[:500],
+                    chunk_id=payload.get("chunk_id", ""),
+                    heading_path=payload.get("heading_path", ""),
+                    source_locator=payload.get("source_locator", ""),
+                    chunk_type=payload.get("chunk_type", ""),
+                    dense_rank=item.get("dense_rank"),
+                    dense_score=item.get("dense_score"),
+                    sparse_rank=item.get("sparse_rank"),
+                    sparse_score=item.get("sparse_score"),
+                    rrf_score=item.get("rrf_score"),
+                )
+            )
+        return sources
+
+    @classmethod
+    def _procedure_steps(cls, content: str) -> List[tuple[str, str]]:
+        return [
+            (label.upper(), text.strip())
+            for label, text in cls._STEP_RE.findall(content or "")
+        ]
+
+    @classmethod
+    def _preserve_procedure_steps(
+        cls,
+        question: str,
+        answer: str,
+        selected: List[Dict[str, Any]],
+    ) -> str:
+        question_norm = question.lower()
+        if not any(term in question_norm for term in cls._PROCEDURE_INTENT_TERMS):
+            return answer
+
+        procedure_scope_terms = (
+            "lắp đặt",
+            "kết nối",
+            "giám sát",
+            "automation",
+            "kịch bản",
+            "kiểm tra",
+            "thêm thiết bị",
+            "điều khiển",
+            "reset",
+        )
+        requested_scopes = [
+            term
+            for term in procedure_scope_terms
+            if term in question_norm
+        ]
+
+        candidates = []
+        for index, item in enumerate(selected, start=1):
+            payload = item.get("payload", item)
+
+            candidate_scope = " ".join([
+                str(payload.get("feature_name", "")),
+                str(payload.get("source_section", "")),
+                str(payload.get("heading_path", "")),
+                str(payload.get("source_locator", "")),
+                str(payload.get("content_type", "")),
+            ]).lower()
+
+            if requested_scopes and not any(
+                scope in candidate_scope
+                for scope in requested_scopes
+            ):
+                continue
+
+            steps = cls._procedure_steps(str(payload.get("content", "")))
+            if payload.get("chunk_type") == "procedure" and len(steps) >= 2:
+                candidates.append((index, payload, steps))
+
+        if not candidates:
+            return answer
+
+        source_index, payload, steps = candidates[0]
+        expected_labels = [label for label, _ in steps]
+        answer_labels = [
+            label.upper()
+            for label in re.findall(
+                r"(?m)^\s*(B\d+)\s*[:.)-]",
+                answer or "",
+                flags=re.IGNORECASE,
+            )
+        ]
+        if answer_labels == expected_labels:
+            return answer
+
+        feature_name = str(
+            payload.get("feature_name")
+            or payload.get("source_section")
+            or "quy trình trong tài liệu"
+        ).strip()
+        lines = [f"Hướng dẫn {feature_name.lower()}:"]
+        for label, text in steps:
+            lines.append(f"- **{label}:** {text}")
+        lines.append("")
+        lines.append("📚 Nguồn tham khảo:")
+        lines.append(f"- SOURCE_{source_index}")
+        return "\n".join(lines)
+
+    @staticmethod
+    def _remove_dangling_markdown_bullet(answer: str) -> str:
+        return re.sub(r"[\r\n]+\s*[-*]\s*$", "", (answer or "").rstrip())
+
+    @classmethod
+    def _finalize_answer(
+        cls,
+        question: str,
+        answer: str,
+        selected: List[Dict[str, Any]],
+    ) -> str:
+        answer = cls._preserve_procedure_steps(question, answer, selected)
+        return cls._remove_dangling_markdown_bullet(answer)
+
+    def _group_chunks_by_coverage(
+        self, chunks: List[Dict[str, Any]]
+    ) -> Dict[str, Dict[str, Any]]:
+        """Map retrieved chunks into the 11 canonical coverage groups."""
+        result: Dict[str, Dict[str, Any]] = {}
+        for key, title, keywords in COVERAGE_GROUPS:
+            result[key] = {
+                "title": title,
+                "chunks": [],
+                "has_data": False,
+            }
+
+        for item in chunks:
+            payload = item.get("payload", item)
+            ct = str(payload.get("content_type", "")).lower()
+            sec = str(payload.get("source_section", "")).lower()
+
+            # 1. Direct content_type -> group lookup (see _CONTENT_TYPE_TO_GROUP
+            # for why this has to run first: most content_type values never
+            # textually match the group keyword lists below).
+            target_key = _CONTENT_TYPE_TO_GROUP.get(ct)
+
+            # 2. "feature" is an intentionally ambiguous catch-all emitted by
+            # the classifier for on-device features, app features, and voice
+            # command tables alike — disambiguate using the section heading.
+            if target_key is None and ct == "feature":
+                if any(kw in sec for kw in ("khẩu lệnh", "giọng nói")):
+                    target_key = "voice_command"
+                elif any(kw in sec for kw in ("ứng dụng", "app", "vhomenex")):
+                    target_key = "app_feature"
+                elif any(kw in sec for kw in ("kiểm tra sau lắp đặt", "vận hành thử")):
+                    target_key = "post_installation"
+                else:
+                    target_key = "device_feature"
+
+            if target_key:
+                result[target_key]["chunks"].append(item)
+                result[target_key]["has_data"] = True
+                continue
+
+            # 3. Fallback: keyword/substring pass against content_type or
+            # source_section, for any content_type not covered above.
+            matched = False
+            for key, title, keywords in COVERAGE_GROUPS:
+                if any(kw in ct or kw in sec for kw in keywords):
+                    result[key]["chunks"].append(item)
+                    result[key]["has_data"] = True
+                    matched = True
+                    break
+
+            if not matched:
+                result["overview"]["chunks"].append(item)
+                result["overview"]["has_data"] = True
+
+        return result
+
+    def _multi_stage_synthesize(
+        self,
+        question: str,
+        chunks: List[Dict[str, Any]],
+        product_name: str = "",
+        debug: bool = False,
+    ) -> Tuple[str, List[Dict[str, Any]], Dict[str, Any]]:
+        """Multi-stage synthesis: Group chunks by section, summarize large groups, merge deterministically."""
+        orchestration_steps = ["1_group_coverage"]
+        coverage_map = self._group_chunks_by_coverage(chunks)
+
+        coverage_by_product = {product_name or "product": {}}
+        missing_sections = []
+
+        for key, group in coverage_map.items():
+            cnt = len(group["chunks"])
+            coverage_by_product[product_name or "product"][group["title"]] = cnt
+            if cnt == 0:
+                missing_sections.append(group["title"])
+
+        user_msg, selected = self.context_builder.build(chunks, query=question)
+        token_est = estimate_tokens(user_msg)
+
+        if token_est <= getattr(self.settings, "max_context_tokens", 6000):
+            orchestration_steps.append("2_single_pass_generation")
+            gen_res = self.generator.generate(user_msg)
+            answer = gen_res["answer"]
+        else:
+            orchestration_steps.append("2_stage1_summarize_groups")
+            # Groups are independent of each other, so their summaries are
+            # generated concurrently instead of one-by-one. This is the
+            # single biggest latency cost for "toàn bộ thông tin sản phẩm"
+            # style questions: up to 11 sequential Ollama calls otherwise.
+            # Actual wall-clock speedup depends on how many requests the
+            # Ollama server accepts concurrently (OLLAMA_NUM_PARALLEL env var
+            # on the Ollama side, and available VRAM) — with a single RTX
+            # 3060 running qwen at Q8, 3 is a safe default that won't starve
+            # a single generation of VRAM/compute; raise it if the server is
+            # configured for more parallel slots.
+            groups_needing_generation = [
+                (key, title) for key, title, _ in COVERAGE_GROUPS
+                if coverage_map[key]["has_data"]
+            ]
+            summaries_by_key: Dict[str, str] = {}
+            max_workers = min(
+                getattr(self.settings, "synthesis_max_parallel_groups", 3),
+                max(1, len(groups_needing_generation)),
+            )
+            if groups_needing_generation:
+                with ThreadPoolExecutor(max_workers=max_workers) as pool:
+                    future_to_key = {
+                        pool.submit(self._summarize_group, coverage_map[key], title, question): key
+                        for key, title in groups_needing_generation
+                    }
+                    for future in as_completed(future_to_key):
+                        key = future_to_key[future]
+                        try:
+                            summaries_by_key[key] = future.result()
+                        except Exception as e:
+                            logger.error("Group summary failed for '%s': %s", key, e, exc_info=True)
+                            summaries_by_key[key] = "Không thể tạo tóm tắt cho mục này do lỗi hệ thống."
+
+            group_summaries = []
+            for key, title, _ in COVERAGE_GROUPS:
+                grp = coverage_map[key]
+                if not grp["has_data"]:
+                    group_summaries.append(f"### {title}\nChưa có dữ liệu trong tài liệu.")
+                else:
+                    group_summaries.append(f"### {title}\n{summaries_by_key.get(key, '')}")
+
+            orchestration_steps.append("3_stage2_merge_summaries")
+            merged_context = "\n\n".join(group_summaries)
+            final_prompt = (
+                f"Dưới đây là bản tóm tắt đầy đủ theo từng mục của sản phẩm {product_name}:\n\n"
+                f"{merged_context}\n\n"
+                f"=== CÂU HỎI NGƯỜI DÙNG ===\n{question}\n\n"
+                "Hãy tổng hợp thành câu trả lời đầy đủ, chi tiết, chuyên nghiệp theo thứ tự 11 mục trên."
+            )
+            gen_res = self.generator.generate(final_prompt)
+            answer = gen_res["answer"]
+
+        debug_data = {
+            "orchestration_steps": orchestration_steps,
+            "coverage_by_product": coverage_by_product,
+            "missing_sections": missing_sections,
+            "context_token_estimate": token_est,
+            "total_candidate_chunks": len(chunks),
+            "selected_chunks": len(selected),
+        }
+        return answer, selected, debug_data
+
+    def _summarize_group(self, group: Dict[str, Any], title: str, question: str) -> str:
+        """Summarize a single coverage group. Runs inside a worker thread —
+        no shared mutable state, only reads from context_builder/generator
+        (both stateless per-call aside from the shared thread-safe httpx
+        client), so this is safe to call concurrently."""
+        grp_msg, _ = self.context_builder.build(
+            group["chunks"],
+            query=f"Tóm tắt ngắn gọn và chính xác toàn bộ nội dung của mục {title}.",
+        )
+        grp_res = self.generator.generate(grp_msg)
+        return grp_res["answer"]
+
+    def chat(
+        self,
+        question: str,
+        product_id: Optional[str] = None,
+        history: Optional[List[ConversationTurn]] = None,
+        compare_mode: bool = False,
+        debug: bool = False,
+    ) -> ChatResponse:
+        """Full RAG pipeline with intent classification & full-coverage multi-stage synthesis."""
+        t0 = time.perf_counter()
+
+        history_dicts = None
+        if history:
+            history_dicts = [{"role": h.role, "content": h.content} for h in history]
+
+        explicit_products = [
+            item
+            for item in self.retriever.resolver.resolve_all(question)
+            if item.get("product_id") and item.get("confidence", 0.0) >= 0.65
+        ]
+        if product_id and not any(p["product_id"] == product_id for p in explicit_products):
+            catalog_item = self.retriever.resolver.catalog_item(product_id) or {}
+            explicit_products.append({
+                "product_id": product_id,
+                "product_name": catalog_item.get("product_name", product_id),
+                "confidence": 1.0,
+            })
+
+        multi_reference = self.conversation_context.is_multi_product_reference(
+            question
+        )
+        expected_count = self.conversation_context.referenced_product_count(
+            question
+        )
+
+        # Only raid conversation history for extra products when the current
+        # question is genuinely under-specified. A generic phrase like "các
+        # thiết bị" ("the devices") is a weak signal on its own — it appears
+        # in plenty of self-contained, single-product questions (e.g. "...xóa
+        # Gateway khỏi tài khoản, các thiết bị Zigbee sẽ ra sao?" is clearly
+        # about Gateway, not an ambiguous multi-product reference). Confirmed
+        # in practice: this generic-phrase path was pulling in 2 unrelated
+        # products from an earlier, unrelated turn even though the current
+        # question already named its one real product explicitly. Only treat
+        # the question as needing history when either (a) it has an explicit
+        # numeric count ("2 thiết bị", "cả ba"...) not yet satisfied by what
+        # the current turn already resolved, or (b) the current turn resolved
+        # zero products at all, so there is genuinely nothing to go on.
+        needs_history_lookup = multi_reference and (
+            (expected_count is not None and len(explicit_products) < expected_count)
+            or (expected_count is None and len(explicit_products) == 0)
+        )
+
+        if needs_history_lookup:
+            historical_products = self.conversation_context.products_from_history(
+                history,
+                expected_count=expected_count,
+            )
+
+            known_ids = {item["product_id"] for item in explicit_products}
+            for item in historical_products:
+                if item["product_id"] not in known_ids:
+                    explicit_products.append(item)
+                    known_ids.add(item["product_id"])
+
+            insufficient = (
+                len(explicit_products) < 2
+                if expected_count is None
+                else len(explicit_products) != expected_count
+            )
+            if insufficient:
+                total_latency = (time.perf_counter() - t0) * 1000
+                expected_text = (
+                    f"{expected_count} thiết bị"
+                    if expected_count
+                    else "các thiết bị"
+                )
+                return ChatResponse(
+                    answer=(
+                        f"Bạn vui lòng cho biết rõ tên {expected_text} cần hỏi. "
+                        "Lịch sử hội thoại hiện chưa xác định đủ danh sách sản phẩm "
+                        "nên tôi chưa thể trả lời chính xác."
+                    ),
+                    latency_ms=total_latency,
+                )
+
+        intent_question = question
+        if multi_reference and len(explicit_products) == 2:
+            intent_question += "\nCả hai sản phẩm."
+        elif multi_reference and len(explicit_products) == 3:
+            intent_question += "\nCả ba sản phẩm."
+
+        intent_res = classify_intent(intent_question, explicit_products)
+        logger.info("Classified Intent: %s (products=%s, sections=%s)", intent_res.intent.value, intent_res.requested_products, intent_res.requested_sections)
+
+        scope = self.conversation_context.resolve(
+            question=question,
+            explicit_product_id=product_id or (explicit_products[0]["product_id"] if explicit_products else None),
+            history=history,
+            compare_mode=compare_mode or intent_res.intent in (QueryIntent.COMPARE_FIELD, QueryIntent.COMPARE_FULL),
+        )
+        effective_pid = scope.product_id
+
+        if intent_res.intent == QueryIntent.PRODUCT_FULL:
+            return self._handle_product_full(question, intent_res, effective_pid, history_dicts, debug, t0)
+
+        elif intent_res.intent == QueryIntent.SECTION_FULL:
+            return self._handle_section_full(question, intent_res, effective_pid, history_dicts, debug, t0)
+
+        elif intent_res.intent in (QueryIntent.COMPARE_FIELD, QueryIntent.COMPARE_FULL):
+            return self._handle_compare(question, intent_res, explicit_products, history_dicts, debug, t0)
+
+        elif intent_res.intent == QueryIntent.MULTI_PRODUCT_FACT:
+            return self._handle_multi_product_fact(question, intent_res, explicit_products, history_dicts, debug, t0)
+
+        return self._handle_fact(question, intent_res, effective_pid, scope, history_dicts, debug, t0)
+
+    def _handle_product_full(
+        self,
+        question: str,
+        intent_res: Any,
+        product_id: Optional[str],
+        history_dicts: Any,
+        debug: bool,
+        t0: float,
+    ) -> ChatResponse:
+        t_ret_start = time.perf_counter()
+        pid = product_id or (intent_res.requested_products[0] if intent_res.requested_products else "")
+        catalog_item = self.retriever.resolver.catalog_item(pid) or {}
+        pname = catalog_item.get("product_name", pid)
+
+        chunks = self.retriever.retrieve_full(product_id=pid)
+        retrieval_ms = (time.perf_counter() - t_ret_start) * 1000
+
+        t_gen_start = time.perf_counter()
+        answer, selected, orch_debug = self._multi_stage_synthesize(
+            question, chunks, product_name=pname, debug=debug
+        )
+        generation_ms = (time.perf_counter() - t_gen_start) * 1000
+
+        final_ans = self._finalize_answer(question, answer, selected)
+        sources = filter_cited_sources(final_ans, self._build_source_references(selected))
+        total_latency = (time.perf_counter() - t0) * 1000
+
+        debug_info = None
+        if debug:
+            debug_info = {
+                "query_intent": intent_res.intent.value,
+                "requested_products": intent_res.requested_products or [pid],
+                "requested_sections": intent_res.requested_sections,
+                "total_candidate_chunks": len(chunks),
+                "selected_chunks": len(selected),
+                "coverage_by_product": orch_debug["coverage_by_product"],
+                "missing_sections": orch_debug["missing_sections"],
+                "context_token_estimate": orch_debug["context_token_estimate"],
+                "orchestration_steps": orch_debug["orchestration_steps"],
+                "retrieval_ms": retrieval_ms,
+                "generation_ms": generation_ms,
+                "total_ms": total_latency,
+            }
+
+        return ChatResponse(
+            answer=final_ans,
+            sources=sources,
+            debug_info=debug_info,
+            latency_ms=total_latency,
+            retrieval_ms=retrieval_ms,
+            generation_ms=generation_ms,
+        )
+
+    def _handle_section_full(
+        self,
+        question: str,
+        intent_res: Any,
+        product_id: Optional[str],
+        history_dicts: Any,
+        debug: bool,
+        t0: float,
+    ) -> ChatResponse:
+        t_ret_start = time.perf_counter()
+        pid = product_id or (intent_res.requested_products[0] if intent_res.requested_products else "")
+        sec_name = intent_res.requested_sections[0] if intent_res.requested_sections else ""
+
+        chunks = self.retriever.retrieve_full(product_id=pid, section_name=sec_name)
+        retrieval_ms = (time.perf_counter() - t_ret_start) * 1000
+
+        user_msg, selected = self.context_builder.build(chunks, query=question)
+        token_est = estimate_tokens(user_msg)
+
+        t_gen_start = time.perf_counter()
+        gen_res = self.generator.generate(user_msg, history=history_dicts)
+        generation_ms = (time.perf_counter() - t_gen_start) * 1000
+
+        final_ans = self._finalize_answer(question, gen_res["answer"], selected)
+        sources = filter_cited_sources(final_ans, self._build_source_references(selected))
+        total_latency = (time.perf_counter() - t0) * 1000
+
+        debug_info = None
+        if debug:
+            debug_info = {
+                "query_intent": intent_res.intent.value,
+                "requested_products": intent_res.requested_products or [pid],
+                "requested_sections": intent_res.requested_sections,
+                "total_candidate_chunks": len(chunks),
+                "selected_chunks": len(selected),
+                "coverage_by_product": {pid: {sec_name: len(chunks)}},
+                "missing_sections": [] if chunks else [sec_name],
+                "context_token_estimate": token_est,
+                "orchestration_steps": ["section_scroll", "generation"],
+                "retrieval_ms": retrieval_ms,
+                "generation_ms": generation_ms,
+                "total_ms": total_latency,
+            }
+
+        return ChatResponse(
+            answer=final_ans,
+            sources=sources,
+            debug_info=debug_info,
+            latency_ms=total_latency,
+            retrieval_ms=retrieval_ms,
+            generation_ms=generation_ms,
+        )
+
+    def _handle_compare(
+        self,
+        question: str,
+        intent_res: Any,
+        explicit_products: List[Dict[str, Any]],
+        history_dicts: Any,
+        debug: bool,
+        t0: float,
+    ) -> ChatResponse:
+        t_ret_start = time.perf_counter()
+        pids = [p["product_id"] for p in explicit_products]
+
+        all_chunks = []
+        coverage_by_product = {}
+        missing_sections = []
+
+        if intent_res.intent == QueryIntent.COMPARE_FULL:
+            for pid in pids:
+                p_chunks = self.retriever.retrieve_full(product_id=pid)
+                all_chunks.extend(p_chunks)
+                grp_map = self._group_chunks_by_coverage(p_chunks)
+                coverage_by_product[pid] = {v["title"]: len(v["chunks"]) for v in grp_map.values()}
+        else:
+            for pid in pids:
+                ret = self.retriever.retrieve(question, product_id=pid, top_k=8)
+                all_chunks.extend(ret["results"])
+                coverage_by_product[pid] = {"candidates": len(ret["results"])}
+
+        retrieval_ms = (time.perf_counter() - t_ret_start) * 1000
+
+        user_msg, selected = self.context_builder.build(all_chunks, query=question)
+        token_est = estimate_tokens(user_msg)
+
+        comp_prompt = (
+            f"{user_msg}\n\n"
+            "YÊU CẦU SO SÁNH NGHĨA VỤ:\n"
+            "1. Lập bảng so sánh chi tiết cho từng sản phẩm.\n"
+            "2. Mỗi hàng/ô nội dung phải dẫn nguồn chính xác [SOURCE_x].\n"
+            "3. Nếu mục/tiêu chí nào không có trong tài liệu của sản phẩm đó, BẮT BUỘC ghi rõ: 'Chưa có dữ liệu trong tài liệu'. Không tự suy đoán."
+        )
+
+        t_gen_start = time.perf_counter()
+        gen_res = self.generator.generate(comp_prompt, system_prompt=COMPARE_SYSTEM_PROMPT, history=history_dicts)
+        answer = repair_comparison_table(gen_res["answer"], [p.get("product_name", p["product_id"]) for p in explicit_products])
+        generation_ms = (time.perf_counter() - t_gen_start) * 1000
+
+        final_ans = self._remove_dangling_markdown_bullet(answer)
+        sources = filter_cited_sources(final_ans, self._build_source_references(selected))
+        total_latency = (time.perf_counter() - t0) * 1000
+
+        debug_info = None
+        if debug:
+            debug_info = {
+                "query_intent": intent_res.intent.value,
+                "requested_products": pids,
+                "requested_sections": intent_res.requested_sections,
+                "total_candidate_chunks": len(all_chunks),
+                "selected_chunks": len(selected),
+                "coverage_by_product": coverage_by_product,
+                "missing_sections": missing_sections,
+                "context_token_estimate": token_est,
+                "orchestration_steps": ["compare_retrieval", "comparison_generation"],
+                "retrieval_ms": retrieval_ms,
+                "generation_ms": generation_ms,
+                "total_ms": total_latency,
+            }
+
+        return ChatResponse(
+            answer=final_ans,
+            sources=sources,
+            debug_info=debug_info,
+            latency_ms=total_latency,
+            retrieval_ms=retrieval_ms,
+            generation_ms=generation_ms,
+        )
+
+    def _handle_multi_product_fact(
+        self,
+        question: str,
+        intent_res: Any,
+        explicit_products: List[Dict[str, Any]],
+        history_dicts: Any,
+        debug: bool,
+        t0: float,
+    ) -> ChatResponse:
+        t_ret_start = time.perf_counter()
+        all_chunks = []
+        pids = [p["product_id"] for p in explicit_products]
+        coverage_by_product = {}
+
+        for pid in pids:
+            ret = self.retriever.retrieve(question, product_id=pid, top_k=6)
+            product_chunks = ret["results"]
+            coverage_by_product[pid] = len(product_chunks)
+            all_chunks.extend(product_chunks)
+
+        retrieval_ms = (time.perf_counter() - t_ret_start) * 1000
+
+        user_msg, selected = self.context_builder.build(all_chunks, query=question)
+        token_est = estimate_tokens(user_msg)
+
+        resolved_product_names = [
+            p.get("product_name", p["product_id"])
+            for p in explicit_products
+        ]
+
+        resolved_context = (
+            "Các sản phẩm đã được hệ thống xác định cho câu hỏi hiện tại: "
+            + ", ".join(resolved_product_names)
+        )
+
+        multi_product_prompt = chr(10).join([
+            resolved_context,
+            "",
+            user_msg,
+            "",
+            "=== YÊU CẦU TỔNG HỢP NHIỀU SẢN PHẨM ===",
+            "1. Phải kiểm tra và sử dụng thông tin của TẤT CẢ sản phẩm đã xác định.",
+            "2. Đối chiếu bằng chứng riêng của từng sản phẩm trước khi kết luận.",
+            "3. Nếu hỏi điểm chung, chỉ nêu nội dung được tài liệu của tất cả sản phẩm cùng xác nhận.",
+            "4. Nếu không có điểm chung cho tất cả sản phẩm, nêu rõ điều kiện của từng sản phẩm.",
+            "5. Không bỏ qua sản phẩm và không chép riêng một SOURCE không trả lời câu hỏi.",
+            "6. Mỗi nhận định phải gắn SOURCE tương ứng; cuối câu trả lời chỉ liệt kê SOURCE thực sự dùng.",
+        ])
+
+        t_gen_start = time.perf_counter()
+        gen_res = self.generator.generate(
+            multi_product_prompt,
+            history=None,
+        )
+        generation_ms = (time.perf_counter() - t_gen_start) * 1000
+
+        # Không dùng _preserve_procedure_steps cho câu hỏi nhiều sản phẩm.
+        # Hàm đó chỉ chọn một procedure chunk và có thể thay mất câu trả lời tổng hợp.
+        final_ans = self._remove_dangling_markdown_bullet(gen_res["answer"])
+        sources = filter_cited_sources(final_ans, self._build_source_references(selected))
+        total_latency = (time.perf_counter() - t0) * 1000
+
+        debug_info = None
+        if debug:
+            debug_info = {
+                "query_intent": intent_res.intent.value,
+                "requested_products": pids,
+                "requested_sections": intent_res.requested_sections,
+                "total_candidate_chunks": len(all_chunks),
+                "selected_chunks": len(selected),
+                "coverage_by_product": coverage_by_product,
+                "missing_sections": [
+                    f"{pid}:retrieval"
+                    for pid, count in coverage_by_product.items()
+                    if count == 0
+                ],
+                "context_token_estimate": token_est,
+                "orchestration_steps": ["multi_product_retrieval", "generation"],
+                "retrieval_ms": retrieval_ms,
+                "generation_ms": generation_ms,
+                "total_ms": total_latency,
+            }
+
+        return ChatResponse(
+            answer=final_ans,
+            sources=sources,
+            debug_info=debug_info,
+            latency_ms=total_latency,
+            retrieval_ms=retrieval_ms,
+            generation_ms=generation_ms,
+        )
+
+    def _handle_fact(
+        self,
+        question: str,
+        intent_res: Any,
+        effective_product_id: Optional[str],
+        scope: Any,
+        history_dicts: Any,
+        debug: bool,
+        t0: float,
+    ) -> ChatResponse:
+        t_ret_start = time.perf_counter()
+        retrieval = self.retriever.retrieve(
+            query=scope.query if scope else question,
+            product_id=effective_product_id,
+            top_k=self.settings.final_top_k,
+            debug=debug,
+        )
+        retrieval_ms = (time.perf_counter() - t_ret_start) * 1000
+        results = retrieval["results"]
+
+        generation_question = question
+        if scope and scope.is_follow_up and scope.product_name:
+            generation_question = (
+                f"{question}\n\n"
+                f"Ngữ cảnh hội thoại cần giữ: sản phẩm đang hỏi là "
+                f"{scope.product_name}. Chỉ trả lời cho sản phẩm này."
+            )
+
+        user_message, selected = self.context_builder.build(results, generation_question)
+        token_est = estimate_tokens(user_message)
+
+        t_gen_start = time.perf_counter()
+        # History is used by the context resolver to resolve follow-up references.
+        # Once the product is resolved, generation must rely only on current
+        # product-filtered RAG context to prevent facts leaking from older answers.
+        generation_history = (
+            None
+            if scope and scope.is_follow_up and effective_product_id
+            else history_dicts
+        )
+        gen_result = self.generator.generate(
+            user_message,
+            history=generation_history,
+        )
+        generation_ms = (time.perf_counter() - t_gen_start) * 1000
+
+        answer = self._finalize_answer(question, gen_result["answer"], selected)
+        sources = filter_cited_sources(answer, self._build_source_references(selected))
+        total_latency = (time.perf_counter() - t0) * 1000
+
+        debug_info = None
+        if debug:
+            debug_info = {
+                "query_intent": intent_res.intent.value,
+                "requested_products": intent_res.requested_products or ([effective_product_id] if effective_product_id else []),
+                "requested_sections": intent_res.requested_sections,
+                "total_candidate_chunks": len(results),
+                "selected_chunks": len(selected),
+                "coverage_by_product": {effective_product_id or "all": len(results)},
+                "missing_sections": [],
+                "context_token_estimate": token_est,
+                "orchestration_steps": ["hybrid_retrieval", "generation"],
+                "resolved_product": retrieval.get("resolved_product"),
+                "resolved_products": retrieval.get("resolved_products", []),
+                "retrieval_ms": retrieval_ms,
+                "generation_ms": generation_ms,
+                "total_ms": total_latency,
+            }
+
+        return ChatResponse(
+            answer=answer,
+            sources=sources,
+            debug_info=debug_info,
+            latency_ms=total_latency,
+            retrieval_ms=retrieval_ms,
+            generation_ms=generation_ms,
+        )

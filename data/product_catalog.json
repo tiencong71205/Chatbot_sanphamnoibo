@@ -1,0 +1,349 @@
+[
+  {
+    "product_id": "cam_bien_cua_mesh",
+    "product_name": "Cảm biến cửa Mesh",
+    "product_group": "Cảm biến",
+    "source_file": "1.Vhomenex_Mô tả sản phẩm_Cảm biến cửa Mesh_v1.0_final.docx",
+    "business_product_id": "",
+    "model": "",
+    "aliases": [
+      "cảm biến cửa mesh",
+      "cảm biến cửa",
+      "door sensor mesh",
+      "cảm biến đóng mở cửa",
+      "sensor cửa"
+    ],
+    "common_typos": [
+      "cam bien cua mesh",
+      "cam bien cua",
+      "cảm biến cửa meh",
+      "cam bien cua me"
+    ],
+    "keywords": [
+      "cửa",
+      "đóng mở",
+      "bluetooth mesh",
+      "gateway",
+      "usb converter",
+      "pin",
+      "nam châm",
+      "trạng thái cửa"
+    ]
+  },
+  {
+    "product_id": "cam_bien_chuyen_dong_anh_sang",
+    "product_name": "Cảm biến chuyển động ánh sáng",
+    "product_group": "Cảm biến",
+    "source_file": "2.Vhomenex_Mô tả sản phẩm_Cảm biến chuyển động ánh sáng_v1.0_final.docx",
+    "business_product_id": "",
+    "model": "",
+    "aliases": [
+      "cảm biến chuyển động",
+      "cảm biến ánh sáng",
+      "motion sensor",
+      "pir sensor",
+      "cảm biến pir",
+      "cảm biến chuyển động và ánh sáng"
+    ],
+    "common_typos": [
+      "cam bien chuyen dong",
+      "cam bien anh sang",
+      "cam bien chuyen dong anh sang",
+      "cảm biến chuyển động anh sang"
+    ],
+    "keywords": [
+      "chuyển động",
+      "ánh sáng",
+      "pir",
+      "lux",
+      "tự động bật tắt",
+      "phát hiện người",
+      "độ sáng"
+    ]
+  },
+  {
+    "product_id": "bo_dieu_khien_trung_tam_gateway",
+    "product_name": "Bộ điều khiển trung tâm - Gateway",
+    "product_group": "Thiết bị thông minh",
+    "source_file": "10.Vhomenex_Mô tả sản phẩm_Gateway_final.docx",
+    "business_product_id": "",
+    "model": "",
+    "aliases": [
+      "bo dieu khien trung tam",
+      "bo dieu khien trung tam gateway",
+      "bộ điều khiển trung tâm",
+      "bộ điều khiển trung tâm - gateway",
+      "bộ điều khiển trung tâm gateway",
+      "gateway"
+    ],
+    "common_typos": [],
+    "keywords": [],
+    "auto_generated": false,
+    "name_extraction_failed": false
+  },
+  {
+    "product_id": "cong_tac_chong_giat_cho_bnn",
+    "product_name": "Công Tắc Chống Giật Cho Bnn",
+    "product_group": "Thiết bị thông minh",
+    "source_file": "4.Vhomenex_Mô tả sản phẩm_Công tắc chống giật cho BNN_final.docx",
+    "business_product_id": "",
+    "model": "",
+    "aliases": [
+      "cong tac chong giat bnn",
+      "cong tac chong giat cho bnn",
+      "cong tac thong minh chong giat",
+      "công tắc chống giật bnn",
+      "công tắc chống giật cho bnn",
+      "công tắc chống giật thông minh",
+      "công tắc thông minh chống giật"
+    ],
+    "common_typos": [],
+    "keywords": [],
+    "auto_generated": true,
+    "name_extraction_failed": false
+  },
+  {
+    "product_id": "cong_tac_thong_minh_dimmer",
+    "product_name": "Công tắc thông minh dimmer",
+    "product_group": "Thiết bị thông minh",
+    "source_file": "5.Vhomenex_Mô tả sản phẩm Công tắc dimmer_v1.0_final.docx",
+    "business_product_id": "",
+    "model": "",
+    "aliases": [
+      "cong tac thong minh dimmer",
+      "công tắc thông minh dimmer",
+      "dimmer"
+    ],
+    "common_typos": [],
+    "keywords": [],
+    "auto_generated": true,
+    "name_extraction_failed": false
+  },
+  {
+    "product_id": "dong_co_rem",
+    "product_name": "Động Cơ Rèm",
+    "product_group": "Thiết bị thông minh",
+    "source_file": "6.Vhomenex_Mô tả sản phẩm_ Động cơ rèm_v1.0_final.docx",
+    "business_product_id": "",
+    "model": "",
+    "aliases": [
+      "cơ rèm",
+      "dong co rem",
+      "động cơ rèm"
+    ],
+    "common_typos": [],
+    "keywords": [],
+    "auto_generated": true,
+    "name_extraction_failed": false
+  },
+  {
+    "product_id": "cong_tac_thong_minh",
+    "product_name": "Công tắc thông minh",
+    "product_group": "Thiết bị thông minh",
+    "source_file": "8.Vhomenex_Mô tả sản phẩm_Công tắc thông minh_final.docx",
+    "business_product_id": "",
+    "model": "",
+    "aliases": [
+      "cong tac thong minh",
+      "công tắc thông minh"
+    ],
+    "common_typos": [],
+    "keywords": [],
+    "auto_generated": true,
+    "name_extraction_failed": false
+  },
+  {
+    "product_id": "cong_tac_thong_minh_cho_cua_cuon_cua_cong",
+    "product_name": "Công tắc thông minh cho cửa cuốn, cửa cổng",
+    "product_group": "Thiết bị thông minh",
+    "source_file": "11.Vhomenex_Mô tả sản phẩm_Công tắc thông minh cho cửa cuốn cửa cổng_final.docx",
+    "business_product_id": "",
+    "model": "",
+    "aliases": [
+      "cong tac cua cong",
+      "cong tac cua cuon",
+      "cong tac thong minh cho cua cuon cua cong",
+      "cong tac thong minh cua cuon cua cong",
+      "cuốn, cổng",
+      "công tắc cửa cuốn",
+      "công tắc cửa cổng",
+      "công tắc thông minh cho cửa cuốn, cửa cổng",
+      "công tắc thông minh cửa cuốn, cửa cổng"
+    ],
+    "common_typos": [],
+    "keywords": [],
+    "auto_generated": true,
+    "name_extraction_failed": false
+  },
+  {
+    "product_id": "cam_bien_hien_dien",
+    "product_name": "Cảm biến hiện diện",
+    "product_group": "Thiết bị thông minh",
+    "source_file": "3.Vhomenex_Mô tả sản phẩm_Cảm biến hiện diện_final.docx",
+    "business_product_id": "",
+    "model": "",
+    "aliases": [
+      "cam bien hien dien",
+      "cảm biến hiện diện",
+      "hiện diện"
+    ],
+    "common_typos": [],
+    "keywords": [],
+    "auto_generated": true,
+    "name_extraction_failed": false
+  },
+  {
+    "product_id": "bo_giam_sat_tieu_thu_dien_nang_thong_minh",
+    "product_name": "Bộ giám sát tiêu thụ điện năng thông minh",
+    "product_group": "Thiết bị thông minh",
+    "source_file": "9.Vhomenex_Mô tả sản phẩm_Công tơ_final.docx",
+    "business_product_id": "",
+    "model": "",
+    "aliases": [
+      "bo giam sat tieu thu dien nang thong minh",
+      "bộ giám sát tiêu thụ điện năng thông minh",
+      "cong to",
+      "công tơ",
+      "dong ho dien",
+      "đồng hồ điện"
+    ],
+    "common_typos": [],
+    "keywords": [],
+    "auto_generated": true,
+    "name_extraction_failed": false
+  },
+  {
+    "product_id": "bo_trung_tam_gateway_khoa",
+    "product_name": "Bộ trung tâm Gateway khóa",
+    "product_group": "Thiết bị thông minh",
+    "source_file": "12.Vhomenex_Mô tả sản phẩm_Gateway khóa_final.docx",
+    "business_product_id": "",
+    "model": "",
+    "aliases": [
+      "bo trung tam gateway khoa",
+      "bộ trung tâm gateway khóa",
+      "gateway khoa",
+      "gateway khóa"
+    ],
+    "common_typos": [],
+    "keywords": [],
+    "auto_generated": true,
+    "name_extraction_failed": false
+  },
+  {
+    "product_id": "khoa_dien_tu_thong_minh_cua_go",
+    "product_name": "Khóa Điện Tử Thông Minh (Cửa Gỗ)",
+    "product_group": "Thiết bị thông minh",
+    "source_file": "13.Vhomenex_Mô tả sản phẩm_Khóa điện tử cửa gỗ BLE_final.docx",
+    "business_product_id": "",
+    "model": "",
+    "aliases": [
+      "cua go",
+      "cửa gỗ",
+      "khoa dien tu thong minh cua go",
+      "khóa điện tử thông minh (cửa gỗ)"
+    ],
+    "common_typos": [],
+    "keywords": [],
+    "auto_generated": true,
+    "name_extraction_failed": false
+  },
+  {
+    "product_id": "cong_tac_co_thong_minh",
+    "product_name": "Công tắc cơ thông minh",
+    "product_group": "Thiết bị thông minh",
+    "source_file": "14.Vhomenex_Mô tả sản phẩm_Công tắc cơ thông minh 1.2.3 kênh_final.docx",
+    "business_product_id": "",
+    "model": "VCN-WSM1 (1 kênh)\nVCN-WSM2 (2 kênh)\nVCN-WSM3 (3 kênh)",
+    "aliases": [
+      "cong tac co thong minh",
+      "công tắc cơ thông minh"
+    ],
+    "common_typos": [],
+    "keywords": [],
+    "auto_generated": true,
+    "name_extraction_failed": false
+  },
+  {
+    "product_id": "cong_tac_thong_minh_khong_day",
+    "product_name": "Công tắc thông minh không dây",
+    "product_group": "Thiết bị thông minh",
+    "source_file": "15.Vhomenex_Mô tả sản phẩm_Công tắc thông minh không dây_final.docx",
+    "business_product_id": "",
+    "model": "",
+    "aliases": [
+      "cong tac thong minh khong day",
+      "cong tac thong minh ko day",
+      "công tắc không dây",
+      "công tắc ko dây",
+      "công tắc thông minh không dây",
+      "công tắc thông minh ko dây",
+      "không dây",
+      "ko dây"
+    ],
+    "common_typos": [],
+    "keywords": [],
+    "auto_generated": false,
+    "name_extraction_failed": false
+  },
+  {
+    "product_id": "o_cam_thong_minh_chong_giat",
+    "product_name": "Ổ cắm thông minh chống giật",
+    "product_group": "Thiết bị thông minh",
+    "source_file": "16.Vhomenex_Mô tả sản phẩm_Ổ cắm thông minh chống giật_final.docx",
+    "business_product_id": "",
+    "model": "",
+    "aliases": [
+      "o cam thong minh chong giat",
+      "ổ cắm",
+      "ổ cắm thông minh chống giật"
+    ],
+    "common_typos": [],
+    "keywords": [],
+    "auto_generated": true,
+    "name_extraction_failed": false
+  },
+  {
+    "product_id": "khoa_dien_tu",
+    "product_name": "Khóa Điện Tử",
+    "product_group": "Thiết bị thông minh",
+    "source_file": "7.Vhomenex_Mô tả sản phẩm_ Khóa điện tử wifi_final.docx",
+    "business_product_id": "",
+    "model": "",
+    "aliases": [
+      "khoa cua nhom",
+      "khoa cua wifi",
+      "khoa dien tu",
+      "khóa cửa nhôm",
+      "khóa cửa wifi",
+      "khóa thông minh cửa nhôm",
+      "khóa điện tử",
+      "khóa điện tử wifi"
+    ],
+    "common_typos": [],
+    "keywords": [],
+    "auto_generated": true,
+    "name_extraction_failed": false
+  },
+  {
+    "product_id": "bo_dieu_khien_hong_ngoai_thong_minh_v2",
+    "product_name": "Bộ điều khiển hồng ngoại thông minh v2",
+    "product_group": "Thiết bị thông minh",
+    "source_file": "0.Vhomenex_Mô tả sản phẩm_Bộ điều khiển hồng ngoại thông minh_v2_final.docx",
+    "business_product_id": "",
+    "model": "",
+    "aliases": [
+      "bo dieu khien hong ngoai thong minh v2",
+      "bộ điều khiển hồng ngoại",
+      "bộ điều khiển hồng ngoại thông minh v2",
+      "hub hồng ngoại",
+      "ir controller",
+      "smart ir controller",
+      "điều khiển hồng ngoại thông minh"
+    ],
+    "common_typos": [],
+    "keywords": [],
+    "auto_generated": true,
+    "name_extraction_failed": false
+  }
+]

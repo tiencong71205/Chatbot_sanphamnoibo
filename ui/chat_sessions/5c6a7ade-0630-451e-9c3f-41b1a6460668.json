@@ -1,0 +1,36 @@
+{
+  "title": "cách lắp đặt động cơ rèm",
+  "updated_at": "2026-08-25T08:51:09.257457+00:00",
+  "messages": [
+    {
+      "role": "user",
+      "content": "cách lắp đặt động cơ rèm"
+    },
+    {
+      "role": "assistant",
+      "content": "Cách lắp đặt động cơ rèm được thực hiện theo các bước sau:\n\n1. Ngắt nguồn điện trước khi thực hiện lắp đặt.  \n2. Kiểm tra động cơ, dây nguồn và các phụ kiện trước khi lắp đặt.  \n3. Lắp đặt thanh ray/giá đỡ và cố định chắc chắn theo hướng dẫn kỹ thuật của sản phẩm.  \n4. Gắn động cơ vào vị trí lắp đặt và kết nối với hệ thống rèm.  \n5. Đảm bảo vị trí lắp đặt chắc chắn, khô ráo, thông thoáng và thuận tiện bảo trì.  \n6. Tránh lắp đặt tại nơi có nước, độ ẩm cao hoặc nhiệt độ cao; không lắp tại nơi có bụi bẩn, hóa chất hoặc nguy cơ va đập mạnh.  \n7. Đảm bảo rèm có thể đóng/mở tự do, không bị vướng hoặc cản trở trong quá trình vận hành.  \n8. Đảm bảo nguồn điện và hệ thống kết nối phù hợp với động cơ.  \n9. Cấp nguồn và đưa động cơ về trạng thái sẵn sàng kết nối.  \n10. Thực hiện thêm động cơ rèm trên ứng dụng Vhomenex.  \n11. Kiểm tra chức năng đóng/mở rèm và các chức năng điều khiển trên ứng dụng.  \n12. Thực hiện kiểm tra sau lắp đặt: kiểm tra kết nối, kiểm tra chuyển động của rèm, kiểm tra độ ổn định và không có hiện tượng kẹt, rung lắc hoặc tiếng động bất thường.",
+      "latency_ms": 5534.074485767633,
+      "images": []
+    },
+    {
+      "role": "user",
+      "content": "hướng dẫn lắp đặt cảm biến hiện diện"
+    },
+    {
+      "role": "assistant",
+      "content": "Hướng dẫn chế độ lắp đặt cảm biến:\n- **B1:** Tại màn hình Trang chủ, chọn xem chi tiết Cảm biến hiện diện\n- **B2:** Chọn menu mở rộng > chọn chế độ lắp đặt Treo trần/Gắn tường > Hệ thống lưu chế độ lắp đặt của thiết bị",
+      "latency_ms": 6970.541105140001,
+      "images": []
+    },
+    {
+      "role": "user",
+      "content": "Hướng dẫn lắp đặt cảm biến hiện diện"
+    },
+    {
+      "role": "assistant",
+      "content": "Hướng dẫn chế độ lắp đặt cảm biến:\n- **B1:** Tại màn hình Trang chủ, chọn xem chi tiết Cảm biến hiện diện\n- **B2:** Chọn menu mở rộng > chọn chế độ lắp đặt Treo trần/Gắn tường > Hệ thống lưu chế độ lắp đặt của thiết bị",
+      "latency_ms": 4581.136815715581,
+      "images": []
+    }
+  ]
+}
