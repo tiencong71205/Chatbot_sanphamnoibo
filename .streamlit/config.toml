@@ -1,0 +1,46 @@
+# Bảng màu chính của giao diện Vhomenex AI Assistant.
+#
+# ĐÂY LÀ NƠI DUY NHẤT CẦN SỬA để đổi màu toàn bộ ứng dụng — cả Streamlit
+# (nút bấm, ô nhập, thanh cuộn...) lẫn phần giao diện tự vẽ (bong bóng chat,
+# thẻ ảnh, box cảnh báo...) đều đọc màu từ đây.
+#
+# Sau khi sửa file này, chạy lại:
+#     docker compose restart frontend
+#
+# Gợi ý vài bảng màu có sẵn (bỏ dấu # ở bộ muốn dùng, thêm # vào bộ đang dùng):
+#
+#   -- Cam ấm (theo bản thiết kế mẫu) --  ĐANG DÙNG
+#   -- Xanh Vconnex --
+#       primaryColor = "#0f5ea9"
+#   -- Xanh lá --
+#       primaryColor = "#16a34a"
+#   -- Tím --
+#       primaryColor = "#7c3aed"
+
+[theme]
+# Ép giao diện SÁNG cố định. Thiếu dòng này, Streamlit tự đổi sáng/tối
+# theo cài đặt trình duyệt của từng người — cùng một trang mà mỗi người
+# thấy một kiểu, và bảng màu bên dưới bị lệch tông khi rơi vào nền tối.
+base = "light"
+
+# Màu nhấn chính: nút bấm, viền ô nhập đang chọn, bong bóng tin nhắn người dùng
+primaryColor = "#E8834A"
+
+# Nền chính của khu vực chat
+backgroundColor = "#FFFFFF"
+
+# Nền phụ: sidebar, ô nhập liệu, thẻ ảnh
+secondaryBackgroundColor = "#F7F5F2"
+
+# Màu chữ chính
+textColor = "#22252A"
+
+# Phông chữ: "sans serif" | "serif" | "monospace"
+font = "sans serif"
+
+[server]
+# Cho phép tải ảnh đính kèm dung lượng vừa phải
+maxUploadSize = 20
+
+[browser]
+gatherUsageStats = false

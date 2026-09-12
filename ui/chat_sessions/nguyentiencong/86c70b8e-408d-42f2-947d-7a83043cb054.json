@@ -1,0 +1,37 @@
+{
+  "title": "Cách lắp cảm biến hiện diện",
+  "updated_at": "2026-09-09T03:01:37.107595+00:00",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Cách lắp cảm biến hiện diện"
+    },
+    {
+      "role": "assistant",
+      "content": "Cách lắp cảm biến hiện diện:\n\n- Xác định vị trí lắp đặt phù hợp tại khu vực cần giám sát sự hiện diện của người, đảm bảo phạm vi quan sát không bị che khuất.\n\n- Lắp cảm biến ở độ cao và hướng phù hợp để tối ưu khả năng phát hiện người, kể cả khi người đứng yên. Ưu tiên vị trí có tầm quan sát rộng đến khu vực cần giám sát.\n\n- Có 2 kiểu lắp đặt:  \n  - **Gắn trần**: Chiều cao lắp đặt trong khoảng từ 2.7m đến 3m, góc quan sát là 100º.  \n  - **Gắn tường**: Chiều cao lắp đặt cách mặt đất trong khoảng từ 1.4m đến 2m, nên lắp đặt ở giữa bức tường của không gian cần lắp đặt.\n\n- Tránh lắp cảm biến gần nguồn nhiệt, nguồn sáng thay đổi liên tục hoặc vị trí có nhiều vật cản. Không đặt cảm biến trực tiếp đối diện các thiết bị có thể gây nhiễu hoặc làm sai lệch khả năng phát hiện.\n\n- Không lắp cảm biến tại vị trí tiếp xúc trực tiếp với nước, nhiệt độ cao hoặc rung lắc mạnh. Tránh hướng cảm biến trực tiếp vào nguồn nhiệt hoặc nguồn sáng có cường độ thay đổi liên tục.\n\n- Trước khi lắp đặt, đảm bảo bề mặt lắp đặt sạch, khô và phẳng. Đã cài đặt ứng dụng Vhomenex và thiết bị đã kết nối với hệ thống Mesh/Gateway.",
+      "latency_ms": 6393.740811967291,
+      "images": [],
+      "feedback": "down"
+    },
+    {
+      "role": "user",
+      "content": "Cách bước lắp đặt cảm biến hiện diện"
+    },
+    {
+      "role": "assistant",
+      "content": "Cách lắp đặt cảm biến hiện diện:\n\n- Xác định vị trí lắp đặt phù hợp tại khu vực cần giám sát sự hiện diện của người, đảm bảo phạm vi quan sát không bị che khuất.\n\n- Lắp cảm biến ở độ cao và hướng phù hợp để tối ưu khả năng phát hiện người, kể cả khi người đứng yên. Ưu tiên vị trí có tầm quan sát rộng đến khu vực cần giám sát.\n\n- Có 2 kiểu lắp đặt:\n  - **Gắn trần**: Chiều cao lắp đặt trong khoảng từ 2.7m đến 3m, góc quan sát là 100º.\n  - **Gắn tường**: Chiều cao lắp đặt cách mặt đất trong khoảng từ 1.4m đến 2m, nên lắp đặt ở giữa bức tường của không gian cần lắp đặt.\n\n- Tránh lắp cảm biến gần nguồn nhiệt, nguồn sáng thay đổi liên tục hoặc vị trí có nhiều vật cản. Không đặt cảm biến trực tiếp đối diện các thiết bị có thể gây nhiễu hoặc làm sai lệch khả năng phát hiện.\n\n- Không lắp cảm biến tại vị trí tiếp xúc trực tiếp với nước, nhiệt độ cao hoặc rung lắc mạnh. Tránh hướng cảm biến trực tiếp vào nguồn nhiệt hoặc nguồn sáng có cường độ thay đổi liên tục.\n\n- Bề mặt lắp đặt phải sạch, khô và phẳng.\n\n- Đảm bảo điện thoại đã cài ứng dụng Vhomenex và đã kết nối với hệ thống Mesh/Gateway trước khi thực hiện lắp đặt.",
+      "latency_ms": 5974.6476609725505,
+      "images": []
+    },
+    {
+      "role": "user",
+      "content": "A"
+    },
+    {
+      "role": "assistant",
+      "content": "Cảm biến hiện diện có thể phản hồi ngay cả khi bạn không cử động. Sản phẩm này giúp phát hiện người chuẩn xác trong phạm vi 3m với góc rộng 100º, nhận biết đối tượng đang đến gần để đưa ra thông báo và thực hiện các hành động theo kịch bản người dùng thiết lập. Cảm biến hiện diện hỗ trợ giám sát đồng thời tối đa 7 người.\n\nSản phẩm có khả năng kết hợp với cảm biến ánh sáng, đèn thông minh và các thiết bị khác để xây dựng kịch bản tự động. Thông qua ứng dụng Vhomenex, người dùng có thể:\n- Theo dõi vị trí và số lượng người trong vùng giám sát tại màn hình Trang chủ.\n- Xem nhật ký phát hiện hiện diện để theo dõi từng trạng thái nhận diện.\n- Thiết lập kịch bản tự động dựa trên trạng thái hiện diện (có hoặc không hiện diện sau x phút) và hành động vận hành thiết bị tương ứng.\n\nThông số kỹ thuật:\n- Tên sản phẩm: Cảm biến hiện diện\n- Truyền thông: Wi-Fi, Bluetooth Mesh\n- Đèn LED: Báo trạng thái\n- Kích thước: 81mm x 30mm\n- Chất liệu vỏ: Nhựa ABS\n\nTrong quá trình lắp đặt, cần kiểm tra:\n- Cảm biến đã được cố định chắc chắn.\n- Thiết bị đã kết nối thành công với Gateway hoặc Vconnex USB Converter.\n- Động tác phát hiện hiện diện khi di chuyển hoặc đứng yên trong khu vực giám sát.\n- Nhật ký hoạt động sau khi cảm biến phát hiện sự hiện diện.\n\nNếu không tìm thấy cảm biến khi thêm thiết bị, cần kiểm tra trạng thái kết nối, phạm vi kết nối và thực hiện quét lại.",
+      "latency_ms": 6435.308374930173,
+      "images": []
+    }
+  ]
+}

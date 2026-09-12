@@ -1,0 +1,26 @@
+{
+  "title": "A",
+  "updated_at": "2026-09-09T03:08:47.040341+00:00",
+  "messages": [
+    {
+      "role": "user",
+      "content": "A"
+    },
+    {
+      "role": "assistant",
+      "content": "Câu hỏi này có thể áp dụng cho nhiều sản phẩm khác nhau với thông tin không giống nhau: Bộ điều khiển hồng ngoại thông minh, Khóa Điện Tử, Cảm biến chuyển động ánh sáng, Cảm biến cửa Mesh, Công tắc thông minh không dây. Bạn đang hỏi về sản phẩm nào để mình trả lời chính xác?",
+      "latency_ms": 1597.8971410077065,
+      "images": []
+    },
+    {
+      "role": "user",
+      "content": "Cảm biến hiện diện"
+    },
+    {
+      "role": "assistant",
+      "content": "**Cảm biến hiện diện** là một thiết bị cảm biến hiện diện được thiết kế để phát hiện sự hiện diện của con người trong phạm vi 3m với góc rộng 100º. Thiết bị này có thể nhận biết được đối tượng đang đến gần và đưa ra các thông báo hoặc hành động theo kịch bản mà người dùng đã thiết lập.  \n\n### Tính năng chính:\n- Phát hiện hiện diện chính xác trong phạm vi 3m với góc rộng 100º  \n- Giám sát đồng thời tối đa 7 người  \n- Cho phép người dùng theo dõi nhật ký phát hiện hiện diện  \n- Có thể kết hợp với cảm biến ánh sáng, đèn thông minh và các thiết bị khác để xây dựng kịch bản tự động  \n- Có thể chia khu vực phát hiện thành nhiều vùng riêng biệt để xác định vị trí cụ thể và lưu lịch sử thông báo  \n- Hỗ trợ cập nhật firmware qua OTA (Over-the-Air)  \n\n### Truyền thông:\n- Wi-Fi  \n- Bluetooth Mesh  \n\n### Thông số kỹ thuật vùng:\n- Vùng cảnh báo: 5  \n- Vùng nhiễu: 10  \n- Vùng ra vào: 5  \n\n### Hướng dẫn lắp đặt an toàn:\n- Bề mặt lắp đặt phải sạch, khô và phẳng  \n- Điện thoại cần cài đặt ứng dụng Vhomenex và kết nối với hệ thống Mesh/Gateway  \n\n### Cách sử dụng trong ứng dụng Vhomenex:\n1. **Thêm thiết bị**:  \n   - Chọn \"Thêm thiết bị\" > Chọn cảm biến hiện diện > Chọn kết nối Bluetooth Mesh > Chọn bộ điều khiển trung tâm > Chọn tiếp tục > Tích chọn thiết bị và nhấn tiếp tục.  \n   - Đợi quá trình kết nối hoàn tất.  \n\n2. **Giám sát và phát hiện chuyển động**:  \n   - Tại màn hình Trang chủ, chọn xem chi tiết cảm biến hiện diện > Theo dõi vị trí và số lượng người trong vùng được quét.  \n\n3. **Tạo kịch bản tự động**:  \n   - Chọn \"Kịch bản thông minh\" > Tạo kịch bản tự động > Chọn điều kiện (ví dụ: \"Hiện diện\" hoặc \"Không hiện diện sau x phút\") > Chọn tác vụ (ví dụ: vận hành thiết bị) > Lưu kịch bản.  \n\n4. **Quản lý vùng**:  \n   - Chọn xem chi tiết cảm biến hiện diện > Chọn \"Quản lý vùng\" > Tạo vùng mới > Kéo thả vùng quét, thiết lập tên và biểu tượng > Lưu.  \n\n5. **Xem danh sách vùng**:  \n   - Chọn xem chi tiết cảm biến hiện diện > Chọn \"Danh sách vùng\" để xem các vùng đã thiết lập.  \n\n6. **Cập nhật firmware**:  \n   - Chọn xem chi tiết cảm biến hiện diện > Chọn \"Cập nhật OTA\" > Chọn phiên bản mới > Nhấn cập nhật.  \n\n---",
+      "latency_ms": 10791.541851940565,
+      "images": []
+    }
+  ]
+}

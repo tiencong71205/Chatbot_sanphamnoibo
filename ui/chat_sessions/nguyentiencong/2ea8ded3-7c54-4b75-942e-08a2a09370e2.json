@@ -1,0 +1,66 @@
+{
+  "title": "Chế độ kết nối thủ công qua Bl…",
+  "updated_at": "2026-09-09T01:58:26.193940+00:00",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Chế độ kết nối thủ công qua Bluetooth Mesh của Công tắc thông minh cho cửa cuốn, cửa cổng V2 thực hiện như thế nào?"
+    },
+    {
+      "role": "assistant",
+      "content": "Chế độ kết nối thủ công qua Bluetooth Mesh của Công tắc thông minh cho cửa cuốn, cửa cổng thực hiện như sau:\n\nB1: Nhấn và giữ nút cảm ứng 7s cho đến khi đèn nhấp nháy màu vàng (Chế độ kết nối tự động) > Thiết bị phát Bluetooth với tên là VCONNEX-XXXX với time out 90s  \nB2: Người dùng thực hiện kết nối theo hướng dẫn trên App > Khi vào chế độ kết nối thì đèn nền nhấp nháy màu xanh, sau khi kết nối thành công đèn nền không nhấp nháy và còi kêu 1 tiếng.  \n(Lưu ý: Để thoát chế độ kết nối, người dùng chạm vào nút cảm ứng.)",
+      "latency_ms": 4288.587769027799,
+      "images": []
+    },
+    {
+      "role": "user",
+      "content": "Chế độ kết nối tự động qua Bluetooth Mesh của Công tắc thông minh cho cửa cuốn, cửa cổng V2 thực hiện như thế nào?"
+    },
+    {
+      "role": "assistant",
+      "content": "Chế độ kết nối thủ công qua Bluetooth Mesh của Công tắc thông minh cho cửa cuốn, cửa cổng V2 thực hiện như sau:\n\nB1: Nhấn và giữ nút cảm ứng 7s cho đến khi đèn nhấp nháy màu vàng (Chế độ kết nối tự động) > Thiết bị phát Bluetooth với tên là VCONNEX-XXXX với time out 90s  \nB2: Người dùng thực hiện kết nối theo hướng dẫn trên App > Khi vào chế độ kết nối thì đèn nền nhấp nháy màu xanh, sau khi kết nối thành công đèn nền không nhấp nháy và còi kêu 1 tiếng.  \n(Lưu ý: Để thoát chế độ kết nối, người dùng chạm vào nút cảm ứng.)",
+      "latency_ms": 4210.0035269977525,
+      "images": []
+    },
+    {
+      "role": "user",
+      "content": "Kết nối thủ công với ứng dụng qua mạng wifi gia đình của Ổ cắm thông minh chống giật thực hiện như thế nào?"
+    },
+    {
+      "role": "assistant",
+      "content": "Kết nối thủ công với ứng dụng qua mạng wifi gia đình của Ổ cắm thông minh chống giật thực hiện như sau:\n\nB1: Nhấn và giữ nút nguồn 5s cho đến khi đèn nhấp nháy màu đỏ (Chế độ kết nối tự động) > Thiết bị phát Bluetooth với tên là VCONNEX-XXXX với time out 90s  \n\nB2: Người dùng thực hiện kết nối theo hướng dẫn trên App > Khi vào chế độ kết nối thì đèn nền nhấp nháy màu xanh, sau khi kết nối thành công đèn nền không nhấp nháy và còi kêu 1 tiếng.  \n\n(Lưu ý: Để thoát chế độ kết nối, người dùng chạm vào nút cảm ứng.)  \n\nB2.1: Tại màn hình Trang chủ, chọn Thêm thiết bị > Hiển thị màn hình Danh sách loại thiết bị  \nB2.2: Chọn ổ cắm thông minh > Hiển thị danh sách loại kết nối  \nB2.3: Chọn Kết nối với mạng wifi gia đình > Hiển thị màn hình nhập thông tin wifi  \nB2.4: Nhập thông tin wifi > Nhấn Tiếp tục > Hiển thị màn hình hướng dẫn kết nối tự động  \nB2.5: Tại menu mở rộng, chọn Thủ công > Hiển thị màn hình hướng dẫn kết nối thủ công  \nB2.6: Nhấn Tiếp tục > Hiển thị màn hình kết nối với wifi của thiết bị  \nB2.7: Nhấn Đi đến kết nối > Thực hiện kết nối với wifi VCONNEX-XXXX  \nB2.8: Tại màn hình kết nối với wifi của thiết bị > Nhấn Tiếp tục  \nB2.9: Đợi quá trình kết nối hoàn tất, thêm thiết bị thành công",
+      "latency_ms": 7489.75434503518,
+      "images": []
+    },
+    {
+      "role": "user",
+      "content": "Cài đặt mật mã mở khóa của Khóa điện tử thực hiện như thế nào?"
+    },
+    {
+      "role": "assistant",
+      "content": "Cài đặt mật mã mở khóa của Khóa điện tử thực hiện như sau:\n\nB1: Tại màn hình chính khóa, nhấn phím *, sau đó nhấn phím #  \nB2: Nhập mật mã/vân tay quản trị  \nB3: Nhấn phím 2 để vào chế độ cài đặt mật mã, vân tay, thẻ từ mở khóa  \nB4: Nhấn phím 1 để vào chế độ cài đặt mật mã mở khóa  \nB5: Nhấn phím 1 để vào chế độ thêm mật mã  \nB6: Nhập mật mã mới gồm 4 kí tự  \nB7: Nhấn phím # để hoàn tất",
+      "latency_ms": 4758.223050972447,
+      "images": []
+    },
+    {
+      "role": "user",
+      "content": "Trạng thái thiết bị của Cảm biến cửa Mesh thực hiện như thế nào?"
+    },
+    {
+      "role": "assistant",
+      "content": "Trạng thái thiết bị của Cảm biến cửa Mesh được thực hiện như sau:\n\nB1: Tại màn hình Trang chủ, chọn xem chi tiết Cảm biến cửa Vconnex  \nB2: Kiểm tra trạng thái Đóng/Mở trên ứng dụng  \nB3: Thực hiện đóng/mở cửa để kiểm tra trạng thái được cập nhật",
+      "latency_ms": 2868.9365570317023,
+      "images": []
+    },
+    {
+      "role": "user",
+      "content": "Theo dõi trạng thái khóa của Khóa điện tử thông minh cửa gỗ thực hiện như thế nào?"
+    },
+    {
+      "role": "assistant",
+      "content": "Trạng thái thiết bị của Khóa điện tử thông minh cửa gỗ được theo dõi như sau:\n\nB1: Tại màn hình Trang chủ, chọn khóa thông minh BLE > Hiển thị màn hình quản lý khóa.  \nB2: Theo dõi trạng thái đóng/mở và tình trạng pin tại màn hình quản lý thiết bị > Hiển thị trạng thái đóng/mở và mức pin hiện tại.",
+      "latency_ms": 3073.5774579807185,
+      "images": []
+    }
+  ]
+}

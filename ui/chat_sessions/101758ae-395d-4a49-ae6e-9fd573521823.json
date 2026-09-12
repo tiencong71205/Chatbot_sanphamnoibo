@@ -1,0 +1,16 @@
+{
+  "title": "cho tôi hướng dẫn lắp đặt bộ điều khiển hồng n…",
+  "updated_at": "2026-08-28T07:20:03.111349+00:00",
+  "messages": [
+    {
+      "role": "user",
+      "content": "cho tôi hướng dẫn lắp đặt bộ điều khiển hồng ngoại thông mình v3"
+    },
+    {
+      "role": "assistant",
+      "content": "Dưới đây là hướng dẫn lắp đặt bộ điều khiển hồng ngoại thông minh v3 dựa trên tài liệu đã cung cấp:\n\n1. Chọn vị trí lắp đặt phù hợp theo hướng dẫn, đảm bảo thiết bị được đặt tại vị trí thông thoáng, ổn định và không bị che khuất.  \n2. Đảm bảo thiết bị có hướng phát tín hiệu hồng ngoại về phía thiết bị cần điều khiển (ví dụ: TV, điều hòa, quạt).  \n3. Nên đặt bộ điều khiển trong cùng không gian với các thiết bị điện tử cần điều khiển (TV, điều hòa, quạt).  \n4. Tránh đặt bộ điều khiển phía sau đồ vật, trong tủ kín hoặc tại vị trí có vật cản che chắn đường truyền hồng ngoại.  \n5. Đặt thiết bị gần nguồn điện và đảm bảo dây nguồn không bị kéo căng, gập hoặc đè lên.  \n6. Kiểm tra khu vực lắp đặt có nguồn điện phù hợp và thuận tiện để thiết bị phát tín hiệu hồng ngoại đến thiết bị cần điều khiển.  \n7. Mở ứng dụng Vhomenex và thực hiện thêm bộ điều khiển hồng ngoại vào hệ thống theo hướng dẫn sử dụng.  \n8. Thực hiện thiết lập các thiết bị cần điều khiển như TV, điều hòa, quạt,... và cấu hình các chức năng điều khiển tương ứng (ví dụ: bật/tắt, tăng/giảm âm lượng, chuyển kênh, điều chỉnh nhiệt độ, tốc độ quạt,...).  \n9. Thực hiện thử nghiệm điều khiển để đảm bảo tín hiệu hồng ngoại được truyền và thiết bị nhận lệnh chính xác.  \n10. Sau khi lắp đặt, kiểm tra thiết bị đã hiển thị trên ứng dụng Vhomenex và kiểm tra trạng thái kết nối của bộ điều khiển trên ứng dụng.  \n\n⚠️ Lưu ý: Không đặt bộ điều khiển tại nơi có nhiệt độ cao, độ ẩm lớn, gần nguồn nước hoặc nơi có nguy cơ va đập. Không che chắn khu vực phát tín hiệu hồng ngoại của thiết bị.",
+      "latency_ms": 5979.1128053329885,
+      "images": []
+    }
+  ]
+}

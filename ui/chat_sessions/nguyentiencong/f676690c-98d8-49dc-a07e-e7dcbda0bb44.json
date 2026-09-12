@@ -1,0 +1,36 @@
+{
+  "title": "Cài đặt mật mã mở khóa của Khó…",
+  "updated_at": "2026-09-09T02:45:12.527599+00:00",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Cài đặt mật mã mở khóa của Khóa điện tử thực hiện như thế nào?"
+    },
+    {
+      "role": "assistant",
+      "content": "Cài đặt mật mã mở khóa của Khóa điện tử thực hiện theo các bước sau:\n\n* **Thêm mật mã mở khóa**  \n  B1: Tại màn hình chính khóa, nhấn phím *, sau đó nhấn phím #  \n  B2: Nhập mật mã/vân tay quản trị  \n  B3: Nhấn phím 2 để vào chế độ cài đặt mật mã, vân tay, thẻ từ mở khóa  \n  B4: Nhấn phím 1 để vào chế độ cài đặt mật mã mở khóa  \n  B5: Nhấn phím 1 để vào chế độ thêm mật mã  \n  B6: Nhập mật mã mới gồm 4 kí tự  \n  B7: Nhấn phím # để hoàn tất  \n\n* **Xóa mật mã mở khóa**  \n  B1: Tại màn hình chính khóa, nhấn phím *, sau đó nhấn phím #  \n  B2: Nhập mật mã/vân tay quản trị  \n  B3: Nhấn phím 2 để vào chế độ cài đặt mật mã, vân tay, thẻ từ mở khóa  \n  B4: Nhấn phím 1 để vào chế độ cài đặt mật mã mở khóa  \n  B5: Nhấn phím 2 để vào chế độ xóa mật mã theo ID  \n  B6: Nhập ID mật mã cần xóa  \n  B7: Nhấn phím # để hoàn tất  \n\n* **Xóa tất cả mật mã mở khóa**  \n  B1: Tại màn hình chính khóa, nhấn phím *, sau đó nhấn phím #  \n  B2: Nhập mật mã/vân tay quản trị  \n  B3: Nhấn phím 2 để vào chế độ cài đặt mật mã, vân tay, thẻ từ mở khóa  \n  B4: Nhấn phím 1 để vào chế độ cài đặt mật mã mở khóa  \n  B5: Nhấn phím 3 để vào chế độ xóa tất cả mật mã  \n  B6: Nhấn phím 2 để đồng ý xóa  \n  B7: Nhấn phím # để hoàn tất  \n\n* **Tạo mật mã mở khóa một lần**  \n  B1: Tại màn hình Trang chủ, chọn xem chi tiết Khóa thông minh cửa nhôm > Hiển thị màn hình quản lý Khóa thông minh của nhôm  \n  B2: Vuốt sang trái màn hình để tạo mã sử dụng 1 lần  \n  B3: Nhấn “Nhấn để tạo mã” > Hệ thống cung cấp 1 mã mở khóa có hiệu lực trong 5 phút  \n\n* **Tạo mật mã tạm thời**  \n  B1: Tại màn hình Trang chủ, chọn xem chi tiết Khóa thông minh cửa nhôm > Hiển thị màn hình quản lý Khóa thông minh của nhôm  \n  B2: Nhấn Mật mã tạm thời > Hiển thị màn hình danh sách mật mã tạm thời  \n  B3: Nhấn Tạo mới > Hiển thị màn hình cài đặt mật mã tạm thời  \n  B4: Nhập thông tin mật mã tạm thời:  \n  - Tên mật mã  \n  - Mật mã (Tự tạo hoặc tạo ngẫu nhiên)  \n  - Thời gian bắt đầu hiệu lực  \n  - Thời gian hết hạn  \n  B5: Nhấn Lưu > Hệ thống lưu thông tin mật mã tạm thời, mật mã tạm thời có hiệu lực trong khoảng thời gian được cài đặt  \n\n* **Sử dụng mật mã ảo**  \n  B1: Nhập thêm dãy số bất kỳ vào trước hoặc sau hoặc cả trước và sau mật mã mở khóa",
+      "latency_ms": 14531.945575028658,
+      "images": []
+    },
+    {
+      "role": "user",
+      "content": "Cài đặt vân tay khóa của Khóa điện tử thực hiện như thế nào?"
+    },
+    {
+      "role": "assistant",
+      "content": "Để cài đặt vân tay khóa trên **Khóa điện tử**, người dùng thực hiện theo các bước cụ thể như sau:\n\n---\n\n**Cài đặt vân tay mở khóa**\n\n1. Tại màn hình chính khóa, nhấn phím `*`, sau đó nhấn phím `#`.\n2. Nhập mật mã/vân tay quản trị.\n3. Nhấn phím `2` để vào chế độ cài đặt mật mã, vân tay, thẻ từ mở khóa.\n4. Nhấn phím `2` để vào chế độ cài đặt vân tay mở khóa.\n5. Nhấn phím `2` để vào chế độ thêm vân tay.\n6. Đặt vân tay mới lên cảm biến vân tay trên khóa.\n7. Khi khóa thông báo đặt lại vân tay, thực hiện đặt lại vân tay bước 6 lần, đến khi khóa thông báo “Cài đặt vân tay thành công”.\n\n---\n\n**Lưu ý khi cài đặt không thành công:**  \nNếu khóa không nhận diện vân tay hoặc nhận diện thất bại, cần lau sạch cảm biến và ngón tay, đặt đúng vị trí hoặc đăng ký lại vân tay (theo hướng dẫn tại [SOURCE_6]).\n\n---\n\n📌 **Thông tin liên quan đến sản phẩm khác (Bộ trung tâm Gateway khóa):**  \n- Không có thông tin trong tài liệu về việc **cài đặt vân tay** trên **Bộ trung tâm Gateway khóa**.  \n- Bộ trung tâm Gateway khóa chỉ hỗ trợ việc **liên kết và quản lý** khóa (khóa BLE) chứ không thực hiện cài đặt vân tay trực tiếp trên khóa.  \n- Các thao tác cài đặt vân tay chỉ được thực hiện trên **Khóa điện tử** (theo [SOURCE_1]).\n\n---",
+      "latency_ms": 8799.001266947016,
+      "images": []
+    },
+    {
+      "role": "user",
+      "content": "Cài đặt mật mã thẻ từ khóa của Khóa điện tử thực hiện như thế nào?"
+    },
+    {
+      "role": "assistant",
+      "content": "Cài đặt **vân tay khóa** của **Khóa điện tử** thực hiện theo các bước sau:\n\n---\n\n* **Thêm vân tay mở khóa**\n\nB1: Tại màn hình chính khóa, nhấn phím `*`, sau đó nhấn phím `#`.  \nB2: Nhập mật mã/vân tay quản trị.  \nB3: Nhấn phím `2` để vào chế độ cài đặt mật mã, vân tay, thẻ từ mở khóa.  \nB4: Nhấn phím `2` để vào chế độ cài đặt vân tay mở khóa.  \nB5: Nhấn phím `2` để vào chế độ thêm vân tay.  \nB6: Đặt vân tay mới lên cảm biến vân tay trên khóa.  \nB7: Khi khóa thông báo “đặt lại vân tay”, thực hiện đặt lại vân tay bước 6 lần, đến khi khóa thông báo **“Cài đặt vân tay thành công”**.\n\n---\n\n* **Xóa vân tay mở khóa**\n\nB1: Tại màn hình chính khóa, nhấn phím `*`, sau đó nhấn phím `#`.  \nB2: Nhập mật mã/vân tay quản trị.  \nB3: Nhấn phím `2` để vào chế độ cài đặt mật mã, vân tay, thẻ từ mở khóa.  \nB4: Nhấn phím `2` để vào chế độ cài đặt vân tay mở khóa.  \nB5: Nhấn phím `2` để vào chế độ xóa vân tay theo ID.  \nB6: Nhập ID vân tay cần xóa.  \nB7: Nhấn phím `#` để hoàn tất.\n\n---\n\n* **Xóa tất cả vân tay mở khóa**\n\nB1: Tại màn hình chính khóa, nhấn phím `*`, sau đó nhấn phím `#`.  \nB2: Nhập mật mã/vân tay quản trị.  \nB3: Nhấn phím `2` để vào chế độ cài đặt mật mã, vân tay, thẻ từ mở khóa.  \nB4: Nhấn phím `1` để vào chế độ cài đặt vân tay mở khóa.  \nB5: Nhấn phím `3` để vào chế độ xóa tất cả vân tay.  \nB6: Nhấn phím `2` để đồng ý xóa.  \nB7: Nhấn phím `#` để hoàn tất.\n\n---\n\n✅ **Lưu ý**:  \n- Các thao tác cài đặt vân tay đều yêu cầu **mật mã/vân tay quản trị** để xác thực.  \n- Việc cài đặt vân tay phải thực hiện đúng vị trí cảm biến trên khóa.  \n- Nếu không nhận diện được vân tay, hãy kiểm tra lại việc đặt tay hoặc thực hiện lại quy trình đặt lại vân tay theo hướng dẫn.\n\n---\n\n📌 *Nguồn tham khảo: [SOURCE_4] – Cài đặt vân tay khóa của Khóa điện tử*",
+      "latency_ms": 13078.63038405776,
+      "images": []
+    }
+  ]
+}

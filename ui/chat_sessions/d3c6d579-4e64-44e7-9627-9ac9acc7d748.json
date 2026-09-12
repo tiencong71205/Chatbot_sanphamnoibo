@@ -1,0 +1,16 @@
+{
+  "title": "hướng dẫn cài công tắc 4 kênh",
+  "updated_at": "2026-09-08T07:14:16.535450+00:00",
+  "messages": [
+    {
+      "role": "user",
+      "content": "hướng dẫn cài công tắc 4 kênh"
+    },
+    {
+      "role": "assistant",
+      "content": "Hướng dẫn thiết lập điều khiển:\n- **B1:** Tại màn hình Trang chủ, chọn xem chi tiết Công tắc cửa cuốn > Hiển thị màn hình điều khiển công tắc cửa cuốn\n- **B2:** Chọn Thiết lập điều khiển > Hiển thị màn hình thiết lập điều khiển\n- **B3:** Chọn thiết bị điều khiển > Nhấn Đồng ý\n- **B4:** Người dùng thực hiện điều khiển trên ứng dung > Thiết bị điều khiển thực hiện hành động tương ứng",
+      "latency_ms": 4484.231114969589,
+      "images": []
+    }
+  ]
+}
